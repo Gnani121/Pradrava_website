@@ -29,11 +29,11 @@ export default function Hero() {
         </article>
         <article>
           <strong>99.9%</strong>
-          <span>platform uptime approach</span>
+          <span>designed for platform uptime</span>
         </article>
         <article>
           <strong>24/7</strong>
-          <span>monitoring-ready operations</span>
+          <span>designed for continuous monitoring</span>
         </article>
       </div>
     </section>

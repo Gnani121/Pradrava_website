@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Pradrava">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="80" y="120" width="8" height="390" fill="url(#accent)"/>
+
+  <text x="120" y="250" fill="#e2e8f0" font-size="86" font-family="Segoe UI, Arial, sans-serif" font-weight="700">
+    Pradrava
+  </text>
+  <text x="120" y="330" fill="#94a3b8" font-size="40" font-family="Segoe UI, Arial, sans-serif" font-weight="500">
+    End-to-End IT, AI and Cloud Solutions
+  </text>
+  <text x="120" y="392" fill="#64748b" font-size="30" font-family="Segoe UI, Arial, sans-serif">
+    Product Engineering • AI Automation • Cloud Reliability
+  </text>
+
+  <rect x="120" y="450" width="430" height="62" rx="12" fill="#0b1220" stroke="#334155"/>
+  <text x="336" y="490" text-anchor="middle" fill="#22d3ee" font-size="30" font-family="Segoe UI, Arial, sans-serif" font-weight="600">
+    pradrava.com
+  </text>
+</svg>

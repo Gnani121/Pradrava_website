@@ -1,6 +1,21 @@
 import { demos } from "@/data/demos";
 import DemoCard from "@/components/DemoCard";
 
+export const metadata = {
+  title: "Demo Platform | Interactive Showcase | Pradrava",
+  description: "Explore live product experiences: Fluids Intelligence Workspace, AI Forecast Studio. See what your future platform can feel like.",
+  keywords: [
+    "product demos",
+    "interactive software demo",
+    "AI forecast demo",
+    "industrial operations demo",
+    "Pradrava demos",
+  ],
+  alternates: {
+    canonical: "/demo",
+  },
+};
+
 export default function DemoPage() {
   return (
     <section className="container page-stack">
@@ -10,8 +25,8 @@ export default function DemoPage() {
       </div>
 
       <div className="card-grid reveal delay-1">
-        {demos.map((d, i) => (
-          <DemoCard key={i} demo={d} />
+        {demos.map((d) => (
+          <DemoCard key={d.slug} demo={d} />
         ))}
       </div>
     </section>

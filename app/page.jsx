@@ -4,6 +4,21 @@ import { demos } from "@/data/demos";
 import ServiceCard from "@/components/ServiceCard";
 import DemoCard from "@/components/DemoCard";
 
+export const metadata = {
+  title: "Pradrava | End-to-End IT, AI & Cloud Solutions",
+  description: "Pradrava helps teams design, build, and scale digital products with product engineering, AI automation, and cloud reliability services.",
+  keywords: [
+    "IT consulting company",
+    "AI product development",
+    "cloud reliability services",
+    "digital product engineering",
+    "business automation",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+};
+
 const differentiators = [
   {
     title: "Strategy to shipping in one team",
@@ -45,8 +60,8 @@ export default function Home() {
           <h2>Services designed around outcomes</h2>
         </div>
         <div className="card-grid">
-          {services.map((s, i) => (
-            <ServiceCard key={i} service={s} />
+          {services.map((s) => (
+            <ServiceCard key={s.title} service={s} />
           ))}
         </div>
       </section>
@@ -57,8 +72,8 @@ export default function Home() {
           <h2>Explore what your future platform can feel like</h2>
         </div>
         <div className="card-grid">
-          {demos.map((d, i) => (
-            <DemoCard key={i} demo={d} />
+          {demos.map((d) => (
+            <DemoCard key={d.slug} demo={d} />
           ))}
         </div>
       </section>

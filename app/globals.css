@@ -107,6 +107,21 @@ a {
   color: var(--ink);
 }
 
+.nav-demo-chip {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0.28rem 0.58rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
 .page-stack {
   padding-block: 2.4rem 4.2rem;
   display: grid;
@@ -332,7 +347,7 @@ a {
 }
 
 .inline-cta::after {
-  content: "->";
+  content: "\2192";
 }
 
 .feature-panel {
@@ -408,41 +423,6 @@ a {
   color: var(--muted);
 }
 
-.product-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-}
-
-.product-card {
-  border-radius: 24px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  padding: 1.35rem;
-  box-shadow: 0 12px 26px rgba(8, 28, 48, 0.1);
-}
-
-.product-card h3 {
-  margin: 0.45rem 0 0;
-  font-family: "Space Grotesk", sans-serif;
-  letter-spacing: -0.015em;
-  font-size: 1.25rem;
-}
-
-.product-card p {
-  margin: 0.72rem 0 0;
-  color: var(--muted);
-}
-
-.product-points {
-  margin: 0.95rem 0 0;
-  padding-left: 1.1rem;
-  color: var(--ink);
-  display: grid;
-  gap: 0.42rem;
-  font-weight: 600;
-}
-
 /* ─── Product detail pages ──────────────────────────────── */
 
 .product-page-hero {
@@ -485,6 +465,12 @@ a {
 
 .product-page-hero .hero-subtitle {
   color: rgba(255, 255, 255, 0.72);
+}
+
+.product-page-hero .btn-ghost {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .product-hero-stats {
@@ -577,22 +563,6 @@ a {
   line-height: 1.52;
 }
 
-/* Steps - How it works */
-.steps-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-  counter-reset: steps;
-}
-
-.step-item {
-  border-radius: 22px;
-  border: 1px solid var(--line);
-  padding: 1.4rem;
-  background: var(--surface-soft);
-  position: relative;
-}
-
 .step-number {
   font-family: "Space Grotesk", sans-serif;
   font-size: 2.2rem;
@@ -601,18 +571,6 @@ a {
   opacity: 0.3;
   line-height: 1;
   margin-bottom: 0.55rem;
-}
-
-.step-item h3 {
-  margin: 0;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1.04rem;
-}
-
-.step-item p {
-  margin: 0.5rem 0 0;
-  color: var(--muted);
-  font-size: 0.93rem;
 }
 
 .flow-grid {
@@ -807,12 +765,6 @@ a {
   font-size: 0.95rem;
 }
 
-/* Product showcase cards on /products overview */
-.product-showcase {
-  display: grid;
-  gap: 1.5rem;
-}
-
 .product-showcase-block {
   border-radius: 28px;
   border: 1px solid var(--line);
@@ -873,6 +825,19 @@ a {
   font-weight: 600;
 }
 
+.showcase-chip .chip-state {
+  margin-left: auto;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-deep);
+  background: rgba(255, 94, 58, 0.12);
+  border: 1px solid rgba(255, 94, 58, 0.3);
+  border-radius: 999px;
+  padding: 0.16rem 0.5rem;
+}
+
 .showcase-chip .chip-icon {
   font-size: 1.15rem;
 }
@@ -891,26 +856,6 @@ a {
   margin: 0;
   color: var(--muted);
   font-size: 0.9rem;
-}
-
-/* Product divider */
-.product-divider {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  color: var(--muted);
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.product-divider::before,
-.product-divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--line);
 }
 
 /* Inline tag badge */
@@ -999,6 +944,14 @@ a {
     width: 100%;
     justify-content: flex-start;
     gap: 0.65rem;
+  }
+
+  .nav-demo-btn {
+    display: none;
+  }
+
+  .nav-demo-chip {
+    display: inline-flex;
   }
 
   .hero {
