@@ -1,26 +1,26 @@
 export const services = [
   {
-    title: "Software Development",
-    desc: "Web, mobile, SaaS platforms"
+    title: "Product Engineering",
+    desc: "Web, mobile and SaaS experiences customers actually enjoy"
   },
   {
-    title: "AI & Machine Learning",
-    desc: "AI, analytics, automation"
+    title: "AI & Intelligent Automation",
+    desc: "Practical AI workflows that save time and improve decision quality"
   },
   {
-    title: "Cloud & Infrastructure",
-    desc: "Cloud, servers, data centers"
+    title: "Cloud & Reliability",
+    desc: "Scalable cloud foundations with monitoring, resilience and governance"
   },
   {
-    title: "IT Consulting",
-    desc: "Digital transformation"
+    title: "Digital Transformation Advisory",
+    desc: "Actionable roadmaps that connect business goals to delivery plans"
   },
   {
-    title: "Training & Certification",
-    desc: "Skill development programs"
+    title: "Team Enablement",
+    desc: "Hands-on coaching and playbooks that raise execution confidence"
   },
   {
     title: "Products & Licensing",
-    desc: "Proprietary tools & IP"
+    desc: "Ready-to-deploy platforms with flexible growth-stage licensing"
   }
 ];

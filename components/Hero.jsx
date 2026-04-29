@@ -6,20 +6,35 @@ export default function Hero() {
       <div className="hero-orb hero-orb-left" aria-hidden="true" />
       <div className="hero-orb hero-orb-right" aria-hidden="true" />
 
-      <p className="eyebrow">Engineering + Intelligence</p>
-      <h1 className="hero-title">End-to-end IT, AI and cloud solutions</h1>
+      <p className="eyebrow">Built For Bold Teams</p>
+      <h1 className="hero-title">Launch faster. Operate smarter. Scale with confidence.</h1>
       <p className="hero-subtitle">
-        Build, scale and transform your business with products and platforms designed
-        for reliability, speed and measurable impact.
+        We design high-performance products and AI-enabled systems that turn ambitious
+        ideas into measurable growth, not just more code.
       </p>
 
       <div className="hero-actions">
         <Link href="/demo" className="btn btn-primary">
-          Request Demo
+          See It Live
         </Link>
         <Link href="/services" className="btn btn-ghost">
-          Explore Services
+          Plan My Roadmap
         </Link>
+      </div>
+
+      <div className="hero-stats" aria-label="Key impact highlights">
+        <article>
+          <strong>2-4x</strong>
+          <span>faster rollout cycles</span>
+        </article>
+        <article>
+          <strong>99.9%</strong>
+          <span>platform uptime approach</span>
+        </article>
+        <article>
+          <strong>24/7</strong>
+          <span>monitoring-ready operations</span>
+        </article>
       </div>
     </section>
   );

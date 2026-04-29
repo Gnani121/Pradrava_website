@@ -1,8 +1,9 @@
 import { demos } from "@/data/demos";
 import Link from "next/link";
 
-export default function DemoDetail({ params }) {
-  const demo = demos.find(d => d.slug === params.slug);
+export default async function DemoDetail({ params }) {
+  const { slug } = await params;
+  const demo = demos.find(d => d.slug === slug);
 
   if (!demo) {
     return (

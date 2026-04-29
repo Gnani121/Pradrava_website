@@ -1,12 +1,12 @@
 export const demos = [
   {
     slug: "gas-blending",
-    title: "Gas Blending System",
-    desc: "Simulate gas composition and mixing"
+    title: "Fluids Intelligence Workspace",
+    desc: "Live composition tracking, simulation and operational decision support"
   },
   {
     slug: "ai-predictor",
-    title: "AI Prediction Tool",
-    desc: "Run ML predictions"
+    title: "AI Forecast Studio",
+    desc: "Scenario-based forecasting with explainable recommendations"
   }
 ];
