@@ -2,12 +2,15 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Accounting (Upcoming) | Finance Operations | Pradrava",
-  description: "Smart invoicing, payment tracking, reconciliation, expense management, and audit controls for growing teams. Coming soon.",
+  description: "India-first accounting workspace for GST-ready invoicing, reconciliation, expense controls, and audit visibility. Coming soon.",
   keywords: [
     "accounting software",
+    "India accounting software",
     "invoicing and reconciliation",
     "finance operations platform",
     "GST-ready accounting",
+    "GST invoicing",
+    "Indian SME accounting",
     "audit trail software",
   ],
   alternates: {
@@ -22,7 +25,7 @@ const accountingSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   url: "https://pradrava.com/products/accounting",
-  description: "Upcoming finance operations software for invoicing, reconciliation, expense controls, and reporting.",
+  description: "Upcoming India-first finance operations software for GST-ready invoicing, reconciliation, expense controls, and reporting.",
   brand: {
     "@type": "Brand",
     name: "Pradrava",
@@ -46,8 +49,9 @@ export default function AccountingPage() {
         <p className="eyebrow">Pradrava Product • Upcoming</p>
         <h1 className="hero-title">Accounting</h1>
         <p className="hero-subtitle">
-          Accounting is in active development. We are preparing a finance operations
-          workspace for invoicing, reconciliation, tax-ready reporting, and audit controls.
+          Accounting is in active development for India-first rollout. We are preparing a
+          finance operations workspace for GST-ready invoicing, reconciliation, and
+          audit-ready reporting controls.
         </p>
         <div className="hero-actions">
           <Link href="/contact?interest=accounting-launch&source=accounting-hero" className="btn btn-primary">Get Launch Updates</Link>
@@ -88,7 +92,7 @@ export default function AccountingPage() {
             <li>Payment collection and disbursement tracking</li>
             <li>Expense recording and approvals</li>
             <li>Bank reconciliation workflows</li>
-            <li>Tax-ready reports and ledgers</li>
+            <li>GST-ready reports and ledgers</li>
             <li>Role-based access and audit logs</li>
           </ul>
         </div>
@@ -97,7 +101,7 @@ export default function AccountingPage() {
       <div className="feature-panel reveal delay-2">
         <h3>Availability</h3>
         <p>
-          Accounting is not live yet. We are onboarding interested teams for launch
+          Accounting is not live yet. We are onboarding India-based teams for launch
           notifications, early walkthroughs, and pilot access.
         </p>
       </div>
@@ -105,10 +109,10 @@ export default function AccountingPage() {
       {/* CTA */}
       <div className="momentum-panel reveal delay-2">
         <p className="eyebrow">Get Started</p>
-        <h3>Be first to know when Accounting launches</h3>
+        <h3>Be first to know when Accounting launches in India</h3>
         <p>
           Share your interest and we will send launch updates, roadmap milestones,
-          and early access options.
+          and early access options for the India rollout.
         </p>
         <div className="hero-actions">
           <Link href="/contact?interest=accounting-launch&source=accounting-cta" className="btn btn-primary">Get Launch Updates</Link>
