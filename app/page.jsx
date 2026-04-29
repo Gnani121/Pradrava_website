@@ -6,30 +6,32 @@ import DemoCard from "@/components/DemoCard";
 
 export default function Home() {
   return (
-    <main className="p-6 space-y-12">
-
+    <div className="container page-stack">
       <Hero />
 
-      {/* SERVICES */}
-      <section>
-        <h2 className="text-2xl font-bold mb-4">Our Services</h2>
-        <div className="grid md:grid-cols-3 gap-4">
+      <section className="section-block reveal">
+        <div className="section-head">
+          <p className="eyebrow">What We Build</p>
+          <h2>Services with business outcomes</h2>
+        </div>
+        <div className="card-grid">
           {services.map((s, i) => (
             <ServiceCard key={i} service={s} />
           ))}
         </div>
       </section>
 
-      {/* DEMOS */}
-      <section>
-        <h2 className="text-2xl font-bold mb-4">Try Our Demos</h2>
-        <div className="grid md:grid-cols-3 gap-4">
+      <section className="section-block reveal delay-1">
+        <div className="section-head">
+          <p className="eyebrow">Interactive Lab</p>
+          <h2>Try live product demos</h2>
+        </div>
+        <div className="card-grid">
           {demos.map((d, i) => (
             <DemoCard key={i} demo={d} />
           ))}
         </div>
       </section>
-
-    </main>
+    </div>
   );
 }

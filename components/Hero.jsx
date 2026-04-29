@@ -1,20 +1,25 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
-    <section className="text-center py-16">
-      <h1 className="text-4xl font-bold">
-        End-to-End IT, AI & Cloud Solutions
-      </h1>
-      <p className="mt-4 text-gray-600">
-        Build, scale, and transform your business with our platforms
+    <section className="hero reveal">
+      <div className="hero-orb hero-orb-left" aria-hidden="true" />
+      <div className="hero-orb hero-orb-right" aria-hidden="true" />
+
+      <p className="eyebrow">Engineering + Intelligence</p>
+      <h1 className="hero-title">End-to-end IT, AI and cloud solutions</h1>
+      <p className="hero-subtitle">
+        Build, scale and transform your business with products and platforms designed
+        for reliability, speed and measurable impact.
       </p>
 
-      <div className="mt-6 flex justify-center gap-4">
-        <button className="bg-blue-600 text-white px-6 py-2 rounded">
+      <div className="hero-actions">
+        <Link href="/demo" className="btn btn-primary">
           Request Demo
-        </button>
-        <button className="border px-6 py-2 rounded">
-          Contact Us
-        </button>
+        </Link>
+        <Link href="/services" className="btn btn-ghost">
+          Explore Services
+        </Link>
       </div>
     </section>
   );

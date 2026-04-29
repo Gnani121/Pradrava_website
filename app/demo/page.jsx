@@ -3,14 +3,17 @@ import DemoCard from "@/components/DemoCard";
 
 export default function DemoPage() {
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6">Demo Platform</h1>
+    <section className="container page-stack">
+      <div className="section-head reveal">
+        <p className="eyebrow">Interactive Showcase</p>
+        <h1>Demo Platform</h1>
+      </div>
 
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="card-grid reveal delay-1">
         {demos.map((d, i) => (
           <DemoCard key={i} demo={d} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
