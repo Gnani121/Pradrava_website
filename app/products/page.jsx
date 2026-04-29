@@ -1,5 +1,29 @@
 import Link from "next/link";
-import { fluidsFeatures, accountingFeatures } from "@/data/products";
+import { accountingFeatures } from "@/data/products";
+
+const cylinderOnlyHighlights = [
+  "Cylinder Assignment Engine",
+  "Refill Queue + Filling Production",
+  "Cylinder Service + Hydro-test Tracking",
+  "Rental Lifecycle + Return Monitoring",
+  "Cylinder Movement + Ownership Transfer",
+  "Cylinder Trace Passport + Risk Visibility",
+  "Final Inspection before Dispatch",
+  "Scanner App for cylinder QR/barcode actions",
+];
+
+const itemOnlyHighlights = [
+  "Item Inward Inspection from purchase orders and returns",
+  "Inward metadata capture: entry ID, order reference, recipient, date, count",
+  "Inward status flow: pending → in_progress → completed",
+  "Item Production job creation linked to sales orders/requisitions",
+  "Material consumption logging with quantity, unit, and storage location",
+  "Partial or full production completion with resume support",
+  "Item Service for repairs, upgrades, and component replacement",
+  "Item Dispatch with ordered/packed/dispatched tracking and partial shipments",
+  "Item lifecycle visibility in Trace Passport",
+  "Zone 4 item distribution analytics by module and stage",
+];
 
 export const metadata = {
   title: "Products | Pradrava",
@@ -71,9 +95,9 @@ export default function ProductsPage() {
             <span className="product-badge">Industrial Gas</span>
             <h2>Fluids</h2>
             <p>
-              End-to-end industrial gas operations platform that tracks each cylinder
-              from procurement through filling, quality inspection, customer delivery,
-              rental, and return.
+              Fluids supports modular deployment. You can run Cylinder Management only,
+              Item Management only, or enable both later. For now, details are shown
+              separately below to avoid mixing workflows.
             </p>
           </div>
           <div className="hero-actions">
@@ -82,17 +106,36 @@ export default function ProductsPage() {
           </div>
         </div>
 
-        <div className="showcase-chip-grid">
-          {fluidsFeatures.map((f) => (
-            <div key={f.title} className="showcase-chip">
-              <span className="chip-icon">{f.icon}</span>
-              {f.title}
-            </div>
-          ))}
+        <div className="flow-grid" style={{ marginBottom: "1.4rem" }}>
+          <article className="flow-card">
+            <h3>Cylinder Management</h3>
+            <p>
+              Dedicated cylinder workflows for gas operations teams managing refill,
+              service, movement, dispatch, and returns.
+            </p>
+            <ul className="flow-list">
+              {cylinderOnlyHighlights.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="flow-card">
+            <h3>Item Management</h3>
+            <p>
+              Separate non-cylinder workflow for accessories, components, raw materials,
+              and finished goods from inward to production, service, and dispatch.
+            </p>
+            <ul className="flow-list">
+              {itemOnlyHighlights.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
         </div>
 
         <div className="product-showcase-footer">
-          <p>Includes dashboard KPIs, AI-powered search, pipeline visibility, and full lifecycle traceability</p>
+          <p>Both sections are independent. Teams can activate only the module they need today and expand later.</p>
           <Link href="/products/fluids" className="btn btn-ghost btn-sm">Explore Fluids →</Link>
         </div>
       </div>

@@ -2,18 +2,69 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Fluids | Industrial Gas Operations | Pradrava",
-  description: "End-to-end gas cylinder operations platform with sales, procurement, cylinder tracking, quality inspection, scanner app, and role-based security.",
+  description: "End-to-end operations platform for cylinders and ancillary items—manage gas inventory, production, dispatch, maintenance, and analytics in one system.",
   keywords: [
     "industrial gas cylinder management",
+    "item and goods management software",
     "cylinder inventory tracking",
-    "gas dispatch software",
-    "refill and production workflow",
-    "quality inspection software",
+    "gas dispatch and fulfillment",
+    "production and manufacturing workflow",
+    "quality inspection and testing",
+    "item lifecycle tracking",
   ],
   alternates: {
     canonical: "/products/fluids",
   },
 };
+
+const integrationPoints = [
+  "Sales orders link to both cylinder lines and item lines for unified fulfillment",
+  "Purchase orders feed items via inward inspection and cylinders via goods receipt",
+  "Inventory tracks raw materials (items) consumed in production workflows",
+  "Service requests handle both cylinder and item maintenance in one queue",
+  "Dispatch orders combine cylinders and items for single customer shipments",
+  "Plant Flow Command Center dashboard shows cylinder and item distribution together",
+  "Trace Passport provides unified lifecycle visibility for any asset (cylinder or item)",
+  "Analytics tabs include both cylinder metrics and item production/consumption KPIs",
+  "Masters data includes item definitions alongside cylinders, vendors, and locations",
+  "Mobile scanner app handles cylinder and item asset tagging with shared backend",
+];
+
+const deploymentModes = [
+  {
+    id: "mode-cylinder-only",
+    mode: "Cylinder-Only",
+    title: "For gas-first operations",
+    desc: "Enable core cylinder workflows only: assignment, refill, dispatch, service, rental tracking, and return lifecycle.",
+    includes: [
+      "Cylinder inventory, assignment, refill queue, and production",
+      "Cylinder dispatch, service, movement, rental, and ownership transfer",
+      "Cylinder Trace Passport and cylinder-focused dashboards",
+    ],
+  },
+  {
+    id: "mode-item-only",
+    mode: "Item-Only",
+    title: "For goods and component workflows",
+    desc: "Run Fluids as an item operations system for inward inspection, production, servicing, and dispatch of non-cylinder goods.",
+    includes: [
+      "Item inward inspection from purchase orders and returns",
+      "Item production with material consumption logs and storage locations",
+      "Item service, component replacement, and item dispatch",
+    ],
+  },
+  {
+    id: "mode-combined",
+    mode: "Combined (Cylinder + Items)",
+    title: "For complete plant operations",
+    desc: "Use unified flows where cylinder and item lines are managed together across sales, dispatch, traceability, and analytics.",
+    includes: [
+      "Single order and dispatch handling for cylinders and items",
+      "Unified Plant Flow visibility across Zone 3 and Zone 4",
+      "Cross-asset Trace Passport and combined analytics",
+    ],
+  },
+];
 
 const fluidsSchema = {
   "@context": "https://schema.org",
@@ -22,7 +73,7 @@ const fluidsSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web, Android, iOS",
   url: "https://pradrava.com/products/fluids",
-  description: "Industrial gas operations software for cylinder lifecycle tracking, dispatch, refill, quality, and analytics.",
+  description: "Operations platform for managing cylinders and items—sales, procurement, production, dispatch, maintenance, and real-time analytics.",
   brand: {
     "@type": "Brand",
     name: "Pradrava",
@@ -69,11 +120,7 @@ const features = [
     title: "Mobile Scanner App",
     desc: "Companion React Native scanner app for Android/iOS to scan cylinder QR/barcodes and trigger workflow actions using the same backend APIs.",
   },
-  {
-    icon: "🔐",
-    title: "Session + Role Security",
-    desc: "Auto-logout after 10 minutes inactivity and route/action-level access gates for Super Admin, Manager, Accountant, Operator, and Viewer.",
-  },
+
 ];
 
 const coreFlows = [
@@ -124,6 +171,18 @@ const coreFlows = [
       "Cylinder Pipeline and AI-driven analytics tabs",
     ],
   },
+  {
+    n: "05",
+    title: "Item Management",
+    desc: "Manage non-cylinder products (accessories, components, parts, materials) through inbound, production, maintenance, and dispatch workflows.",
+    items: [
+      "Item inward inspection from vendor purchase orders",
+      "Item production with material consumption tracking",
+      "Item service and component maintenance/replacement",
+      "Item dispatch alongside cylinder orders",
+      "Inventory storage and location management",
+    ],
+  },
 ];
 
 const zoneBreakdown = [
@@ -145,7 +204,7 @@ const zoneBreakdown = [
   {
     zone: "Zone 4",
     title: "Item Distribution",
-    desc: "Tracks non-cylinder item progression by module and stage with drill-down details.",
+    desc: "Tracks item progression (Inward, Production, Service, Dispatch) by module and stage with combined cylinder/item dashboards.",
   },
 ];
 
@@ -158,7 +217,13 @@ const modules = [
   "Cylinder Assignment Engine for order allocation",
   "Refill Queue for empty and low cylinders",
   "Production Queue for fills and refills",
-  "Item Production workflow for non-cylinder items",
+  "Item Inward & Inspection from vendor orders and returns",
+  "Item Production with two-phase workflow (create job → consume materials)",
+  "Material Consumption Log with location tracking",
+  "Item Service and Component Replacement workflow",
+  "Item vs. Cylinder Dispatch integration",
+  "Item Storage and Location Management",
+  "Item Lifecycle Tracing (Inward → Production → Service → Dispatch)",
   "Final Inspection before dispatch",
   "Cylinder Service and hydro-test tracking",
   "Cylinder Rental Tracking with charges and returns",
@@ -168,28 +233,19 @@ const modules = [
   "Quality Lab and Product Quality certifications",
   "Picking and Packing operations",
   "Dashboard with KPI cards and activity feed",
-  "AI-powered natural language cylinder search",
+  "AI-powered natural language cylinder/item search",
   "Plant Flow Command Center with zone drill-down",
   "Trace Passport with idle hours and risk level",
   "Cylinder Pipeline visualization",
-  "Advanced Analytics (cylinder tab and system tab)",
-  "Masters for customers, vendors, gas, valves, capacity, locations",
+  "Advanced Analytics (cylinder tab, item tab, and system tab)",
+  "Masters for customers, vendors, gas, items, valves, capacity, locations",
   "Manager controls and system settings",
   "AI provider toggle (Mistral / Anthropic / fallback)",
   "Manage Users with role assignments",
   "Mobile scanner app with shared backend APIs",
 ];
 
-const keyCharacteristics = [
-  {
-    feature: "Session Security",
-    detail: "Auto-logout after 10 minutes of inactivity",
-  },
-  {
-    feature: "Role-Based Access",
-    detail: "5 roles with route-level and action-level gates: Super Admin, Manager, Accountant, Operator, Viewer",
-  },
-];
+
 
 const faq = [
   {
@@ -215,6 +271,30 @@ const faq = [
   {
     q: "How is access controlled for different teams?",
     a: "Fluids enforces route-level and action-level permission gates across five roles: Super Admin, Manager, Accountant, Operator, and Viewer.",
+  },
+  {
+    q: "What are Items and how do they differ from cylinders?",
+    a: "Items are non-cylinder products like accessories, components, parts, or raw materials. While cylinders are refillable and reusable, items typically follow a produce-consume or maintain-upgrade lifecycle. Both operate in parallel within Fluids with shared dispatch, tracing, and analytics.",
+  },
+  {
+    q: "What workflows do Items support?",
+    a: "Items support inward inspection (receiving from vendors), production (create job + consume materials), service (maintenance and component replacement), and dispatch to customers. Each workflow integrates with inventory, storage locations, and the Plant Flow dashboard.",
+  },
+  {
+    q: "Can I track items and cylinders together?",
+    a: "Yes. Trace Passport provides unified visibility into cylinder and item lifecycles. Plant Flow Command Center shows both cylinder and item distribution across zones, and dispatch orders can combine both cylinders and items for a single customer shipment.",
+  },
+  {
+    q: "How are items produced and consumed?",
+    a: "Item Production uses a two-phase workflow: Phase A creates a production job linked to a sales order or requisition, Phase B consumes raw materials from inventory (with quantity and location tracking) and marks production as completed or partial. Consumption logs track all materials used.",
+  },
+  {
+    q: "Do items support serviceability like cylinders?",
+    a: "Yes. Items can be serviced for maintenance, repairs, component replacements (valve swap, upgrades), or pressure testing. Service status is tracked as pending → in_service → completed, with old and new component IDs recorded for audit trails.",
+  },
+  {
+    q: "Can a customer use only cylinder management or only item management?",
+    a: "Yes. Fluids can be configured in three deployment modes: Cylinder-Only, Item-Only, or Combined. Customers can start with one mode and later enable the other without replacing the platform.",
   },
 ];
 
@@ -317,13 +397,39 @@ export default function FluidsPage() {
         </ul>
       </div>
 
-      <div className="security-grid reveal delay-2">
-        {keyCharacteristics.map((entry) => (
-          <article key={entry.feature} className="security-card">
-            <h3>{entry.feature}</h3>
-            <p>{entry.detail}</p>
-          </article>
-        ))}
+      {/* Deployment Modes */}
+      <div className="reveal delay-2">
+        <div className="section-head" style={{ marginBottom: "1.2rem" }}>
+          <p className="eyebrow">Deployment Modes</p>
+          <h2>Use Fluids your way: standalone or combined</h2>
+        </div>
+        <div className="flow-grid">
+          {deploymentModes.map((mode) => (
+            <article id={mode.id} key={mode.mode} className="flow-card">
+              <p className="zone-tag" style={{ marginBottom: "0.8rem" }}>{mode.mode}</p>
+              <h3>{mode.title}</h3>
+              <p>{mode.desc}</p>
+              <ul className="flow-list">
+                {mode.includes.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      {/* Integration Points */}
+      <div className="reveal delay-2">
+        <div className="section-head" style={{ marginBottom: "1.2rem" }}>
+          <p className="eyebrow">Unified Operations</p>
+          <h2>How cylinders and items work together</h2>
+        </div>
+        <ul className="modules-checklist">
+          {integrationPoints.map((point) => (
+            <li key={point}>{point}</li>
+          ))}
+        </ul>
       </div>
 
       {/* FAQ */}
