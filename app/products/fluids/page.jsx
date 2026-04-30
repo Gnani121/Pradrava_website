@@ -32,7 +32,6 @@ const integrationPoints = [
 
 const deploymentModes = [
   {
-    id: "mode-cylinder-only",
     mode: "Cylinder-Only",
     title: "For gas-first operations",
     desc: "Enable core cylinder workflows only: assignment, refill, dispatch, service, rental tracking, and return lifecycle.",
@@ -43,7 +42,6 @@ const deploymentModes = [
     ],
   },
   {
-    id: "mode-item-only",
     mode: "Item-Only",
     title: "For goods and component workflows",
     desc: "Run Fluids as an item operations system for inward inspection, production, servicing, and dispatch of non-cylinder goods.",
@@ -54,7 +52,6 @@ const deploymentModes = [
     ],
   },
   {
-    id: "mode-combined",
     mode: "Combined (Cylinder + Items)",
     title: "For complete plant operations",
     desc: "Use unified flows where cylinder and item lines are managed together across sales, dispatch, traceability, and analytics.",
@@ -405,7 +402,7 @@ export default function FluidsPage() {
         </div>
         <div className="flow-grid">
           {deploymentModes.map((mode) => (
-            <article id={mode.id} key={mode.mode} className="flow-card">
+            <article key={mode.mode} className="flow-card">
               <p className="zone-tag" style={{ marginBottom: "0.8rem" }}>{mode.mode}</p>
               <h3>{mode.title}</h3>
               <p>{mode.desc}</p>

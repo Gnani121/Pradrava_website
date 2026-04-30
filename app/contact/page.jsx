@@ -62,85 +62,111 @@ export default function ContactPage() {
   return (
     <section className="container page-stack">
       <div className="section-head reveal">
-        <p className="eyebrow">Contact</p>
-        <h1>Request Updates or a Guided Demo</h1>
+        <p className="eyebrow">Contact Us</p>
+        <h1>Let us plan your rollout</h1>
       </div>
       <p className="lead reveal delay-1">
-        Share your email and interest area. We will follow up with launch updates,
-        roadmap milestones, or a tailored walkthrough.
+        Tell us whether you need Fluids, Accounting updates, or a product walkthrough.
+        Our team will respond with next steps and a tailored plan.
       </p>
 
-      <div className="modules-panel reveal delay-1" style={{ maxWidth: "760px" }}>
-        <h2>Tell us what you need</h2>
-        <form onSubmit={handleSubmit} style={{ display: "grid", gap: "0.95rem" }}>
-          <label style={{ display: "grid", gap: "0.35rem" }}>
-            <span>Name</span>
-            <input
-              type="text"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              placeholder="Your name"
-              className="field-input"
-            />
-          </label>
+      <div className="contact-main-stack reveal delay-1">
+        <div className="contact-form-panel">
+          <h2>Head Office & Business Contacts</h2>
+          <div className="contact-main-details">
+            <p className="contact-office-name">PRADRAVA PRIVATE LIMITED</p>
+            <p className="contact-office-address">
+              4th Floor, Om Chambers, 648/A, 1st Stage, Binnamangala, Stage 1,
+              Indiranagar, Bengaluru, Karnataka 560038
+            </p>
 
-          <label style={{ display: "grid", gap: "0.35rem" }}>
-            <span>Email *</span>
-            <input
-              type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              placeholder="you@company.com"
-              className="field-input"
-              required
-            />
-          </label>
-
-          <label style={{ display: "grid", gap: "0.35rem" }}>
-            <span>Interest *</span>
-            <select
-              value={interest}
-              onChange={(event) => setInterest(event.target.value)}
-              className="field-input"
-              required
-            >
-              {INTEREST_OPTIONS.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label style={{ display: "grid", gap: "0.35rem" }}>
-            <span>Message (optional)</span>
-            <textarea
-              value={message}
-              onChange={(event) => setMessage(event.target.value)}
-              placeholder="Anything specific you want us to cover?"
-              className="field-input"
-              rows={4}
-            />
-          </label>
-
-          <div className="hero-actions" style={{ marginTop: "0.25rem" }}>
-            <button type="submit" className="btn btn-primary" disabled={status === "submitting"}>
-              {status === "submitting" ? "Submitting..." : "Submit Request"}
-            </button>
-            <Link href="/products/accounting" className="btn btn-ghost">Back to Accounting</Link>
+            <div className="contact-people-grid">
+              <article>
+                <h3>Vishwas R</h3>
+                <p>Business Development Manager</p>
+                <a href="tel:+919738388683">+91 97383 88683</a>
+              </article>
+              <article>
+                <h3>Gnanendra A</h3>
+                <p>Principle Consultant</p>
+                <a href="tel:+918310084720">+91 83100 84720</a>
+              </article>
+            </div>
           </div>
+        </div>
 
-          {status === "success" && (
-            <p style={{ color: "#22c55e", marginTop: "0.2rem" }}>
-              Request received. We will contact you soon.
-            </p>
-          )}
-          {status === "error" && (
-            <p style={{ color: "#ef4444", marginTop: "0.2rem" }}>
-              {error}
-            </p>
-          )}
-        </form>
+        <div className="contact-form-panel">
+          <h2>Tell us what you need</h2>
+          <form onSubmit={handleSubmit} className="contact-form">
+            <label>
+              <span>Name</span>
+              <input
+                type="text"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                placeholder="Your name"
+                className="field-input"
+              />
+            </label>
+
+            <label>
+              <span>Email *</span>
+              <input
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="you@company.com"
+                className="field-input"
+                required
+              />
+            </label>
+
+            <label>
+              <span>Interest *</span>
+              <select
+                value={interest}
+                onChange={(event) => setInterest(event.target.value)}
+                className="field-input"
+                required
+              >
+                {INTEREST_OPTIONS.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label>
+              <span>Message (optional)</span>
+              <textarea
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+                placeholder="Tell us about your team size, process gaps, or target timeline."
+                className="field-input"
+                rows={4}
+              />
+            </label>
+
+            <div className="hero-actions" style={{ marginTop: "0.25rem" }}>
+              <button type="submit" className="btn btn-primary" disabled={status === "submitting"}>
+                {status === "submitting" ? "Submitting..." : "Submit Request"}
+              </button>
+              <Link href="/products" className="btn btn-ghost">Back to Products</Link>
+            </div>
+
+            {status === "success" && (
+              <p className="contact-success">
+                Request received. We will contact you soon.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="contact-error">
+                {error}
+              </p>
+            )}
+          </form>
+        </div>
       </div>
     </section>
   );
