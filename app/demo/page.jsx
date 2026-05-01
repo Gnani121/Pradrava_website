@@ -18,8 +18,9 @@ export const metadata = {
   },
 };
 
-export default function DemoPage() {
-  const hasAccess = cookies().get("demo_access")?.value === "granted";
+export default async function DemoPage() {
+  const cookieStore = await cookies();
+  const hasAccess = cookieStore.get("demo_access")?.value === "granted";
 
   return (
     <section className="container page-stack">
