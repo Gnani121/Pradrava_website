@@ -13,8 +13,6 @@ export default function Navbar() {
           <Link href="/products" className="nav-link">Products</Link>
           <Link href="/demo" className="nav-link">Demos</Link>
           <Link href="/contact" className="nav-link">Contact Us</Link>
-          <Link href="/demo" className="btn btn-sm nav-demo-btn">See Demos</Link>
-          <Link href="/demo" className="nav-demo-chip">Demo</Link>
         </div>
       </nav>
     </header>
