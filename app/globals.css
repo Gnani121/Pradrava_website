@@ -883,6 +883,27 @@ a {
   color: #c23737;
 }
 
+.otp-gate {
+  max-width: 620px;
+  border-radius: 26px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 1.5rem;
+  box-shadow: 0 12px 28px rgba(8, 28, 48, 0.08);
+}
+
+.otp-gate h2 {
+  margin: 0.5rem 0 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
+}
+
+.otp-gate p {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
 .contact-main-stack {
   display: grid;
   gap: 1rem;
