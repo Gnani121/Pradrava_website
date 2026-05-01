@@ -1108,6 +1108,82 @@ a {
   }
 }
 
+@media (max-width: 1080px) {
+  .nav-row,
+  .product-showcase-header,
+  .product-showcase-footer,
+  .footer-row {
+    align-items: flex-start;
+  }
+
+  .hero-title {
+    max-width: 13ch;
+  }
+
+  .product-page-hero::before,
+  .hero::before {
+    right: -180px;
+    top: -150px;
+  }
+
+  .showcase-chip-grid,
+  .modules-panel,
+  .product-showcase-header,
+  .product-showcase-footer {
+    padding-inline: 1.4rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .card-grid,
+  .pulse-grid,
+  .features-grid,
+  .flow-grid,
+  .zones-grid,
+  .showcase-chip-grid,
+  .modules-checklist,
+  .contact-people-grid,
+  .hero-stats,
+  .product-hero-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section-head h1,
+  .section-head h2,
+  .hero-title,
+  .hero-subtitle,
+  .lead,
+  .product-showcase-header p,
+  .momentum-panel p,
+  .contact-office-address {
+    max-width: none;
+  }
+
+  .product-page-hero,
+  .hero,
+  .modules-panel,
+  .feature-panel,
+  .momentum-panel,
+  .otp-gate,
+  .contact-form-panel,
+  .contact-side-panel {
+    padding: 1.25rem;
+  }
+
+  .product-showcase-header,
+  .product-showcase-footer {
+    flex-direction: column;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+}
+
 @media (max-width: 760px) {
   .container {
     width: min(1150px, calc(100% - 1.2rem));
@@ -1126,6 +1202,34 @@ a {
     gap: 0.65rem;
   }
 
+  .nav-link,
+  .nav-demo-btn,
+  .nav-demo-chip {
+    font-size: 0.82rem;
+  }
+
+  .section-head h1,
+  .section-head h2 {
+    font-size: clamp(1.55rem, 8vw, 2.1rem);
+  }
+
+  .hero-title {
+    font-size: clamp(1.9rem, 10vw, 3rem);
+    max-width: none;
+  }
+
+  .hero-subtitle,
+  .lead,
+  .product-showcase-header p,
+  .feature-panel p,
+  .momentum-panel p,
+  .faq-body,
+  .flow-card p,
+  .zone-card p,
+  .card p {
+    font-size: 0.95rem;
+  }
+
   .hero {
     border-radius: 24px;
   }
@@ -1139,7 +1243,151 @@ a {
     gap: 2rem;
   }
 
+  .card-grid,
+  .pulse-grid,
+  .features-grid,
+  .flow-grid,
+  .zones-grid,
+  .showcase-chip-grid,
+  .modules-checklist,
+  .contact-people-grid,
+  .hero-stats,
+  .product-hero-stats,
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .modules-panel,
+  .feature-panel,
+  .momentum-panel,
+  .otp-gate,
+  .contact-form-panel,
+  .contact-side-panel,
+  .product-page-hero,
+  .hero,
+  .card,
+  .flow-card,
+  .zone-card,
+  .feature-tile,
+  .pulse-card {
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  .product-showcase-block {
+    border-radius: 22px;
+  }
+
+  .product-showcase-header,
+  .product-showcase-footer,
+  .showcase-chip-grid {
+    padding: 1rem;
+  }
+
+  .modules-panel h2,
+  .feature-panel h3,
+  .momentum-panel h3,
+  .otp-gate h2,
+  .contact-form-panel h2,
+  .contact-side-panel h2,
+  .product-showcase-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero-actions {
+    gap: 0.65rem;
+  }
+
+  .hero-actions .btn,
+  .nav-demo-btn,
+  .contact-form .btn,
+  .momentum-panel .btn {
+    width: 100%;
+  }
+
+  .btn {
+    padding: 0.78rem 1rem;
+  }
+
+  .field-input,
+  .faq-item summary {
+    font-size: 0.95rem;
+  }
+
+  .inline-cta {
+    font-size: 0.86rem;
+  }
+
+  .product-page-hero::before,
+  .hero-orb,
+  .product-page-hero .hero-actions .btn-ghost {
+    display: none;
+  }
+
+  .product-showcase-footer .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(1150px, calc(100% - 0.9rem));
+  }
+
+  .nav-row {
+    padding-block: 0.7rem;
+  }
+
+  .nav-links {
+    gap: 0.5rem;
+  }
+
+  .brand-mark {
+    font-size: 1.15rem;
+  }
+
+  .page-stack {
+    gap: 1.5rem;
+    padding-block: 1rem 2rem;
+  }
+
+  .hero,
+  .product-page-hero,
+  .feature-panel,
+  .modules-panel,
+  .momentum-panel,
+  .otp-gate,
+  .contact-form-panel,
+  .contact-side-panel,
+  .card,
+  .flow-card,
+  .zone-card,
+  .feature-tile,
+  .pulse-card {
+    padding: 0.9rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 11vw, 2.35rem);
+  }
+
+  .modules-checklist li,
+  .flow-list li,
+  .showcase-chip,
+  .contact-people-grid p,
+  .contact-people-grid a,
+  .faq-item summary,
+  .faq-body {
+    font-size: 0.88rem;
+  }
+
+  .showcase-chip {
+    padding: 0.58rem 0.75rem;
+  }
+
+  .product-badge,
+  .zone-tag,
+  .eyebrow {
+    font-size: 0.68rem;
   }
 }
