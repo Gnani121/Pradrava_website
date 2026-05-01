@@ -58,6 +58,12 @@ export default function DemoOtpGate() {
         throw new Error(payload.error || "Unable to verify OTP right now.");
       }
 
+      const payload = await response.json().catch(() => ({}));
+      if (payload.redirectUrl) {
+        window.location.href = payload.redirectUrl;
+        return;
+      }
+
       router.refresh();
     } catch (verifyError) {
       setStatus("idle");
