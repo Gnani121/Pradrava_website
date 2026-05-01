@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { isIP } from "node:net";
 import {
   createOtpForEmail,
   getRecentOtpCount,
@@ -26,9 +27,17 @@ function getMailConfig() {
 
 function getClientIp(request) {
   const fwd = request.headers.get("x-forwarded-for");
-  if (fwd) return fwd.split(",")[0].trim();
+  if (fwd) {
+    const candidate = fwd.split(",")[0].trim();
+    return isIP(candidate) ? candidate : null;
+  }
+
   const real = request.headers.get("x-real-ip");
-  if (real) return real.trim();
+  if (real) {
+    const candidate = real.trim();
+    return isIP(candidate) ? candidate : null;
+  }
+
   return null;
 }
 
@@ -106,6 +115,11 @@ export async function POST(request) {
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("[DEMO_OTP_REQUEST_ERROR]", error);
+
+    if (error instanceof Error && error.message.includes("OTP storage failed")) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
     return NextResponse.json(
       { error: "Unable to send OTP right now." },
       { status: 500 }
