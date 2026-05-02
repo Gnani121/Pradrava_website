@@ -1,18 +1,18 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
-import { services } from "@/data/services";
+import { products } from "@/data/products";
 import { demos } from "@/data/demos";
-import ServiceCard from "@/components/ServiceCard";
 import DemoCard from "@/components/DemoCard";
 
 export const metadata = {
-  title: "Pradrava | End-to-End IT, AI & Cloud Solutions",
-  description: "Pradrava helps teams design, build, and scale digital products with product engineering, AI automation, and cloud reliability services.",
+  title: "Pradrava | Purpose-Built Software Products",
+  description: "Pradrava builds purpose-built software products for industrial operations and finance — with implementation and support services to match.",
   keywords: [
-    "IT consulting company",
-    "AI product development",
-    "cloud reliability services",
-    "digital product engineering",
-    "business automation",
+    "industrial operations software",
+    "cylinder tracking platform",
+    "finance operations software",
+    "SaaS products",
+    "operations automation",
   ],
   alternates: {
     canonical: "/",
@@ -21,16 +21,16 @@ export const metadata = {
 
 const differentiators = [
   {
-    title: "Strategy to shipping in one team",
-    desc: "Product strategy, engineering, AI and cloud delivery under one accountable partner."
+    title: "Built for real operations",
+    desc: "Every feature traces back to an actual workflow pain point — not a generic template."
   },
   {
-    title: "Business-first technical decisions",
-    desc: "Every architecture and feature choice maps to revenue, cost efficiency, or risk reduction."
+    title: "Modular by design",
+    desc: "Start with what you need today and activate additional modules as your operations grow."
   },
   {
-    title: "Future-ready from day one",
-    desc: "Security, scalability, integrations and analytics are built in from the first sprint."
+    title: "Production-grade from day one",
+    desc: "Security, role-based access, audit trails, and uptime reliability are built in — not bolted on."
   }
 ];
 
@@ -42,7 +42,7 @@ export default function Home() {
       <section className="section-block reveal">
         <div className="section-head">
           <p className="eyebrow">Why Pradrava</p>
-          <h2>Energy, clarity and execution your team can feel</h2>
+          <h2>Products that solve real operational problems</h2>
         </div>
         <div className="pulse-grid">
           {differentiators.map((item) => (
@@ -56,13 +56,25 @@ export default function Home() {
 
       <section className="section-block reveal">
         <div className="section-head">
-          <p className="eyebrow">What We Build</p>
-          <h2>Services designed around outcomes</h2>
+          <p className="eyebrow">Our Products</p>
+          <h2>Purpose-built platforms for demanding industries</h2>
         </div>
         <div className="card-grid">
-          {services.map((s) => (
-            <ServiceCard key={s.title} service={s} />
+          {products.map((p) => (
+            <Link key={p.title} href={p.href} className="card service-card product-card-link">
+              <div className="product-card-top">
+                <span className="product-badge">{p.tag}</span>
+                {p.status !== "Available" && (
+                  <span className="product-status-badge">{p.status}</span>
+                )}
+              </div>
+              <h3>{p.title}</h3>
+              <p>{p.desc}</p>
+            </Link>
           ))}
+        </div>
+        <div className="section-cta-row">
+          <Link href="/products" className="btn btn-ghost">View All Products</Link>
         </div>
       </section>
 
@@ -78,13 +90,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="momentum-panel reveal delay-2">
-        <p className="eyebrow">Ready To Move</p>
-        <h3>Bring your next idea. We will make it launch-ready.</h3>
-        <p>
-          Whether you are modernizing operations or launching a new digital product,
-          we help you move from uncertainty to execution with speed.
+      <section className="section-block reveal delay-1">
+        <div className="section-head">
+          <p className="eyebrow">Professional Services</p>
+          <h2>We go beyond the software</h2>
+        </div>
+        <p className="lead">
+          Alongside our products, we offer implementation, onboarding, custom integrations,
+          and ongoing support — so your team gets the full value from day one.
         </p>
+        <div className="section-cta-row">
+          <Link href="/services" className="btn btn-ghost">See Our Services</Link>
+        </div>
+      </section>
+
+      <section className="momentum-panel reveal delay-2">
+        <p className="eyebrow">Get Started</p>
+        <h3>Ready to modernize your operations?</h3>
+        <p>
+          Explore our products, request a walkthrough, or talk to our team about
+          how Pradrava fits your workflow.
+        </p>
+        <div className="hero-actions" style={{ marginTop: "1.5rem" }}>
+          <Link href="/products" className="btn btn-primary">Explore Products</Link>
+          <Link href="/contact" className="btn btn-ghost">Talk to Us</Link>
+        </div>
       </section>
     </div>
   );

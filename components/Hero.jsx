@@ -6,34 +6,34 @@ export default function Hero() {
       <div className="hero-orb hero-orb-left" aria-hidden="true" />
       <div className="hero-orb hero-orb-right" aria-hidden="true" />
 
-      <p className="eyebrow">Built For Bold Teams</p>
-      <h1 className="hero-title">Launch faster. Operate smarter. Scale with confidence.</h1>
+      <p className="eyebrow">Purpose-Built Software</p>
+      <h1 className="hero-title">Powerful products. Real operations. Zero compromise.</h1>
       <p className="hero-subtitle">
-        We design high-performance products and AI-enabled systems that turn ambitious
-        ideas into measurable growth, not just more code.
+        Pradrava builds specialized software products for industrial operations and finance —
+        with the depth, reliability, and support that demanding businesses need.
       </p>
 
       <div className="hero-actions">
-        <Link href="/demo" className="btn btn-primary">
-          See It Live
+        <Link href="/products" className="btn btn-primary">
+          Explore Products
         </Link>
-        <Link href="/services" className="btn btn-ghost">
-          Plan My Roadmap
+        <Link href="/contact" className="btn btn-ghost">
+          Talk to Us
         </Link>
       </div>
 
-      <div className="hero-stats" aria-label="Key impact highlights">
+      <div className="hero-stats" aria-label="Key product highlights">
         <article>
-          <strong>2-4x</strong>
-          <span>faster rollout cycles</span>
+          <strong>2</strong>
+          <span>industry-focused products</span>
         </article>
         <article>
           <strong>99.9%</strong>
-          <span>designed for platform uptime</span>
+          <span>designed for uptime</span>
         </article>
         <article>
-          <strong>24/7</strong>
-          <span>designed for continuous monitoring</span>
+          <strong>End-to-End</strong>
+          <span>from tracking to reporting</span>
         </article>
       </div>
     </section>

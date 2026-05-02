@@ -1,26 +1,26 @@
 export const services = [
   {
-    title: "Product Engineering",
-    desc: "Web, mobile and SaaS experiences customers actually enjoy"
+    title: "Implementation & Onboarding",
+    desc: "Guided setup, data migration, and team training to get your team running on day one"
   },
   {
-    title: "AI & Intelligent Automation",
-    desc: "Practical AI workflows that save time and improve decision quality"
+    title: "Custom Integrations",
+    desc: "Connect our products to your existing ERP, billing, or logistics systems without disruption"
   },
   {
-    title: "Cloud & Reliability",
-    desc: "Scalable cloud foundations with monitoring, resilience and governance"
+    title: "Ongoing Support & SLA",
+    desc: "Dedicated support tiers with defined response times so your operations never stop"
   },
   {
-    title: "Digital Transformation Advisory",
-    desc: "Actionable roadmaps that connect business goals to delivery plans"
+    title: "Workflow Consulting",
+    desc: "Hands-on advisory to map your operational workflows and configure the product to match"
   },
   {
-    title: "Team Enablement",
-    desc: "Hands-on coaching and playbooks that raise execution confidence"
+    title: "Feature Extension",
+    desc: "Custom module development when your business needs capabilities beyond the standard product"
   },
   {
-    title: "Products & Licensing",
-    desc: "Ready-to-deploy platforms with flexible growth-stage licensing"
+    title: "Training & Documentation",
+    desc: "Role-specific training, process guides, and reference material for every user level"
   }
 ];

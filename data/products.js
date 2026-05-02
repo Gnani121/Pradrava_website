@@ -1,3 +1,20 @@
+export const products = [
+  {
+    title: "Fluids",
+    tag: "Industrial Gas Operations",
+    desc: "End-to-end cylinder tracking, transaction management, quality control, and real-time plant visibility — built for industrial gas companies.",
+    href: "/products/fluids",
+    status: "Available",
+  },
+  {
+    title: "Accounting",
+    tag: "Finance Operations",
+    desc: "Smart invoicing, payment tracking, bank reconciliation, and live financial reporting designed for growing operations.",
+    href: "/products/accounting",
+    status: "Coming Soon",
+  },
+];
+
 export const fluidsFeatures = [
   { icon: "🧭", title: "Plant Flow Command Center", desc: "Real-time visibility across demand flow, procurement flow, cylinder distribution, and item distribution zones." },
   { icon: "🧪", title: "Trace Passport", desc: "End-to-end trace for any cylinder, item, or order with stage, idle hours, risk level, and event timeline." },
