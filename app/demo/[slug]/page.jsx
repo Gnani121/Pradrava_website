@@ -1,13 +1,18 @@
 import { demos } from "@/data/demos";
+import DemoOtpGate from "@/components/DemoOtpGate";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getActiveDemoSession } from "@/lib/demoSession";
+import DemoLogoutButton from "@/components/DemoLogoutButton";
+import { cookies } from "next/headers";
 
 export function generateStaticParams() {
   return demos.map((demo) => ({ slug: demo.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const demo = demos.find((entry) => entry.slug === params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const demo = demos.find((entry) => entry.slug === slug);
 
   if (!demo) {
     return {
@@ -36,11 +41,36 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function DemoDetail({ params }) {
-  const demo = demos.find((entry) => entry.slug === params.slug);
+export default async function DemoDetail({ params }) {
+  const { slug } = await params;
+  const demo = demos.find((entry) => entry.slug === slug);
 
   if (!demo) {
     notFound();
+  }
+
+  const cookieStore = await cookies();
+  const access = await getActiveDemoSession(cookieStore);
+  const hasAccess = access.ok;
+
+  if (!hasAccess) {
+    return (
+      <section className="container page-stack">
+        <div className="section-head reveal">
+          <p className="eyebrow">Demo Access Required</p>
+          <h1>{demo.title}</h1>
+        </div>
+        <p className="lead reveal delay-1">
+          Verify with email OTP to continue to this demo.
+        </p>
+
+        <DemoOtpGate />
+
+        <div className="hero-actions reveal delay-2">
+          <Link href="/demo" className="btn btn-ghost">Back to All Demos</Link>
+        </div>
+      </section>
+    );
   }
 
   return (
@@ -78,9 +108,15 @@ export default function DemoDetail({ params }) {
           this demo in a live session.
         </p>
         <div className="hero-actions">
-          <Link href="/services" className="btn btn-primary">Talk to Our Team</Link>
+          {demo.slug === "gas-blending" && (
+            <Link href={`/api/demo-auth/launch?slug=${demo.slug}`} className="btn btn-primary">
+              Launch Live Demo
+            </Link>
+          )}
+          <Link href="/services" className="btn btn-ghost">Talk to Our Team</Link>
           <Link href={demo.relatedPath} className="btn btn-ghost">{demo.relatedLabel}</Link>
           <Link href="/demo" className="btn btn-ghost">Back to All Demos</Link>
+          <DemoLogoutButton />
         </div>
       </div>
     </section>

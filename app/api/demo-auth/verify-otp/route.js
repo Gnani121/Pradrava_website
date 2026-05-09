@@ -4,8 +4,10 @@ import { NextResponse } from "next/server";
 import { verifyOtpForEmail } from "@/lib/demoOtpStore";
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 import { signJwtToken } from "@/lib/jwt";
-
-const SESSION_DURATION_SECONDS = 15 * 60;
+import {
+  DEMO_SESSION_DURATION_SECONDS,
+  getDemoCookieOptions,
+} from "@/lib/demoSession";
 
 function getClientIp(request) {
   const fwd = request.headers.get("x-forwarded-for");
@@ -44,7 +46,7 @@ export async function POST(request) {
     const jti = randomUUID();
     const ip = getClientIp(request);
     const userAgent = getUserAgent(request);
-    const expiresAt = new Date(Date.now() + SESSION_DURATION_SECONDS * 1000).toISOString();
+    const expiresAt = new Date(Date.now() + DEMO_SESSION_DURATION_SECONDS * 1000).toISOString();
     const supabase = getSupabaseAdmin();
     const { error: sessionError } = await supabase.from("sessions").insert({
       jti,
@@ -65,7 +67,7 @@ export async function POST(request) {
         jti,
       },
       {
-        expiresIn: `${SESSION_DURATION_SECONDS}s`,
+        expiresIn: `${DEMO_SESSION_DURATION_SECONDS}s`,
         subject: validation.email,
       }
     );
@@ -77,13 +79,8 @@ export async function POST(request) {
       ok: true,
       redirectUrl: redirectUrl.toString(),
     });
-    response.cookies.set("demo_access", "granted", {
-      httpOnly: true,
-      sameSite: "lax",
-      secure: process.env.NODE_ENV === "production",
-      maxAge: 60 * 60 * 8,
-      path: "/",
-    });
+    response.cookies.set("demo_access", "granted", getDemoCookieOptions());
+    response.cookies.set("demo_session", jti, getDemoCookieOptions());
 
     return response;
   } catch (error) {

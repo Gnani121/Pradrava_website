@@ -1,6 +1,8 @@
 import { demos } from "@/data/demos";
 import DemoCard from "@/components/DemoCard";
 import DemoOtpGate from "@/components/DemoOtpGate";
+import { getActiveDemoSession } from "@/lib/demoSession";
+import DemoLogoutButton from "@/components/DemoLogoutButton";
 import { cookies } from "next/headers";
 
 export const metadata = {
@@ -20,7 +22,8 @@ export const metadata = {
 
 export default async function DemoPage() {
   const cookieStore = await cookies();
-  const hasAccess = cookieStore.get("demo_access")?.value === "granted";
+  const access = await getActiveDemoSession(cookieStore);
+  const hasAccess = access.ok;
 
   return (
     <section className="container page-stack">
@@ -32,11 +35,16 @@ export default async function DemoPage() {
       {!hasAccess ? (
         <DemoOtpGate />
       ) : (
-        <div className="card-grid reveal delay-1">
-          {demos.map((d) => (
-            <DemoCard key={d.slug} demo={d} />
-          ))}
-        </div>
+        <>
+          <div className="card-grid reveal delay-1">
+            {demos.map((d) => (
+              <DemoCard key={d.slug} demo={d} />
+            ))}
+          </div>
+          <div className="section-cta-row reveal delay-2" style={{ marginTop: "2rem" }}>
+            <DemoLogoutButton />
+          </div>
+        </>
       )}
     </section>
   );
