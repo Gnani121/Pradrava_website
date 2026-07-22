@@ -8,32 +8,37 @@ export default function Hero() {
 
       <div className="hero-grid">
         <div className="hero-copy">
-          <p className="eyebrow">Purpose-Built Software</p>
-          <h1 className="hero-title">Design smarter operations that scale with confidence</h1>
+          <p className="eyebrow">Purpose-Built Operations Software</p>
+          <h1 className="hero-title">
+            Run your plant on <span className="grad-text">one connected system</span>
+          </h1>
           <p className="hero-subtitle">
-            Turn operational complexity into clear, reliable workflows with specialized
-            products built for industrial execution and financial control.
+            Pradrava builds industrial-grade platforms that turn scattered spreadsheets and
+            manual tracking into clear, reliable workflows — from cylinder operations and
+            quality control to procurement, dispatch, and financial reporting.
           </p>
 
           <div className="hero-actions">
             <Link href="/products" className="btn btn-primary">
               Explore Products
             </Link>
-            <Link href="/contact" className="btn btn-ghost">
-              Talk to Us
+            <Link href="/demo" className="btn btn-ghost">
+              See a Live Demo
             </Link>
           </div>
 
-          <p className="hero-meta">Fast onboarding. Practical modules. Enterprise-grade reliability.</p>
+          <p className="hero-meta">
+            Fast onboarding · Modular by design · Enterprise-grade security &amp; audit trails
+          </p>
 
           <div className="hero-stats" aria-label="Key product highlights">
             <article>
-              <strong>2</strong>
-              <span>industry-focused products</span>
+              <strong>30+</strong>
+              <span>operational modules in Fluids</span>
             </article>
             <article>
               <strong>99.9%</strong>
-              <span>designed for uptime</span>
+              <span>designed-for uptime</span>
             </article>
             <article>
               <strong>End-to-End</strong>
@@ -46,7 +51,7 @@ export default function Hero() {
           <div className="visual-ring" />
           <div className="mock-card mock-card-top">
             <p>Live Ops</p>
-            <strong>Realtime inventory map</strong>
+            <strong>Real-time inventory map</strong>
           </div>
           <div className="mock-bag">
             <div className="mock-bag-label">Pradrava Suite</div>

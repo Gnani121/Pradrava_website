@@ -120,6 +120,45 @@ const features = [
 
 ];
 
+const whatsNew = [
+  {
+    icon: "🧾",
+    tag: "New",
+    title: "GST E-Way Bill Compliance",
+    desc: "Generate, cancel, update Part-B, extend, and consolidate NIC e-way bills without leaving Fluids. Works from sales invoices, branch transfers, purchase inward, and delivery challans — with values, HSN, and tax pulled automatically. Provider-agnostic GSP integration (NIC, ClearTax, Masters India) plus a built-in sandbox to test the full flow before going live.",
+  },
+  {
+    icon: "🏢",
+    tag: "New",
+    title: "Multi-Company & Multi-Branch",
+    desc: "Run several companies and branches in a single deployment with strict data isolation — no user can see or touch another branch's or company's data, enforced right down to the database. Perfect for groups scaling from one plant to many.",
+  },
+  {
+    icon: "🔁",
+    tag: "New",
+    title: "Cross-Branch Stock Transfer",
+    desc: "Move cylinders and item stock between branches (e.g. Bangalore → Delhi) with a clean approval workflow — Requested → Approved → Dispatched → Received — including in-transit tracking, per-line shortage capture, and a full cylinder movement audit trail.",
+  },
+  {
+    icon: "🛡️",
+    tag: "Enhanced",
+    title: "Dispatch Compliance Gate",
+    desc: "A dispatch-readiness board blocks unsafe or non-compliant shipments before they leave the gate, with vehicle, driver, and transporter capture, partial-dispatch reconciliation, and branch-isolated delivery challans.",
+  },
+  {
+    icon: "🔔",
+    tag: "Enhanced",
+    title: "Hand-off Notifications",
+    desc: "Automatic Email, SMS, and WhatsApp alerts for stage hand-offs, low stock, overdue returns, and expiries — so the next team acts on time and nothing stalls waiting for a phone call.",
+  },
+  {
+    icon: "🧭",
+    tag: "Enhanced",
+    title: "Command Center Workspace",
+    desc: "A redesigned operational hub that brings live KPIs, zone flow, and quick actions into one focused cockpit — giving managers a single place to run the day.",
+  },
+];
+
 const coreFlows = [
   {
     n: "01",
@@ -235,6 +274,13 @@ const modules = [
   "Trace Passport with idle hours and risk level",
   "Cylinder Pipeline visualization",
   "Advanced Analytics (cylinder tab, item tab, and system tab)",
+  "GST E-Way Bill generation, cancel, Part-B update, extend & consolidate",
+  "GSP integration (NIC / ClearTax / Masters India) with sandbox mode",
+  "Multi-Company and Multi-Branch operations with strict data isolation",
+  "Cross-Branch Stock Transfer with approval workflow and in-transit tracking",
+  "Dispatch-readiness board with compliance gate before shipment",
+  "Command Center operational hub with live KPIs and zone flow",
+  "Email, SMS & WhatsApp hand-off and exception notifications",
   "Masters for customers, vendors, gas, items, valves, capacity, locations",
   "Manager controls and system settings",
   "AI provider toggle (Mistral / Anthropic / fallback)",
@@ -318,6 +364,25 @@ export default function FluidsPage() {
             Talk to Sales
           </Link>
         </div>
+
+        <div className="product-hero-stats">
+          <article>
+            <strong>30+</strong>
+            <span>operational modules</span>
+          </article>
+          <article>
+            <strong>3</strong>
+            <span>deployment modes</span>
+          </article>
+          <article>
+            <strong>5</strong>
+            <span>role-based access levels</span>
+          </article>
+          <article>
+            <strong>Web + Mobile</strong>
+            <span>with companion scanner app</span>
+          </article>
+        </div>
       </div>
 
       <div className="feature-panel reveal delay-1">
@@ -339,6 +404,30 @@ export default function FluidsPage() {
           {features.map((f) => (
             <article key={f.title} className="feature-tile">
               <div className="feature-tile-icon">{f.icon}</div>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      {/* What's New */}
+      <div className="reveal delay-1">
+        <div className="section-head" style={{ marginBottom: "1.2rem" }}>
+          <p className="eyebrow">Recently Shipped</p>
+          <h2>New capabilities your team asked for</h2>
+          <p className="lead" style={{ marginTop: "0.9rem" }}>
+            Fluids ships continuously. Here&apos;s what&apos;s newest — built to keep you
+            compliant, connected across branches, and always one step ahead.
+          </p>
+        </div>
+        <div className="features-grid">
+          {whatsNew.map((f) => (
+            <article key={f.title} className="feature-tile">
+              <div className="product-card-top">
+                <div className="feature-tile-icon">{f.icon}</div>
+                <span className={`product-status-badge${f.tag === "New" ? "" : " neutral"}`}>{f.tag}</span>
+              </div>
               <h3>{f.title}</h3>
               <p>{f.desc}</p>
             </article>
@@ -422,7 +511,7 @@ export default function FluidsPage() {
           <p className="eyebrow">Unified Operations</p>
           <h2>How cylinders and items work together</h2>
         </div>
-        <ul className="modules-checklist">
+        <ul className="integration-list">
           {integrationPoints.map((point) => (
             <li key={point}>{point}</li>
           ))}

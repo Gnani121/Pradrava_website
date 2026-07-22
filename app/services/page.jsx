@@ -36,6 +36,36 @@ export default function ServicesPage() {
         ))}
       </div>
 
+      {/* Engagement process */}
+      <div className="reveal delay-1">
+        <div className="section-head" style={{ marginBottom: "1.2rem" }}>
+          <p className="eyebrow">How We Work</p>
+          <h2>A clear path from first call to full rollout</h2>
+        </div>
+        <div className="flow-grid">
+          <div className="flow-card">
+            <div className="step-number">01</div>
+            <h3>Discover</h3>
+            <p>We map your current workflows, data, and pain points to understand exactly how your operation runs today.</p>
+          </div>
+          <div className="flow-card">
+            <div className="step-number">02</div>
+            <h3>Configure</h3>
+            <p>We tailor modules, roles, and integrations to match your process — not force your process to match the software.</p>
+          </div>
+          <div className="flow-card">
+            <div className="step-number">03</div>
+            <h3>Onboard</h3>
+            <p>Guided data migration and role-specific training get every user productive, with reference material for each level.</p>
+          </div>
+          <div className="flow-card">
+            <div className="step-number">04</div>
+            <h3>Support &amp; Grow</h3>
+            <p>Ongoing support with defined SLAs, plus feature extensions and new modules as your operations expand.</p>
+          </div>
+        </div>
+      </div>
+
       <div className="momentum-panel reveal delay-2" style={{ marginTop: "2rem" }}>
         <p className="eyebrow">Have a specific need?</p>
         <h3>Let&apos;s talk about your setup</h3>

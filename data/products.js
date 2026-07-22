@@ -16,14 +16,14 @@ export const products = [
 ];
 
 export const fluidsFeatures = [
-  { icon: "🧭", title: "Plant Flow Command Center", desc: "Real-time visibility across demand flow, procurement flow, cylinder distribution, and item distribution zones." },
-  { icon: "🧪", title: "Trace Passport", desc: "End-to-end trace for any cylinder, item, or order with stage, idle hours, risk level, and event timeline." },
-  { icon: "📦", title: "Cylinder Assignment", desc: "Assign exact cylinders to open sales order lines by gas composition, capacity, and ownership." },
-  { icon: "♻️", title: "Refill + Production", desc: "Push eligible cylinders to refill queue and manage filling workflows, urgency, and readiness." },
-  { icon: "🔁", title: "Sales + Procurement Lifecycle", desc: "Track enquiry-to-order conversion and requisition-to-PO progression with stage-level control." },
-  { icon: "🔬", title: "Quality + Inspection", desc: "Item inward inspection, quality lab records, product quality checks, and final inspection before dispatch." },
-  { icon: "📷", title: "Scanner App", desc: "Companion mobile scanner app for QR/barcode actions on Android and iOS, connected to the same backend." },
-  { icon: "🔐", title: "Session + Role Security", desc: "10-minute inactivity auto-logout and route/action-level access for Super Admin, Manager, Accountant, Operator, and Viewer." },
+  { icon: "🧭", title: "Command Center", desc: "One live operational cockpit across demand, procurement, cylinder distribution, and item zones — so nothing slips through the cracks." },
+  { icon: "🧪", title: "Trace Passport", desc: "Know where any cylinder, item, or order is at any moment — stage, idle hours, risk level, and full event history in one view." },
+  { icon: "🧾", title: "GST E-Way Bills", desc: "Generate, cancel, update, and extend NIC e-way bills straight from invoices and challans — stay India-GST compliant without leaving Fluids." },
+  { icon: "🏢", title: "Multi-Branch & Multi-Company", desc: "Run every branch and company in one secure system with cross-branch stock transfers and strict data isolation between them." },
+  { icon: "🚚", title: "Smart Dispatch & Invoicing", desc: "Delivery challans, dispatch-readiness checks, partial shipments, and GST invoices — with compliance gates that stop unsafe dispatch." },
+  { icon: "📦", title: "Cylinder Assignment", desc: "Match the right cylinders to each order by gas composition, capacity, and ownership — no manual guessing, no mismatches." },
+  { icon: "🔔", title: "Proactive Alerts", desc: "Email, SMS, and WhatsApp notifications for low stock, overdue returns, expiries, and hand-offs so teams act before problems grow." },
+  { icon: "📷", title: "Mobile Scanner App", desc: "Field-ready companion app for QR/barcode scanning on Android and iOS, connected live to the same backend." },
 ];
 
 export const fluidsModules = [

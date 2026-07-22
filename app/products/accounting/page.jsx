@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { accountingFeatures, accountingModules, accountingFaq } from "@/data/products";
 
 export const metadata = {
   title: "Accounting (Upcoming) | Finance Operations | Pradrava",
@@ -79,22 +80,55 @@ export default function AccountingPage() {
         </div>
       </div>
 
-      {/* Roadmap */}
+      <div className="feature-panel reveal delay-1">
+        <h3>What we&apos;re building</h3>
+        <p>
+          A finance operations workspace designed for Indian SMEs and growing operations —
+          GST-ready invoicing, automated reconciliation, and real-time reporting with the
+          same audit-grade controls and role-based security that power Fluids.
+        </p>
+      </div>
+
+      {/* Planned capabilities */}
       <div className="reveal delay-1">
         <div className="section-head" style={{ marginBottom: "1.2rem" }}>
-          <p className="eyebrow">Roadmap</p>
-          <h2>Planned release scope</h2>
+          <p className="eyebrow">Planned Capabilities</p>
+          <h2>Everything you need to close the books faster</h2>
         </div>
-        <div className="modules-panel">
-          <h2>Phase 1 (Planned)</h2>
-          <ul className="modules-checklist">
-            <li>Invoice and bill generation</li>
-            <li>Payment collection and disbursement tracking</li>
-            <li>Expense recording and approvals</li>
-            <li>Bank reconciliation workflows</li>
-            <li>GST-ready reports and ledgers</li>
-            <li>Role-based access and audit logs</li>
-          </ul>
+        <div className="features-grid">
+          {accountingFeatures.map((f) => (
+            <article key={f.title} className="feature-tile">
+              <div className="feature-tile-icon">{f.icon}</div>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      {/* Full module list */}
+      <div className="modules-panel reveal delay-2">
+        <h2>Planned Modules &amp; Feature List</h2>
+        <ul className="modules-checklist">
+          {accountingModules.map((m) => (
+            <li key={m}>{m}</li>
+          ))}
+        </ul>
+      </div>
+
+      {/* FAQ */}
+      <div className="reveal delay-2">
+        <div className="section-head" style={{ marginBottom: "1.2rem" }}>
+          <p className="eyebrow">FAQ</p>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div className="faq-list">
+          {accountingFaq.map((item) => (
+            <details key={item.q} className="faq-item">
+              <summary>{item.q}</summary>
+              <p className="faq-body">{item.a}</p>
+            </details>
+          ))}
         </div>
       </div>
 
