@@ -1225,6 +1225,30 @@ textarea.field-input { resize: vertical; min-height: 110px; }
   font-weight: 600;
 }
 
+/* ── Demo notice banner ────────────────────────────────── */
+.demo-notice {
+  max-width: 640px;
+  margin-inline: auto;
+  border-radius: 14px;
+  padding: 0.95rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.demo-notice-info {
+  color: var(--brand-deep);
+  background: rgba(79, 70, 229, 0.08);
+  border-color: rgba(79, 70, 229, 0.24);
+}
+
+.demo-notice-error {
+  color: #b45309;
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.28);
+}
+
 /* ── OTP gate ──────────────────────────────────────────── */
 .otp-gate {
   max-width: 480px;

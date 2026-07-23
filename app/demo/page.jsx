@@ -20,10 +20,29 @@ export const metadata = {
   },
 };
 
-export default async function DemoPage() {
+const DEMO_NOTICES = {
+  expired: {
+    tone: "info",
+    text: "Your 5-minute demo session has ended. Verify again below to start a fresh demo.",
+  },
+  invalid_token: {
+    tone: "error",
+    text: "That demo link was invalid or already used. Please verify again to launch the demo.",
+  },
+  missing_token: {
+    tone: "error",
+    text: "We couldn't read your demo access. Please verify again to launch the demo.",
+  },
+};
+
+export default async function DemoPage({ searchParams }) {
   const cookieStore = await cookies();
   const access = await getActiveDemoSession(cookieStore);
   const hasAccess = access.ok;
+
+  const params = (await searchParams) || {};
+  const noticeKey = params.expired ? "expired" : params.error;
+  const notice = DEMO_NOTICES[noticeKey] || null;
 
   return (
     <section className="container page-stack">
@@ -31,6 +50,12 @@ export default async function DemoPage() {
         <p className="eyebrow">Interactive Showcase</p>
         <h1>Demo Platform</h1>
       </div>
+
+      {notice && (
+        <div className={`demo-notice demo-notice-${notice.tone} reveal`} role="status">
+          {notice.text}
+        </div>
+      )}
 
       {!hasAccess ? (
         <DemoOtpGate />
