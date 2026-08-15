@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import { products, fluidsFeatures } from "@/data/products";
-import { painPoints, pillars, standards, personas, fluidsStats } from "@/data/fluids";
+import { painPoints, pillars, standards, personas, spreadsheetLimits } from "@/data/fluids";
 import { demos } from "@/data/demos";
 import DemoCard from "@/components/DemoCard";
 
@@ -187,16 +187,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Scale band */}
+      {/* Not a spreadsheet */}
       <section className="modules-panel reveal">
-        <p className="eyebrow">The scale of it</p>
-        <h2 style={{ marginBottom: "1.8rem" }}>This is not a tracking spreadsheet with a login</h2>
-        <div className="hero-stats" style={{ marginTop: 0, paddingTop: 0, borderTop: "none" }}>
-          {fluidsStats.map((s) => (
-            <article key={s.label}>
-              <strong style={{ fontSize: "2rem" }}>{s.value}</strong>
-              <span style={{ fontSize: "0.95rem", color: "#a5b4fc", fontWeight: 700 }}>{s.label}</span>
-              <span style={{ marginTop: "0.4rem" }}>{s.note}</span>
+        <p className="eyebrow">The difference</p>
+        <h2 style={{ marginBottom: "0.6rem" }}>This is not a tracking spreadsheet with a login</h2>
+        <p style={{ color: "rgba(226,232,240,0.72)", margin: 0, fontSize: "0.98rem", maxWidth: "62ch" }}>
+          A spreadsheet records what already happened. It cannot refuse anything, it cannot
+          chase anyone, and it cannot tell you it was wrong. Every line below is something a
+          spreadsheet structurally cannot do — not something it does less prettily.
+        </p>
+        <div className="contrast-grid">
+          {spreadsheetLimits.map((c) => (
+            <article key={c.now} className="contrast-card">
+              <p className="was">{c.was}</p>
+              <p className="now">{c.now}</p>
             </article>
           ))}
         </div>

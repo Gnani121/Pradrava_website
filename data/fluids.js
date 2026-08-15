@@ -48,6 +48,35 @@ export const painPoints = [
   },
 ];
 
+// Things a spreadsheet structurally cannot do. Each one maps to an enforced
+// mechanism in the product, not to a nicer interface.
+export const spreadsheetLimits = [
+  {
+    was: "A spreadsheet will happily let you dispatch a cylinder whose hydro test expired in March.",
+    now: "Fluids refuses. The compliance gate blocks an out-of-test cylinder or one missing its CCOE details before it reaches the vehicle — and a bay that only accepts inert gas will not take a flammable one.",
+  },
+  {
+    was: "Two people open the same file and both allocate cylinder 4471 to a different order.",
+    now: "A cylinder can be claimed exactly once. The database enforces it, so it holds under two operators working at the same second — not by a convention about who edits when.",
+  },
+  {
+    was: "A sheet shared with your Delhi branch is shared with your Delhi branch. All of it.",
+    now: "Isolation is structural. Every table declares which branch or company it belongs to, and the build fails if one does not. Moving stock between branches is an approval workflow, not a copy-paste.",
+  },
+  {
+    was: "A cell nobody looks at is a job nobody does. The order sits until a customer calls.",
+    now: "Thirty stage hand-offs raise a task with an SLA clock on it. When the clock runs out it escalates to the role you nominated, and to the branch manager if nobody is staffed there.",
+  },
+  {
+    was: "Rent gets billed when someone remembers to check who still has your cylinders.",
+    now: "Demurrage accrues daily after the grace period against a billing watermark, so the same day is never billed twice and never quietly skipped. It runs whether anyone remembers or not.",
+  },
+  {
+    was: "The GST working is correct because the person who built the sheet was careful.",
+    now: "The tax split is computed twice, independently, and the database refuses to issue an invoice where the two disagree or where the place of supply could not be resolved.",
+  },
+];
+
 export const pillars = [
   {
     icon: "⚙️",
