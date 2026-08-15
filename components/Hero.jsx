@@ -8,41 +8,41 @@ export default function Hero() {
 
       <div className="hero-grid">
         <div className="hero-copy">
-          <p className="eyebrow">Purpose-Built Operations Software</p>
+          <p className="eyebrow">Operations software for industrial gas</p>
           <h1 className="hero-title">
-            Run your plant on <span className="grad-text">one connected system</span>
+            Run the whole plant on <span className="grad-text">one set of live data</span>
           </h1>
           <p className="hero-subtitle">
-            Pradrava builds industrial-grade platforms that turn scattered spreadsheets and
-            manual tracking into clear, reliable workflows — from cylinder operations and
-            quality control to procurement, dispatch, and financial reporting.
+            Pradrava builds Fluids — the operating system for a gas plant. Cylinder lifecycle,
+            sales, procurement, production, laboratory quality, dispatch and GST compliance
+            stop being seven disconnected records and become one.
           </p>
 
           <div className="hero-actions">
-            <Link href="/products" className="btn btn-primary">
-              Explore Products
+            <Link href="/products/fluids" className="btn btn-primary">
+              See what Fluids does
             </Link>
             <Link href="/demo" className="btn btn-ghost">
-              See a Live Demo
+              Try a live demo
             </Link>
           </div>
 
           <p className="hero-meta">
-            Fast onboarding · Modular by design · Enterprise-grade security &amp; audit trails
+            Multi-branch from day one · ISO-grade quality records · India GST built in
           </p>
 
           <div className="hero-stats" aria-label="Key product highlights">
             <article>
-              <strong>30+</strong>
-              <span>operational modules in Fluids</span>
+              <strong>19</strong>
+              <span>operational modules, one system</span>
             </article>
             <article>
-              <strong>99.9%</strong>
-              <span>designed-for uptime</span>
+              <strong>84</strong>
+              <span>working screens, not menu items</span>
             </article>
             <article>
-              <strong>End-to-End</strong>
-              <span>from tracking to reporting</span>
+              <strong>13</strong>
+              <span>roles enforced at the database</span>
             </article>
           </div>
         </div>

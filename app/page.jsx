@@ -1,20 +1,23 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import { products, fluidsFeatures } from "@/data/products";
+import { painPoints, pillars, standards, personas, fluidsStats } from "@/data/fluids";
 import { demos } from "@/data/demos";
 import DemoCard from "@/components/DemoCard";
 
 export const metadata = {
-  title: "Pradrava | Purpose-Built Software for Industrial Operations",
+  title: "Pradrava | Operations Software for Industrial Gas Plants",
   description:
-    "Pradrava builds purpose-built software for industrial gas operations and finance — cylinder tracking, quality control, procurement, dispatch, and reporting in one connected system, with implementation and support to match.",
+    "Pradrava builds Fluids — cylinder lifecycle, sales, procurement, production, laboratory quality, dispatch and India GST compliance on one set of live data. Multi-branch, ISO-grade quality records, and a compliance gate that blocks unsafe dispatch.",
   keywords: [
-    "industrial operations software",
-    "cylinder tracking platform",
-    "gas operations software",
-    "finance operations software",
-    "SaaS products",
-    "operations automation",
+    "industrial gas ERP",
+    "gas cylinder management software",
+    "cylinder tracking software India",
+    "gas plant operations software",
+    "ISO 6141 certificate of analysis software",
+    "GST e-way bill software",
+    "cylinder rental and demurrage billing",
+    "LIMS for industrial gas",
   ],
   alternates: {
     canonical: "/",
@@ -24,28 +27,20 @@ export const metadata = {
 const differentiators = [
   {
     icon: "🎯",
-    title: "Built for real operations",
-    desc: "Every feature traces back to an actual workflow pain point on the plant floor — not a generic template. If it doesn't earn its place, it isn't there.",
+    title: "Built inside a working plant",
+    desc: "Every screen exists because a real operation needed it — receiving inspection before spec capture, a billing watermark so rent is never double-billed, hazard classes on the storage bay. Not a generic ERP with a cylinder field added.",
   },
   {
     icon: "🧱",
-    title: "Modular by design",
-    desc: "Start with exactly what you need today — cylinders only, items only, or both — and activate additional modules as your operations grow.",
+    title: "You decide how much of it you take",
+    desc: "28 modules and 48 sub-modules switch on or off per company and per branch. Plant profiles and gas-only or item-only modes are enforced on writes, not just hidden in the menu. Start narrow, widen later, without a migration.",
   },
   {
     icon: "🛡️",
-    title: "Production-grade from day one",
-    desc: "Role-based access, audit trails, tenant isolation, and uptime reliability are engineered in from the start — not bolted on after launch.",
+    title: "Correctness is enforced, not promised",
+    desc: "The application refuses to start if a route that changes data is left unguarded. Every table declares its tenancy scope or the build fails. The database blocks an invoice whose tax does not reconcile.",
   },
 ];
-
-const outcomes = [
-  { stat: "Zero", label: "lost cylinders", desc: "Full lifecycle traceability from procurement to return means every asset is accounted for." },
-  { stat: "Minutes", label: "not days", desc: "Generate invoices, dispatch orders, and quality records in real time instead of chasing paper." },
-  { stat: "One", label: "source of truth", desc: "Sales, procurement, production, quality, and finance all read from the same live data." },
-];
-
-const highlightFeatures = fluidsFeatures.slice(0, 6);
 
 export default function Home() {
   return (
@@ -56,22 +51,89 @@ export default function Home() {
       <div className="trust-strip reveal">
         <span>Industrial Gas</span>
         <span>·</span>
-        <span>Manufacturing</span>
+        <span>Cylinder Fleets</span>
         <span>·</span>
-        <span>Quality &amp; Compliance</span>
+        <span>Laboratory Quality</span>
         <span>·</span>
-        <span>Finance Operations</span>
+        <span>Statutory Compliance</span>
+        <span>·</span>
+        <span>Multi-Branch Groups</span>
       </div>
+
+      {/* The problems */}
+      <section className="section-block reveal">
+        <div className="section-head">
+          <p className="eyebrow">Why plants call us</p>
+          <h2>Six problems that cost real money every month</h2>
+          <p className="lead" style={{ marginTop: "0.9rem" }}>
+            These are the conversations we have on the first call. Each one has a specific
+            answer in the product — not a dashboard that shows you the problem after it happened.
+          </p>
+        </div>
+        <div className="pain-grid">
+          {painPoints.map((p) => (
+            <article key={p.problem} className="pain-card">
+              <div className="pain-icon">{p.icon}</div>
+              <h3>{p.problem}</h3>
+              <p>{p.answer}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Capability pillars */}
+      <section className="section-block reveal">
+        <div className="section-head">
+          <p className="eyebrow">Inside Fluids</p>
+          <h2>Six capability areas, one connected system</h2>
+          <p className="lead" style={{ marginTop: "0.9rem" }}>
+            A sales order reserves stock, allocates cylinders, gates on quality, blocks on
+            compliance, prints a challan, raises a compliant invoice and posts to your accounts.
+            One chain, no re-keying.
+          </p>
+        </div>
+        <div className="pillar-grid">
+          {pillars.map((p) => (
+            <article key={p.title} className="pillar-card">
+              <div className="feature-tile-icon">{p.icon}</div>
+              <h3>{p.title}</h3>
+              <p>{p.desc}</p>
+              <ul className="pillar-list">
+                {p.points.map((pt) => (
+                  <li key={pt}>{pt}</li>
+                ))}
+              </ul>
+              <Link href={p.href} className="inline-cta">Explore {p.title}</Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Standards band */}
+      <section className="section-block reveal">
+        <div className="section-head">
+          <p className="eyebrow">Compliance</p>
+          <h2>Standards the product was built against</h2>
+          <p className="lead" style={{ marginTop: "0.9rem" }}>
+            Not a claim of certification — these are the frameworks the workflows, calculations
+            and record formats are implemented to, so your own audit has something to stand on.
+          </p>
+        </div>
+        <div className="standards-grid">
+          {standards.map((s) => (
+            <div key={s.code} className="standard-chip">
+              <strong>{s.code}</strong>
+              <span>{s.note}</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Why Pradrava */}
       <section className="section-block reveal">
         <div className="section-head">
           <p className="eyebrow">Why Pradrava</p>
-          <h2>Software that solves real operational problems</h2>
-          <p className="lead" style={{ marginTop: "0.9rem" }}>
-            We don&apos;t sell shelfware. Each product is built alongside the teams who use it,
-            so it fits the way your plant actually runs.
-          </p>
+          <h2>What makes this different from the last system you evaluated</h2>
         </div>
         <div className="pulse-grid">
           {differentiators.map((item) => (
@@ -84,11 +146,67 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Personas */}
+      <section className="section-block reveal">
+        <div className="section-head">
+          <p className="eyebrow">Who uses it</p>
+          <h2>Every desk in the plant gets its own view</h2>
+        </div>
+        <div className="persona-grid">
+          {personas.map((p) => (
+            <article key={p.role} className="persona-card">
+              <h3>{p.role}</h3>
+              <p>{p.line}</p>
+              <ul>
+                {p.gets.map((g) => (
+                  <li key={g}>{g}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Highlight features */}
+      <section className="section-block reveal">
+        <div className="section-head">
+          <p className="eyebrow">Signature capabilities</p>
+          <h2>The eight things people remember after the demo</h2>
+        </div>
+        <div className="features-grid">
+          {fluidsFeatures.map((f) => (
+            <article key={f.title} className="feature-tile">
+              <div className="feature-tile-icon">{f.icon}</div>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
+            </article>
+          ))}
+        </div>
+        <div className="section-cta-row">
+          <Link href="/products/fluids" className="btn btn-ghost">See the full module list</Link>
+        </div>
+      </section>
+
+      {/* Scale band */}
+      <section className="modules-panel reveal">
+        <p className="eyebrow">The scale of it</p>
+        <h2 style={{ marginBottom: "1.8rem" }}>This is not a tracking spreadsheet with a login</h2>
+        <div className="hero-stats" style={{ marginTop: 0, paddingTop: 0, borderTop: "none" }}>
+          {fluidsStats.map((s) => (
+            <article key={s.label}>
+              <strong style={{ fontSize: "2rem" }}>{s.value}</strong>
+              <span style={{ fontSize: "0.95rem", color: "#a5b4fc", fontWeight: 700 }}>{s.label}</span>
+              <span style={{ marginTop: "0.4rem" }}>{s.note}</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
       {/* Products */}
       <section className="section-block reveal">
         <div className="section-head">
           <p className="eyebrow">Our Products</p>
-          <h2>Purpose-built platforms for demanding industries</h2>
+          <h2>What we build</h2>
         </div>
         <div className="card-grid">
           {products.map((p) => (
@@ -102,51 +220,9 @@ export default function Home() {
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
               <span className="inline-cta" style={{ marginTop: "1rem" }}>
-                {p.status === "Available" ? "Explore" : "See roadmap"}
+                {p.status === "Available" ? "Explore" : "See where it stands"}
               </span>
             </Link>
-          ))}
-        </div>
-        <div className="section-cta-row">
-          <Link href="/products" className="btn btn-ghost">View All Products</Link>
-        </div>
-      </section>
-
-      {/* Capability highlights */}
-      <section className="section-block reveal">
-        <div className="section-head">
-          <p className="eyebrow">Inside the Platform</p>
-          <h2>Everything a plant needs, connected end to end</h2>
-          <p className="lead" style={{ marginTop: "0.9rem" }}>
-            A snapshot of what Fluids does out of the box — from live plant visibility to
-            traceability, assignment, refill, and quality.
-          </p>
-        </div>
-        <div className="features-grid">
-          {highlightFeatures.map((f) => (
-            <article key={f.title} className="feature-tile">
-              <div className="feature-tile-icon">{f.icon}</div>
-              <h3>{f.title}</h3>
-              <p>{f.desc}</p>
-            </article>
-          ))}
-        </div>
-        <div className="section-cta-row">
-          <Link href="/products/fluids" className="btn btn-ghost">See All Fluids Features</Link>
-        </div>
-      </section>
-
-      {/* Outcomes band */}
-      <section className="modules-panel reveal">
-        <p className="eyebrow">The Payoff</p>
-        <h2 style={{ marginBottom: "1.8rem" }}>What changes when operations run on Pradrava</h2>
-        <div className="hero-stats" style={{ marginTop: 0, paddingTop: 0, borderTop: "none" }}>
-          {outcomes.map((o) => (
-            <article key={o.label}>
-              <strong style={{ fontSize: "1.9rem" }}>{o.stat}</strong>
-              <span style={{ fontSize: "0.95rem", color: "#a5b4fc", fontWeight: 700 }}>{o.label}</span>
-              <span style={{ marginTop: "0.4rem" }}>{o.desc}</span>
-            </article>
           ))}
         </div>
       </section>
@@ -154,8 +230,12 @@ export default function Home() {
       {/* Demos */}
       <section className="section-block reveal">
         <div className="section-head">
-          <p className="eyebrow">Interactive Experiences</p>
-          <h2>Explore what your future platform can feel like</h2>
+          <p className="eyebrow">See it running</p>
+          <h2>Open the real product, not a slide deck</h2>
+          <p className="lead" style={{ marginTop: "0.9rem" }}>
+            Demo access opens the live application with sample data, time-boxed and read-mostly,
+            so you can click through the actual screens before you talk to anyone.
+          </p>
         </div>
         <div className="card-grid">
           {demos.map((d) => (
@@ -167,30 +247,30 @@ export default function Home() {
       {/* Services */}
       <section className="section-block reveal">
         <div className="section-head">
-          <p className="eyebrow">Professional Services</p>
-          <h2>We go beyond the software</h2>
+          <p className="eyebrow">Getting it live</p>
+          <h2>Software this deep needs someone who knows it</h2>
         </div>
         <p className="lead">
-          Alongside our products, we offer implementation, onboarding, custom integrations,
-          and ongoing support — so your team gets the full value from day one and keeps
-          getting it as you grow.
+          We migrate your masters, configure plant profile and module toggles to how your plant
+          runs, connect your existing accounts package, train each role, and stay on a defined
+          SLA afterwards. Eighty written operating guides ship with the product.
         </p>
         <div className="section-cta-row">
-          <Link href="/services" className="btn btn-ghost">See Our Services</Link>
+          <Link href="/services" className="btn btn-ghost">See our services</Link>
         </div>
       </section>
 
       {/* CTA */}
       <section className="momentum-panel reveal">
         <p className="eyebrow">Get Started</p>
-        <h3>Ready to modernize your operations?</h3>
+        <h3>Bring us your hardest workflow</h3>
         <p>
-          Explore our products, request a guided walkthrough, or talk to our team about
-          exactly how Pradrava fits your workflow.
+          Tell us the thing that currently takes three people and a WhatsApp group. We will show
+          you the screen that does it, on live data, in the demo.
         </p>
         <div className="hero-actions">
-          <Link href="/products" className="btn btn-primary">Explore Products</Link>
-          <Link href="/contact" className="btn btn-ghost">Talk to Us</Link>
+          <Link href="/demo" className="btn btn-primary">Try a live demo</Link>
+          <Link href="/contact" className="btn btn-ghost">Talk to us</Link>
         </div>
       </section>
     </div>

@@ -2,103 +2,100 @@ import Link from "next/link";
 import { accountingFeatures, accountingModules, accountingFaq } from "@/data/products";
 
 export const metadata = {
-  title: "Accounting (Upcoming) | Finance Operations | Pradrava",
-  description: "India-first accounting workspace for GST-ready invoicing, reconciliation, expense controls, and audit visibility. Coming soon.",
+  title: "Accounting | In Development | Pradrava",
+  description:
+    "Pradrava Accounting is a companion ledger in active development, built on the same tenancy, permission and audit foundation as Fluids. Available today: the durable accounting hand-off that pushes Fluids documents into the accounts package you already run.",
   keywords: [
-    "accounting software",
-    "India accounting software",
-    "invoicing and reconciliation",
-    "finance operations platform",
-    "GST-ready accounting",
-    "GST invoicing",
-    "Indian SME accounting",
-    "audit trail software",
+    "accounting software for industrial operations",
+    "ERP accounts integration",
+    "operational ledger software India",
   ],
-  alternates: {
-    canonical: "/products/accounting",
-  },
+  alternates: { canonical: "/products/accounting" },
 };
 
-const accountingSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Accounting",
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Web",
-  url: "https://pradrava.com/products/accounting",
-  description: "Upcoming India-first finance operations software for GST-ready invoicing, reconciliation, expense controls, and reporting.",
-  brand: {
-    "@type": "Brand",
-    name: "Pradrava",
+const availableNow = [
+  {
+    label: "Durable accounting outbox",
+    value:
+      "Invoices, credit notes and debit notes are queued to your existing accounts system with exponential backoff and voucher ID write-back onto the source document. It drains hourly, and raises a high-priority alert if a document exhausts its retries rather than failing silently.",
   },
-  offers: {
-    "@type": "Offer",
-    availability: "https://schema.org/PreOrder",
+  {
+    label: "Inbound payment bridge",
+    value:
+      "Your accounts system can mark documents synced or failed and post payments against invoices through a secured endpoint, so payment status in Fluids reflects your books without anyone re-keying it.",
   },
-};
+  {
+    label: "Statutory outputs today",
+    value:
+      "GSTR-1 and GSTR-3B materialisation, gapless document numbering per GSTIN and financial year, e-invoice IRN, NIC e-way bills, AR ageing and automated dunning all live in Fluids now — they do not wait on this product.",
+  },
+  {
+    label: "Registers you can hand to your accountant",
+    value:
+      "Sales register, credit note register, delivery-challan-pending-invoice, GST inward register, receivables ageing and rental ageing, exportable today.",
+  },
+];
 
 export default function AccountingPage() {
   return (
     <div className="container page-stack">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(accountingSchema) }}
-      />
-
-      {/* Hero */}
       <div className="product-page-hero accounting-hero reveal">
-        <p className="eyebrow">Pradrava Product • Upcoming</p>
+        <p className="eyebrow">Pradrava Product • In development</p>
         <h1 className="hero-title">Accounting</h1>
         <p className="hero-subtitle">
-          Accounting is in active development for India-first rollout. We are preparing a
-          finance operations workspace for GST-ready invoicing, reconciliation, and
-          audit-ready reporting controls.
+          A companion ledger for teams that want their books inside Pradrava rather than beside
+          it. It is being built on the same tenancy, permission and audit foundation as Fluids —
+          and it is not available yet. Here is exactly where it stands.
         </p>
         <div className="hero-actions">
-          <Link href="/contact?interest=accounting-launch&source=accounting-hero" className="btn btn-primary">Get Launch Updates</Link>
-          <Link href="/services" className="btn btn-ghost">
-            Talk to Our Team
-          </Link>
-        </div>
-        <div className="product-hero-stats">
-          <article>
-            <strong>Upcoming</strong>
-            <span>Core invoicing module</span>
-          </article>
-          <article>
-            <strong>Upcoming</strong>
-            <span>Bank reconciliation</span>
-          </article>
-          <article>
-            <strong>Upcoming</strong>
-            <span>Finance dashboards</span>
-          </article>
-          <article>
-            <strong>Upcoming</strong>
-            <span>Audit and compliance controls</span>
-          </article>
+          <Link href="/contact" className="btn btn-primary">Become a design partner</Link>
+          <Link href="/products/fluids/finance" className="btn btn-ghost">See what Fluids does today</Link>
         </div>
       </div>
 
-      <div className="feature-panel reveal delay-1">
-        <h3>What we&apos;re building</h3>
+      <div className="roadmap-panel reveal delay-1">
+        <h3>Read this before anything else on the page</h3>
         <p>
-          A finance operations workspace designed for Indian SMEs and growing operations —
-          GST-ready invoicing, automated reconciliation, and real-time reporting with the
-          same audit-grade controls and role-based security that power Fluids.
+          Everything below describes what Accounting is being built to do. None of it is
+          available today. We would rather say that plainly than let you plan around it. If you
+          need finance functionality now, the section that follows lists what is live in Fluids.
         </p>
       </div>
 
-      {/* Planned capabilities */}
-      <div className="reveal delay-1">
+      <div className="section-block reveal delay-1">
         <div className="section-head" style={{ marginBottom: "1.2rem" }}>
-          <p className="eyebrow">Planned Capabilities</p>
-          <h2>Everything you need to close the books faster</h2>
+          <p className="eyebrow">Available today</p>
+          <h2>You do not have to wait for this to run your books properly</h2>
+          <p className="lead" style={{ marginTop: "0.9rem" }}>
+            Fluids is designed to sit alongside your existing accounts package, not to hold your
+            operations hostage until we finish ours.
+          </p>
+        </div>
+        <dl className="spec-list">
+          {availableNow.map((a) => (
+            <div key={a.label} className="spec-row">
+              <dt>{a.label}</dt>
+              <dd>{a.value}</dd>
+            </div>
+          ))}
+        </dl>
+        <div className="section-cta-row">
+          <Link href="/products/fluids/finance" className="btn btn-ghost">See Finance &amp; GST in Fluids</Link>
+        </div>
+      </div>
+
+      <div className="section-block reveal delay-2">
+        <div className="section-head" style={{ marginBottom: "1.2rem" }}>
+          <p className="eyebrow">In development</p>
+          <h2>What Accounting is being built to do</h2>
         </div>
         <div className="features-grid">
           {accountingFeatures.map((f) => (
             <article key={f.title} className="feature-tile">
-              <div className="feature-tile-icon">{f.icon}</div>
+              <div className="product-card-top">
+                <div className="feature-tile-icon">{f.icon}</div>
+                <span className="product-status-badge neutral">Planned</span>
+              </div>
               <h3>{f.title}</h3>
               <p>{f.desc}</p>
             </article>
@@ -106,9 +103,12 @@ export default function AccountingPage() {
         </div>
       </div>
 
-      {/* Full module list */}
       <div className="modules-panel reveal delay-2">
-        <h2>Planned Modules &amp; Feature List</h2>
+        <h2>Planned module list</h2>
+        <p style={{ color: "rgba(226,232,240,0.75)", marginTop: "-0.6rem", marginBottom: "1.6rem", fontSize: "0.95rem" }}>
+          Design partners get to shape this list against their own chart of accounts before
+          general release.
+        </p>
         <ul className="modules-checklist">
           {accountingModules.map((m) => (
             <li key={m}>{m}</li>
@@ -116,8 +116,7 @@ export default function AccountingPage() {
         </ul>
       </div>
 
-      {/* FAQ */}
-      <div className="reveal delay-2">
+      <div className="section-block reveal delay-2">
         <div className="section-head" style={{ marginBottom: "1.2rem" }}>
           <p className="eyebrow">FAQ</p>
           <h2>Frequently asked questions</h2>
@@ -132,28 +131,18 @@ export default function AccountingPage() {
         </div>
       </div>
 
-      <div className="feature-panel reveal delay-2">
-        <h3>Availability</h3>
-        <p>
-          Accounting is not live yet. We are onboarding India-based teams for launch
-          notifications, early walkthroughs, and pilot access.
-        </p>
-      </div>
-
-      {/* CTA */}
       <div className="momentum-panel reveal delay-2">
-        <p className="eyebrow">Get Started</p>
-        <h3>Be first to know when Accounting launches in India</h3>
+        <p className="eyebrow">Get involved</p>
+        <h3>Shape it before it ships</h3>
         <p>
-          Share your interest and we will send launch updates, roadmap milestones,
-          and early access options for the India rollout.
+          If your finance team is willing to sit with us on the design, you get the module list
+          and the report formats built around how you actually close a month.
         </p>
         <div className="hero-actions">
-          <Link href="/contact?interest=accounting-launch&source=accounting-cta" className="btn btn-primary">Get Launch Updates</Link>
+          <Link href="/contact" className="btn btn-primary">Talk to us</Link>
           <Link href="/products" className="btn btn-ghost">← Back to Products</Link>
         </div>
       </div>
-
     </div>
   );
 }

@@ -10,37 +10,44 @@ export default function Footer() {
             Pradrava<span className="dot">.</span>
           </Link>
           <p>
-            Purpose-built software for operations that cannot stop. Industrial gas,
-            manufacturing, and finance teams run cleaner, faster, and safer on Pradrava.
+            Operations software for industrial gas. Cylinder lifecycle, laboratory quality,
+            procurement, production and GST compliance on one set of live data — multi-company
+            and multi-branch from the first day.
           </p>
         </div>
 
         <div className="footer-col">
-          <h4>Products</h4>
-          <Link href="/products/fluids">Fluids</Link>
-          <Link href="/products/accounting">Accounting</Link>
-          <Link href="/products">All Products</Link>
-          <Link href="/demo">Live Demos</Link>
+          <h4>Fluids</h4>
+          <Link href="/products/fluids">Overview</Link>
+          <Link href="/products/fluids/cylinder-operations">Cylinder Operations</Link>
+          <Link href="/products/fluids/quality">Quality &amp; Compliance</Link>
+          <Link href="/products/fluids/production">Production &amp; Machines</Link>
+          <Link href="/products/fluids/procurement">Procurement &amp; Inventory</Link>
+          <Link href="/products/fluids/finance">Finance &amp; GST</Link>
+          <Link href="/products/fluids/platform">Platform &amp; Security</Link>
         </div>
 
         <div className="footer-col">
           <h4>Company</h4>
+          <Link href="/products">All Products</Link>
+          <Link href="/products/accounting">Accounting</Link>
           <Link href="/services">Services</Link>
+          <Link href="/demo">Live Demos</Link>
           <Link href="/contact">Contact Us</Link>
-          <a href="tel:+919738388683">+91 97383 88683</a>
-          <a href="mailto:info@pradrava.com">info@pradrava.com</a>
         </div>
 
         <div className="footer-col">
-          <h4>Head Office</h4>
-          <p>Pradrava Private Limited</p>
+          <h4>Get in touch</h4>
+          <a href="tel:+919738388683">+91 97383 88683</a>
+          <a href="mailto:info@pradrava.com">info@pradrava.com</a>
+          <p style={{ marginTop: "0.6rem" }}>Pradrava Private Limited</p>
           <p>4th Floor, Om Chambers, Indiranagar, Bengaluru, Karnataka 560038</p>
         </div>
       </div>
 
       <div className="container footer-row">
         <p>© {new Date().getFullYear()} Pradrava Private Limited. All rights reserved.</p>
-        <p>Purpose-built products · Expert implementation · Real results.</p>
+        <p>Built for plants that cannot stop.</p>
       </div>
     </footer>
   );

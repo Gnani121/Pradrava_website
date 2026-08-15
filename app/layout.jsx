@@ -3,16 +3,21 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Pradrava",
-  description: "End-to-End IT, AI & Cloud Solutions",
+  title: {
+    default: "Pradrava | Operations Software for Industrial Gas Plants",
+    template: "%s | Pradrava",
+  },
+  description:
+    "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and India GST compliance on one set of live data, multi-company and multi-branch.",
   applicationName: "Pradrava",
   metadataBase: new URL("https://pradrava.com"),
   keywords: [
-    "global software development company",
-    "AI automation services",
-    "cloud engineering services",
-    "product engineering company",
-    "digital transformation partner",
+    "industrial gas ERP",
+    "gas cylinder management software",
+    "cylinder tracking software India",
+    "gas plant operations software",
+    "GST e-way bill e-invoice software",
+    "LIMS for industrial gas",
     "Pradrava",
   ],
   alternates: {
@@ -33,8 +38,8 @@ export const metadata = {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "Pradrava",
-    description: "End-to-End IT, AI & Cloud Solutions",
+    title: "Pradrava | Operations Software for Industrial Gas Plants",
+    description: "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and India GST compliance on one set of live data, multi-company and multi-branch.",
     url: "https://pradrava.com",
     siteName: "Pradrava",
     images: [
@@ -50,8 +55,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pradrava",
-    description: "End-to-End IT, AI & Cloud Solutions",
+    title: "Pradrava | Operations Software for Industrial Gas Plants",
+    description: "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and India GST compliance on one set of live data, multi-company and multi-branch.",
     images: ["/og-image.svg"],
   },
 };
@@ -62,8 +67,23 @@ const organizationSchema = {
   name: "Pradrava",
   url: "https://pradrava.com",
   logo: "https://pradrava.com/favicon.svg",
-  description: "End-to-End IT, AI & Cloud Solutions",
+  description: "Operations software for industrial gas plants",
   sameAs: [],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "4th Floor, Om Chambers, Indiranagar",
+    addressLocality: "Bengaluru",
+    addressRegion: "Karnataka",
+    postalCode: "560038",
+    addressCountry: "IN",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+91-97383-88683",
+    email: "info@pradrava.com",
+    contactType: "sales",
+    areaServed: "IN",
+  },
 };
 
 const websiteSchema = {
