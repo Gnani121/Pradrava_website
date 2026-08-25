@@ -10,6 +10,7 @@ import {
   roadmap,
   fluidsStats,
 } from "@/data/fluids";
+import { depthProof, scaleFacts } from "@/data/depth";
 
 export const metadata = {
   title: "Fluids | Industrial Gas Plant ERP | Pradrava",
@@ -209,7 +210,7 @@ export default function FluidsPage() {
       <div className="section-block reveal delay-1">
         <div className="section-head" style={{ marginBottom: "1.2rem" }}>
           <p className="eyebrow">Capability areas</p>
-          <h2>Six areas, each deep enough for its own team</h2>
+          <h2>Seven areas, each deep enough for its own team</h2>
         </div>
         <div className="pillar-grid">
           {pillars.map((p) => (
@@ -336,6 +337,38 @@ export default function FluidsPage() {
             <li key={m}>{m}</li>
           ))}
         </ul>
+      </div>
+
+      {/* Depth */}
+      <div className="section-block reveal delay-2">
+        <div className="section-head" style={{ marginBottom: "1.2rem" }}>
+          <p className="eyebrow">Depth</p>
+          <h2>The parts that never fit on a feature list</h2>
+          <p className="lead" style={{ marginTop: "0.9rem" }}>
+            Every operations product demos well for twenty minutes. What separates them is
+            what happens on the day a customer cancels an order and you are still holding
+            their cylinders, or the day someone banks the same cheque twice. These are the
+            answers to those days — all shipped, all working now.
+          </p>
+        </div>
+        <div className="stat-band" style={{ marginBottom: "1.6rem" }}>
+          {scaleFacts.map((s) => (
+            <article key={s.label}>
+              <strong>{s.value}</strong>
+              <span>{s.label}</span>
+              <em>{s.note}</em>
+            </article>
+          ))}
+        </div>
+        <div className="features-grid">
+          {depthProof.map((d) => (
+            <article key={d.title} className="feature-tile">
+              <div className="feature-tile-icon">{d.icon}</div>
+              <h3>{d.title}</h3>
+              <p>{d.desc}</p>
+            </article>
+          ))}
+        </div>
       </div>
 
       {/* Roadmap honesty */}

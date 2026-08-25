@@ -24,6 +24,7 @@ export default function Footer() {
           <Link href="/products/fluids/production">Production &amp; Machines</Link>
           <Link href="/products/fluids/procurement">Procurement &amp; Inventory</Link>
           <Link href="/products/fluids/finance">Finance &amp; GST</Link>
+          <Link href="/products/fluids/notifications">Notifications &amp; SLA</Link>
           <Link href="/products/fluids/platform">Platform &amp; Security</Link>
         </div>
 
@@ -33,6 +34,7 @@ export default function Footer() {
           <Link href="/products/accounting">Accounting</Link>
           <Link href="/services">Services</Link>
           <Link href="/demo">Live Demos</Link>
+          <Link href="/showcase">Poster Set</Link>
           <Link href="/contact">Contact Us</Link>
         </div>
 

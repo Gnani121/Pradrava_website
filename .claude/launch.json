@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "//": "Port 3010, not the Next default 3000 — the Fluids backend dev server owns 3000 on this machine.",
+      "name": "pradrava-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "-p", "3010"],
+      "port": 3010
+    }
+  ]
+}

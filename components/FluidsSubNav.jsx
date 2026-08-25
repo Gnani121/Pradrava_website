@@ -7,6 +7,7 @@ export const fluidsNav = [
   { href: "/products/fluids/production", label: "Production & Machines" },
   { href: "/products/fluids/procurement", label: "Procurement & Inventory" },
   { href: "/products/fluids/finance", label: "Finance & GST" },
+  { href: "/products/fluids/notifications", label: "Notifications & SLA" },
   { href: "/products/fluids/platform", label: "Platform & Security" },
 ];
 

@@ -1911,3 +1911,299 @@ textarea.field-input { resize: vertical; min-height: 110px; }
   color: #fff;
   font-weight: 700;
 }
+
+/* =====================================================================
+   v2.2 — Notifications, SLA & escalation page
+   ===================================================================== */
+
+.sla-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.1rem;
+}
+
+.sla-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.4rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.sla-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: rgba(79, 70, 229, 0.28);
+}
+
+.sla-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.sla-card-head h3 {
+  font-size: 1.06rem;
+  line-height: 1.25;
+}
+
+.sla-pri {
+  flex-shrink: 0;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.sla-pri-high {
+  color: #b45309;
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.32);
+}
+
+.sla-pri-normal {
+  color: var(--muted);
+  background: rgba(15, 23, 42, 0.05);
+  border-color: var(--line);
+}
+
+.sla-route {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+}
+
+.sla-route span {
+  padding: 0.26rem 0.62rem;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.sla-route .sla-from {
+  background: rgba(15, 23, 42, 0.05);
+  color: var(--muted);
+}
+
+.sla-route .sla-to {
+  background: var(--grad-soft);
+  color: var(--brand-deep);
+  border: 1px solid rgba(79, 70, 229, 0.22);
+}
+
+.sla-route i {
+  color: var(--muted-2);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.sla-clock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.sla-clock div { display: grid; gap: 0.15rem; }
+
+.sla-clock strong {
+  font-family: "Sora", sans-serif;
+  font-size: 1.02rem;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.sla-clock span {
+  font-size: 0.74rem;
+  color: var(--muted-2);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+}
+
+.sla-also {
+  font-size: 0.8rem;
+  color: var(--brand-deep);
+  font-weight: 600;
+}
+
+.sla-why {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-top: auto;
+}
+
+/* --- Module rule counts --- */
+.module-rule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 0.9rem;
+}
+
+.module-rule-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.1rem 1.2rem;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.module-rule-card:hover {
+  border-color: rgba(6, 182, 212, 0.35);
+  transform: translateY(-2px);
+}
+
+.module-rule-count {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-family: "Sora", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--grad);
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.25);
+}
+
+.module-rule-card h3 { font-size: 1rem; margin-bottom: 0.3rem; }
+.module-rule-card p { font-size: 0.88rem; color: var(--muted); }
+
+/* --- Channels --- */
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.channel-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.3rem;
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  box-shadow: var(--shadow-sm);
+}
+
+.channel-card h3 { font-size: 1.06rem; }
+.channel-card p { font-size: 0.9rem; color: var(--muted); }
+
+.channel-state {
+  justify-self: start;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.2rem;
+}
+
+.channel-state.live {
+  color: #047857;
+  background: rgba(16, 185, 129, 0.13);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.channel-state.pending {
+  color: #b45309;
+  background: rgba(245, 158, 11, 0.13);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+}
+
+@media (max-width: 640px) {
+  .sla-clock { grid-template-columns: 1fr; gap: 0.6rem; }
+  .sla-grid, .module-rule-grid, .channel-grid { grid-template-columns: 1fr; }
+}
+
+/* =====================================================================
+   v2.3 — Poster showcase
+   ===================================================================== */
+
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.6rem;
+}
+
+.poster-card {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 260ms ease, box-shadow 260ms ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.poster-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.poster-frame {
+  position: relative;
+  background: #070c1a;
+  line-height: 0;
+}
+
+.poster-frame svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.poster-card figcaption {
+  padding: 1.2rem 1.3rem 1.4rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.poster-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.poster-card figcaption h3 { font-size: 1.06rem; }
+
+.poster-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.7rem;
+}
+
+.poster-actions .btn-ghost {
+  border-color: var(--line-strong);
+  color: var(--ink-soft);
+}
+
+.poster-actions .btn:disabled { opacity: 0.6; cursor: default; }
+
+@media (max-width: 640px) {
+  .poster-grid { grid-template-columns: 1fr; }
+}

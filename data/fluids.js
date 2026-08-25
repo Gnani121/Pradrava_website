@@ -65,7 +65,7 @@ export const spreadsheetLimits = [
   },
   {
     was: "A cell nobody looks at is a job nobody does. The order sits until a customer calls.",
-    now: "Thirty stage hand-offs raise a task with an SLA clock on it. When the clock runs out it escalates to the role you nominated, and to the branch manager if nobody is staffed there.",
+    now: "Sixty-five stages across seventeen modules raise a task with an SLA clock on it — seventy-one rules, all of them yours to edit. When the clock runs out it escalates to the role you nominated, and to the branch manager if nobody is staffed there.",
   },
   {
     was: "Rent gets billed when someone remembers to check who still has your cylinders.",
@@ -141,6 +141,19 @@ export const pillars = [
       "Bill of materials with planned-versus-actual variance and costing",
       "OEE, MTBF and MTTR with downtime Pareto by reason code",
       "Preventive maintenance driven by run hours, not by memory",
+    ],
+  },
+  {
+    icon: "🔔",
+    title: "Notifications & SLA",
+    href: "/products/fluids/notifications",
+    desc:
+      "Every hand-off in the plant gets an owner, a deadline and a named person it escalates to — configured by you, on an admin screen, not by us in a release.",
+    points: [
+      "71 live rules over 65 stages raised by 17 modules",
+      "Due time set by the event, escalation to the role you nominate",
+      "An unstaffed role falls back to the branch manager, and it is recorded",
+      "Ten more scheduled engines chasing dates rather than hand-offs",
     ],
   },
   {
@@ -265,7 +278,7 @@ export const fluidsFaq = [
   },
   {
     q: "How do handovers between teams actually get chased?",
-    a: "Thirty stage events across the system — enquiry created, production queued, inspection hold, refill inwarded, return available and so on — raise a notification to a configured role with an SLA clock. If the clock runs out the item escalates to the escalation role automatically. Which role, how many hours and who it escalates to are all configuration, not code.",
+    a: "Sixty-five stage events across seventeen modules — enquiry created, cylinder assignment pending, gas test failed, refill inwarded, requisition pending approval, return available and so on — raise a notification to a configured role with an SLA clock. Fifty-six of the seventy-one rules also carry an escalation window, so an unactioned task moves to the role you nominated without anyone chasing it. Which role, how many hours, who it escalates to, and whether the rule is on at all are configuration, not code. The full picture is on the Notifications & SLA page.",
   },
   {
     q: "Can we get our data out?",

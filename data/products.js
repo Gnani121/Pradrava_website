@@ -50,7 +50,7 @@ export const fluidsFeatures = [
   {
     icon: "⏱️",
     title: "SLA Engine with Escalation",
-    desc: "Thirty stage hand-offs raise a notification with an SLA clock. Miss the clock and it escalates automatically to the role you nominated — all configuration, no code.",
+    desc: "71 rules over 65 stages give every hand-off an owner and a deadline. Miss the clock and it escalates to the role you nominated — plus ten scheduled engines chasing overdue invoices, expiring quotes and cylinders coming due for test.",
   },
   {
     icon: "🎛️",
@@ -111,12 +111,28 @@ export const fluidsModules = [
   "Print Center: 17 document types with per-branch templates and server-rendered PDF",
   "Email Center: sender identity and recipient routing per branch and per department",
   "UPI scan-to-pay QR embedded on invoices",
-  "Notification and SLA engine over 30 stage hand-offs with automatic escalation",
+  "Notification and SLA engine: 71 editable rules over 65 stages, with due dates, additional recipients, priorities and automatic escalation",
+  "Unstaffed-role fallback and a delivery report showing every alert that could not be raised, and why",
+  "Ten scheduled reminder engines: escalation sweep, quote funnel, dunning, rental billing, reorder, calibration expiry, hydro-test bands, reservation reclaim, contract price expiry and accounting hand-off alarms",
   "Module Control Panel: 28 modules and 48 sub-modules toggled per company or branch",
   "Plant profiles and gas-only, item-only or combined business modes",
   "Activity and security audit log with database-level change tracking",
   "Shop-floor kiosk station, phone-as-scanner QR sessions, and a mobile scanner app",
   "Advanced analytics across eight dimensions including demand forecast and customer insight",
+  "Customer receipts ledger: part payment, six payment modes, over-payment refused, void with a stated reason",
+  "Receivables summary with collected, outstanding, and unpaid, part-paid and settled counts",
+  "Order cancellation with a cylinder disposition queue — decide, then confirm the physical move",
+  "Cylinder retirement with a stated reason and full history retained, instead of deletion",
+  "Cylinder lookup by the number stencilled on the bottle: position, holder, order, vendor, challan and next step",
+  "Configurable three-way match tolerance bands per branch, with the effective source shown",
+  "Fill quantity ranges gating the return leg, with a worklist of capacity and gas pairs that have none",
+  "Master-data readiness worklist ranked by what each gap breaks downstream",
+  "Optional segregation of duties on requisition approval, vendor invoice approval and order cancellation",
+  "Administrator console: sessions, activity, permission denials, client errors, endpoint and system health",
+  "Failed sign-in capture with repeat-failure lockout, and configurable log retention with an audited purge",
+  "Stock corrections entered as a physical count, with the system deriving the adjustment",
+  "Acceptance sampling plan editor with a lot-size lookup that matches what production QC applies",
+  "Demurrage run log recording when a sweep ran, through what date, and what it accrued",
 ];
 
 export const fluidsFaq = [
