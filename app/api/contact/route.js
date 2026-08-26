@@ -1,5 +1,11 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import {
+  getMailConfig,
+  createTransporter,
+  fromAddress,
+  escapeHtml,
+  HUMAN_FALLBACK,
+} from "@/lib/mailer";
 
 const VALID_INTERESTS = new Set([
   "accounting-launch",
@@ -15,23 +21,19 @@ const INTEREST_LABELS = {
   "general-enquiry": "General enquiry",
 };
 
-function getMailConfig() {
-  const host = process.env.SMTP_HOST;
-  const port = Number(process.env.SMTP_PORT || "587");
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const secure = String(process.env.SMTP_SECURE || "false").toLowerCase() === "true";
-
-  if (!host || !port || !user || !pass) {
-    return null;
-  }
-
-  return { host, port, user, pass, secure };
+// A lead that cannot be emailed must still be recoverable. This marker is what
+// you grep the Vercel runtime logs for.
+function recordUndeliveredLead(payload, reason) {
+  console.error(
+    "[CONTACT_LEAD_UNDELIVERED]",
+    JSON.stringify({ reason: String(reason), lead: payload })
+  );
 }
 
 export async function POST(request) {
   try {
-    const { name = "", email = "", interest = "", message = "", source = "" } = await request.json();
+    const { name = "", email = "", interest = "", message = "", source = "" } =
+      await request.json();
 
     const trimmedEmail = String(email).trim().toLowerCase();
     const trimmedInterest = String(interest).trim();
@@ -54,69 +56,86 @@ export async function POST(request) {
       createdAt: new Date().toISOString(),
     };
 
+    // Capture BEFORE mail. The webhook is the independent record — if it is
+    // configured, a lead survives a mail outage. It is best-effort in both
+    // directions: its failure must never lose a submission that mail accepted,
+    // which is what awaiting it unguarded used to do.
+    let webhookOk = false;
+    if (process.env.CONTACT_WEBHOOK_URL) {
+      try {
+        const hookRes = await fetch(process.env.CONTACT_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        webhookOk = hookRes.ok;
+        if (!hookRes.ok) {
+          console.error("[CONTACT_WEBHOOK_FAILED]", hookRes.status);
+        }
+      } catch (hookError) {
+        console.error("[CONTACT_WEBHOOK_FAILED]", hookError);
+      }
+    }
+
     const mailConfig = getMailConfig();
     if (!mailConfig) {
-      return NextResponse.json(
-        { error: "Contact email is not configured on the server." },
-        { status: 500 }
-      );
+      recordUndeliveredLead(payload, "SMTP not configured");
+      // If the webhook captured it, this visitor is not lost and should not be
+      // told to phone us.
+      if (webhookOk) return NextResponse.json({ ok: true });
+      return NextResponse.json({ error: HUMAN_FALLBACK }, { status: 503 });
     }
 
     const toEmail = process.env.CONTACT_TO_EMAIL || "info@pradrava.com";
-    const fromEmail = process.env.CONTACT_FROM_EMAIL || mailConfig.user;
+    const transporter = createTransporter(mailConfig);
 
-    const transporter = nodemailer.createTransport({
-      host: mailConfig.host,
-      port: mailConfig.port,
-      secure: mailConfig.secure,
-      auth: {
-        user: mailConfig.user,
-        pass: mailConfig.pass,
-      },
-    });
+    const safe = {
+      name: escapeHtml(payload.name || "Not provided"),
+      email: escapeHtml(payload.email),
+      interestLabel: escapeHtml(payload.interestLabel),
+      source: escapeHtml(payload.source || "contact-page"),
+      createdAt: escapeHtml(payload.createdAt),
+      message: escapeHtml(payload.message || "No message provided."),
+    };
 
-    await transporter.sendMail({
-      from: fromEmail,
-      to: toEmail,
-      replyTo: payload.email,
-      subject: `[Pradrava Contact] ${payload.interestLabel}`,
-      text: [
-        "New contact form submission",
-        "",
-        `Name: ${payload.name || "Not provided"}`,
-        `Email: ${payload.email}`,
-        `Interest: ${payload.interestLabel}`,
-        `Source: ${payload.source || "contact-page"}`,
-        `Submitted At: ${payload.createdAt}`,
-        "",
-        "Message:",
-        payload.message || "No message provided.",
-      ].join("\n"),
-      html: `
-        <h2>New contact form submission</h2>
-        <p><strong>Name:</strong> ${payload.name || "Not provided"}</p>
-        <p><strong>Email:</strong> ${payload.email}</p>
-        <p><strong>Interest:</strong> ${payload.interestLabel}</p>
-        <p><strong>Source:</strong> ${payload.source || "contact-page"}</p>
-        <p><strong>Submitted At:</strong> ${payload.createdAt}</p>
-        <p><strong>Message:</strong></p>
-        <p>${payload.message || "No message provided."}</p>
-      `,
-    });
-
-    if (process.env.CONTACT_WEBHOOK_URL) {
-      await fetch(process.env.CONTACT_WEBHOOK_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
+    try {
+      await transporter.sendMail({
+        from: fromAddress(mailConfig),
+        to: toEmail,
+        replyTo: payload.email,
+        subject: `[Pradrava Contact] ${payload.interestLabel}`,
+        text: [
+          "New contact form submission",
+          "",
+          `Name: ${payload.name || "Not provided"}`,
+          `Email: ${payload.email}`,
+          `Interest: ${payload.interestLabel}`,
+          `Source: ${payload.source || "contact-page"}`,
+          `Submitted At: ${payload.createdAt}`,
+          "",
+          "Message:",
+          payload.message || "No message provided.",
+        ].join("\n"),
+        html: `
+          <h2>New contact form submission</h2>
+          <p><strong>Name:</strong> ${safe.name}</p>
+          <p><strong>Email:</strong> ${safe.email}</p>
+          <p><strong>Interest:</strong> ${safe.interestLabel}</p>
+          <p><strong>Source:</strong> ${safe.source}</p>
+          <p><strong>Submitted At:</strong> ${safe.createdAt}</p>
+          <p><strong>Message:</strong></p>
+          <p style="white-space: pre-wrap;">${safe.message}</p>
+        `,
       });
+    } catch (mailError) {
+      recordUndeliveredLead(payload, mailError);
+      if (webhookOk) return NextResponse.json({ ok: true });
+      return NextResponse.json({ error: HUMAN_FALLBACK }, { status: 502 });
     }
 
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("[CONTACT_SUBMISSION_ERROR]", error);
-    return NextResponse.json({ error: "Unable to process request right now." }, { status: 500 });
+    return NextResponse.json({ error: HUMAN_FALLBACK }, { status: 500 });
   }
 }

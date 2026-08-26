@@ -1,29 +1,17 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 import { isIP } from "node:net";
 import {
   createOtpForEmail,
   getRecentOtpCount,
   getRecentIpOtpCount,
 } from "@/lib/demoOtpStore";
+import { getMailConfig, createTransporter, fromAddress } from "@/lib/mailer";
 
 const MAX_PER_EMAIL_PER_HOUR = 3;
 const MAX_PER_IP_PER_HOUR = 10;
 
-function getMailConfig() {
-  const host = process.env.SMTP_HOST;
-  const port = Number(process.env.SMTP_PORT || "587");
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const secure =
-    String(process.env.SMTP_SECURE || "false").toLowerCase() === "true";
-
-  if (!host || !port || !user || !pass) {
-    return null;
-  }
-
-  return { host, port, user, pass, secure };
-}
+const MAIL_DOWN =
+  "We could not send your passcode just now. Please email info@pradrava.com or call +91 97383 88683 and we will open the demo for you.";
 
 function getClientIp(request) {
   const fwd = request.headers.get("x-forwarded-for");
@@ -75,42 +63,50 @@ export async function POST(request) {
 
     const mailConfig = getMailConfig();
     if (!mailConfig) {
-      return NextResponse.json(
-        { error: "Demo login email is not configured on the server." },
-        { status: 500 }
-      );
+      console.error("[DEMO_OTP_MAIL_UNCONFIGURED]");
+      return NextResponse.json({ error: MAIL_DOWN }, { status: 503 });
+    }
+
+    const transporter = createTransporter(mailConfig);
+
+    // Prove the mail path works BEFORE minting a code.
+    //
+    // createOtpForEmail() writes a row that counts against
+    // MAX_PER_EMAIL_PER_HOUR. If the send then failed, the visitor burned one of
+    // three attempts and received nothing — three retries and they are locked
+    // out for an hour having never seen a passcode, on the primary call to
+    // action of the whole site. Verifying first costs one handshake on a path
+    // limited to three requests an hour per address.
+    try {
+      await transporter.verify();
+    } catch (verifyError) {
+      console.error("[DEMO_OTP_MAIL_UNREACHABLE]", verifyError);
+      return NextResponse.json({ error: MAIL_DOWN }, { status: 503 });
     }
 
     const { otp } = await createOtpForEmail(trimmedEmail, ip);
 
-    const transporter = nodemailer.createTransport({
-      host: mailConfig.host,
-      port: mailConfig.port,
-      secure: mailConfig.secure,
-      auth: {
-        user: mailConfig.user,
-        pass: mailConfig.pass,
-      },
-    });
-
-    const fromEmail = process.env.CONTACT_FROM_EMAIL || mailConfig.user;
-
-    await transporter.sendMail({
-      from: fromEmail,
-      to: trimmedEmail,
-      subject: "Your Pradrava Demo OTP",
-      text: [
-        "Use this OTP to access Pradrava demos:",
-        otp,
-        "",
-        "This code expires in 10 minutes.",
-      ].join("\n"),
-      html: `
-        <p>Use this OTP to access Pradrava demos:</p>
-        <p style="font-size: 22px; font-weight: 700; letter-spacing: 2px;">${otp}</p>
-        <p>This code expires in 10 minutes.</p>
-      `,
-    });
+    try {
+      await transporter.sendMail({
+        from: fromAddress(mailConfig),
+        to: trimmedEmail,
+        subject: "Your Pradrava Demo OTP",
+        text: [
+          "Use this OTP to access Pradrava demos:",
+          otp,
+          "",
+          "This code expires in 10 minutes.",
+        ].join("\n"),
+        html: `
+          <p>Use this OTP to access Pradrava demos:</p>
+          <p style="font-size: 22px; font-weight: 700; letter-spacing: 2px;">${otp}</p>
+          <p>This code expires in 10 minutes.</p>
+        `,
+      });
+    } catch (sendError) {
+      console.error("[DEMO_OTP_SEND_FAILED]", sendError);
+      return NextResponse.json({ error: MAIL_DOWN }, { status: 502 });
+    }
 
     return NextResponse.json({ ok: true });
   } catch (error) {

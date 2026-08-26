@@ -44,6 +44,9 @@ export default function Footer() {
           <a href="mailto:info@pradrava.com">info@pradrava.com</a>
           <p style={{ marginTop: "0.6rem" }}>Pradrava Private Limited</p>
           <p>4th Floor, Om Chambers, Indiranagar, Bengaluru, Karnataka 560038</p>
+          <h4 style={{ marginTop: "1.1rem" }}>Legal</h4>
+          <Link href="/privacy">Privacy Policy</Link>
+          <Link href="/terms">Terms of Service</Link>
         </div>
       </div>
 
