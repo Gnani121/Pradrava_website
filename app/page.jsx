@@ -33,7 +33,7 @@ const differentiators = [
   {
     icon: "🧱",
     title: "You decide how much of it you take",
-    desc: "28 modules and 48 sub-modules switch on or off per company and per branch. If you only fill cylinders, the item and manufacturing side genuinely is not there — not merely hidden from the menu. Start narrow and widen later, without moving your data.",
+    desc: "28 modules and 45 sub-modules switch on or off per company and per branch. If you only fill cylinders, the item and manufacturing side genuinely is not there — not merely hidden from the menu. Start narrow and widen later, without moving your data.",
   },
   {
     icon: "🛡️",

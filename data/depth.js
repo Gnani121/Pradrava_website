@@ -83,6 +83,6 @@ export const depthProof = [
 export const scaleFacts = [
   { value: "71", label: "SLA rules", note: "over 65 stages, all editable" },
   { value: "17", label: "print & email document types", note: "your letterhead, per branch" },
-  { value: "10", label: "scheduled reminder engines", note: "chasing dates, not hand-offs" },
+  { value: "13", label: "jobs that run on a schedule", note: "chasing dates, not hand-offs" },
   { value: "5", label: "sale types", note: "sale, refill, rental, quality check, service" },
 ];

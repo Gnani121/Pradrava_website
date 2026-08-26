@@ -92,7 +92,7 @@ export default function ServicesPage() {
         <p className="eyebrow">Professional Services</p>
         <h1>Software this deep needs someone who knows it</h1>
         <p className="lead" style={{ marginTop: "1rem" }}>
-          Fluids has 19 modules, 13 roles and several hundred configuration decisions behind it.
+          Fluids has 28 modules, 13 roles and several hundred configuration decisions behind it.
           Handing you a login and a manual would be a poor way to start. We migrate your data,
           set the configuration to how your plant runs, connect what you already use, train each
           role separately, and stay on a defined SLA afterwards.

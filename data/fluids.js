@@ -158,7 +158,7 @@ export const pillars = [
       "Seventy-one rules covering every handover, from enquiry to cylinder return",
       "Each has a deadline, and a person it escalates to when that deadline passes",
       "If nobody holds that role, it goes to the branch manager — and that is recorded",
-      "Ten more jobs that watch dates instead: rent due, tests expiring, invoices overdue",
+      "Thirteen more jobs that watch dates instead: rent due, invoices overdue, stock held too long",
     ],
   },
   {
@@ -263,7 +263,7 @@ export const fluidsFaq = [
   },
   {
     q: "We only fill cylinders — do we have to take the item and manufacturing modules?",
-    a: "No. You can set the system to gas only, items only, or both, and it is enforced when data is saved rather than just hidden from the menu. Beyond that, your plant profile — full plant, on-site production, import-and-fill, bulk-fill — decides which capabilities exist at all, and any of 28 modules and 48 sub-modules can be switched on or off per company or per branch without a code change.",
+    a: "No. You can set the system to gas only, items only, or both, and it is enforced when data is saved rather than just hidden from the menu. Beyond that, your plant profile — full plant, on-site production, import-and-fill, bulk-fill — decides which capabilities exist at all, and any of 28 modules and 45 sub-modules can be switched on or off per company or per branch without a code change.",
   },
   {
     q: "Does it handle Indian GST properly, or is it a generic tax field?",

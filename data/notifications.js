@@ -283,6 +283,6 @@ export const notificationsFaq = [
   },
   {
     q: "Is this just for the plant, or does it chase commercial work too?",
-    a: "Both, on one engine. The same mechanism that gives a failed gas test an eight-hour clock gives a quotation a ten-working-day follow-up clock that escalates to the branch manager after twenty. Separately, scheduled jobs chase overdue invoices, expiring quotes, lapsing vendor prices, calibrations coming due and cylinders approaching their hydro-test date.",
+    a: "Both, on one engine. The same mechanism that gives a failed gas test an eight-hour clock gives a quotation a ten-working-day follow-up clock that escalates to the branch manager after twenty. Separately, a scheduled job chases overdue invoices, and rental billing, reservation reclaim and e-way bill expiry run on their own clocks. Sweeps for expiring quotes, lapsing vendor prices, calibrations coming due and cylinders approaching their hydro-test date are built and run when you run them — we have not put them on a timer yet.",
   },
 ];

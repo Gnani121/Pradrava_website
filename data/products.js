@@ -55,7 +55,7 @@ export const fluidsFeatures = [
   {
     icon: "🎛️",
     title: "Turn Modules On and Off",
-    desc: "28 modules and 48 sub-modules switched on or off per company or per branch, plus plant profiles and gas-only or item-only modes. What you switch off genuinely is not there, rather than hidden from the menu.",
+    desc: "28 modules and 45 sub-modules switched on or off per company or per branch, plus plant profiles and gas-only or item-only modes. What you switch off genuinely is not there, rather than hidden from the menu.",
   },
 ];
 
@@ -113,13 +113,14 @@ export const fluidsModules = [
   "UPI pay link on the invoice, built from your own bank details",
   "Notification and SLA engine: 71 editable rules over 65 stages, with due dates, additional recipients, priorities and automatic escalation",
   "Unstaffed-role fallback and a delivery report showing every alert that could not be raised, and why",
-  "Ten scheduled reminder engines: escalation sweep, quote funnel, dunning, rental billing, reorder, calibration expiry, hydro-test bands, reservation reclaim, contract price expiry and accounting hand-off alarms",
-  "Module Control Panel: 28 modules and 48 sub-modules toggled per company or branch",
+  "Thirteen jobs that run on a schedule: the escalation sweep, alert dispatch and its delivery report, overdue-invoice dunning, monthly invoice consolidation, rental billing, reservation reclaim, e-way bill expiry, the accounting hand-off, purchase and sales automation, item-cost reconciliation and log retention",
+  "Run-on-demand sweeps for the quote funnel, reordering, calibrations coming due, cylinders approaching hydro test and lapsing contract prices",
+  "Module Control Panel: 28 modules and 45 sub-modules toggled per company or branch",
   "Plant profiles and gas-only, item-only or combined business modes",
   "Activity and security audit log with database-level change tracking",
-  "Shop-floor kiosk station, phone-as-scanner QR sessions, and a mobile scanner app",
-  "Advanced analytics across eight dimensions including demand forecast and customer insight",
-  "Customer receipts ledger: part payment, six payment modes, over-payment refused, void with a stated reason",
+  "Shop-floor kiosk station, phone-as-scanner QR sessions, and a companion scanner app in preview",
+  "Advanced analytics across eight views, including consumption history, customer and quality insight",
+  "Customer receipts ledger: part payment, seven payment modes, over-payment refused, void with a stated reason",
   "Receivables summary with collected, outstanding, and unpaid, part-paid and settled counts",
   "Order cancellation with a cylinder disposition queue — decide, then confirm the physical move",
   "Cylinder retirement with a stated reason and full history retained, instead of deletion",

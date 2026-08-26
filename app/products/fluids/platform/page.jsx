@@ -69,7 +69,7 @@ const control = [
   {
     icon: "🎛️",
     title: "Module Control Panel",
-    desc: "28 top-level modules and 48 sub-modules switched on or off at global, customer or branch scope, with the more specific scope winning and inherited-versus-overridden shown clearly. Turning a parent off cascades to its children. Core modules are always on, so an administrator cannot lock everybody out.",
+    desc: "28 top-level modules and 45 sub-modules switched on or off at global, customer or branch scope, with the more specific scope winning and inherited-versus-overridden shown clearly. Turning a parent off cascades to its children. Core modules are always on, so an administrator cannot lock everybody out.",
   },
   {
     icon: "🏭",
