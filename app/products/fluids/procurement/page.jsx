@@ -51,12 +51,12 @@ const controls = [
   {
     icon: "🏆",
     title: "Vendor scorecards",
-    desc: "On-time percentage, reject rate, spend, average lead time and a composite score, materialised per period from real goods receipts and purchase orders. Non-conformances raised at inspection flow straight into it.",
+    desc: "How often a vendor delivered on time, how much of it you rejected, what you spent, how long they took, and one overall score — worked out each period from your actual receipts and orders, not from an opinion. Problems raised at inspection feed straight into it.",
   },
   {
     icon: "🤖",
     title: "Procurement automation",
-    desc: "A planner-first engine that drafts purchase orders from the price book and raises draft RFQs by category policy. It is idempotent, it executes only the safe paths, and it never auto-spends — a human always confirms.",
+    desc: "It drafts purchase orders from your price book and raises draft enquiries by category. Running it twice cannot create two orders, it only ever does the safe part on its own, and it never spends your money — a person always confirms.",
   },
 ];
 
@@ -64,12 +64,12 @@ const inventory = [
   {
     label: "The ledger is the truth",
     value:
-      "Inventory transactions are append-only. Stock levels and snapshots are derived from that ledger and can be rebuilt from it at any time, so a disagreement about a balance is resolvable rather than a matter of opinion.",
+      "Every stock movement is added to the ledger and never rewritten. Your stock figures are worked out from that list and can be rebuilt from it at any time — so an argument about a balance is something you can settle, not a matter of opinion.",
   },
   {
     label: "Reservations",
     value:
-      "Stock is auto-reserved against open demand by trigger, with a scheduled reclaim of reservations whose demand never materialised and a full reservation history.",
+      "Stock is held automatically against open orders, freed again if the order never happens, and every hold and release is kept on record.",
   },
   {
     label: "Picking and packing",

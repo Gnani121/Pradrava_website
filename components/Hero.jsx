@@ -14,7 +14,7 @@ export default function Hero() {
           </h1>
           <p className="hero-subtitle">
             Pradrava builds Fluids — the operating system for a gas plant. Cylinder lifecycle,
-            sales, procurement, production, laboratory quality, dispatch and GST-correct invoicing
+            sales, procurement, production, laboratory quality, dispatch and GST compliance
             stop being seven disconnected records and become one.
           </p>
 
@@ -28,21 +28,21 @@ export default function Hero() {
           </div>
 
           <p className="hero-meta">
-            Multi-branch from day one · ISO-grade quality records · India GST built in
+            Works across every branch · Lab records an auditor will accept · Built for Indian GST
           </p>
 
           <div className="hero-stats" aria-label="Key product highlights">
             <article>
-              <strong>19</strong>
-              <span>operational modules, one system</span>
+              <strong>Every</strong>
+              <span>cylinder accounted for — where it is, who has it, when it was last tested</span>
             </article>
             <article>
-              <strong>84</strong>
-              <span>working screens, not menu items</span>
+              <strong>One</strong>
+              <span>place for sales, plant, lab, dispatch and your accounts</span>
             </article>
             <article>
-              <strong>13</strong>
-              <span>roles checked on every request</span>
+              <strong>All</strong>
+              <span>your branches, each kept separate, the group total in one view</span>
             </article>
           </div>
         </div>

@@ -405,8 +405,8 @@ function PosterTax() {
         size="23"
         fill="rgba(226,232,240,0.55)"
         lines={[
-          "Place of supply, HSN and rate settled on the document, not at month end.",
-          "Gapless numbering per GSTIN and financial year. Tax that reconciles before it issues.",
+          "Gapless numbering per GSTIN and financial year. E-invoice and e-way bill ready.",
+          "Every invoice right when it is raised, not fixed in a month of reconciliation.",
         ]}
         lh={34}
       />

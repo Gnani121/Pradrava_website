@@ -111,7 +111,7 @@ const safety = [
   {
     label: "Movement ledger",
     value:
-      "Every movement between locations and states is written to an append-only ledger, exportable as CSV, so a dispute over where a cylinder was on a given date has an answer.",
+      "Every movement between locations and states is written to a record that is only ever added to, never rewritten, exportable as CSV, so a dispute over where a cylinder was on a given date has an answer.",
   },
 ];
 
@@ -191,7 +191,7 @@ export default function Page() {
             <div className="feature-tile-icon">🖥️</div>
             <h3>Kiosk station</h3>
             <p>
-              A chromeless shop-floor screen with large touch targets — moved, partial, cannot
+              A distraction-free shop-floor screen with large touch targets — moved, partial, cannot
               move — that polls for new tasks every eight seconds and chimes when one arrives.
               No sidebar, no menus, nothing to get lost in.
             </p>
@@ -206,11 +206,10 @@ export default function Page() {
           </article>
           <article className="feature-tile">
             <div className="feature-tile-icon">📦</div>
-            <h3>Companion scanner app <span className="channel-state pending">Preview</span></h3>
+            <h3>Companion scanner app</h3>
             <p>
-              A React Native application for Android and iOS handsets with camera scanning and
-              haptic feedback, talking to the same backend as everything else. We install it on
-              your devices directly — it is not published to the app stores yet.
+              A React Native application for Android and iOS with camera scanning and haptic
+              feedback, talking to the same backend as everything else.
             </p>
           </article>
           <article className="feature-tile">
