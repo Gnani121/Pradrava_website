@@ -20,3 +20,9 @@ yarn-error.log*
 
 # local key material
 keys/
+# Scratch snapshots. A tarball can wrap a .env and slip past the rules above.
+*.tgz
+*.tar.gz
+*.zip
+_to_delete/
+_archive/
