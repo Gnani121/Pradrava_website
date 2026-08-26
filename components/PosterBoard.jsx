@@ -405,8 +405,8 @@ function PosterTax() {
         size="23"
         fill="rgba(226,232,240,0.55)"
         lines={[
-          "Gapless numbering per GSTIN and financial year. E-invoice IRN. NIC e-way bills.",
-          "GSTR-1 and 3B built from live documents, not from a month of reconciliation.",
+          "Place of supply, HSN and rate settled on the document, not at month end.",
+          "Gapless numbering per GSTIN and financial year. Tax that reconciles before it issues.",
         ]}
         lh={34}
       />

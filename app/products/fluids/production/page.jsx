@@ -12,7 +12,7 @@ export const metadata = {
     "bill of materials variance manufacturing",
     "production genealogy traceability software",
     "machine calibration register software",
-    "predictive maintenance rules",
+    "machine telemetry maintenance rules",
   ],
   alternates: { canonical: "/products/fluids/production" },
 };
@@ -80,8 +80,8 @@ const machines = [
   },
   {
     icon: "📶",
-    title: "Telemetry and predictive rules",
-    desc: "An ingestion endpoint accepts machine data tagged as manual, PLC, SCADA or IoT sourced, with predictive maintenance rules over it. The endpoint is live today; the plant-floor connector is the next step.",
+    title: "Telemetry and threshold rules",
+    desc: "An ingestion endpoint accepts machine data tagged as manual, PLC, SCADA or IoT sourced, with maintenance rules you set over it — a reading outside its band raises a task. The endpoint is live today; the plant-floor connector is the next step.",
   },
   {
     icon: "🗓️",

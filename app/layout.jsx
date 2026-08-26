@@ -8,7 +8,7 @@ export const metadata = {
     template: "%s | Pradrava",
   },
   description:
-    "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and India GST compliance on one set of live data, multi-company and multi-branch.",
+    "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and GST-correct invoicing on one set of live data, multi-company and multi-branch.",
   applicationName: "Pradrava",
   metadataBase: new URL("https://pradrava.com"),
   keywords: [
@@ -16,7 +16,7 @@ export const metadata = {
     "gas cylinder management software",
     "cylinder tracking software India",
     "gas plant operations software",
-    "GST e-way bill e-invoice software",
+    "GST invoicing software for gas plants",
     "LIMS for industrial gas",
     "Pradrava",
   ],
@@ -39,7 +39,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Pradrava | Operations Software for Industrial Gas Plants",
-    description: "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and India GST compliance on one set of live data, multi-company and multi-branch.",
+    description: "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and GST-correct invoicing on one set of live data, multi-company and multi-branch.",
     url: "https://pradrava.com",
     siteName: "Pradrava",
     images: [
@@ -56,7 +56,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Pradrava | Operations Software for Industrial Gas Plants",
-    description: "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and India GST compliance on one set of live data, multi-company and multi-branch.",
+    description: "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and GST-correct invoicing on one set of live data, multi-company and multi-branch.",
     images: ["/og-image.svg"],
   },
 };

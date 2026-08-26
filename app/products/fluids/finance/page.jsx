@@ -4,12 +4,11 @@ import FluidsSubNav from "@/components/FluidsSubNav";
 export const metadata = {
   title: "Finance, GST & Billing | Fluids | Pradrava",
   description:
-    "Indian statutory compliance handled at the transaction: place-of-supply resolution, editable GST rate table, gapless numbering per GSTIN and financial year, e-invoice IRN, NIC e-way bills across four movement types, GSTR-1 and GSTR-3B materialisation, credit control, AR ageing, dunning and rental demurrage billing.",
+    "Indian GST handled at the transaction: place-of-supply resolution, editable GST rate table, gapless numbering per GSTIN and financial year, e-invoice IRN and e-way bills across four movement types, credit control, AR ageing, dunning and rental demurrage billing.",
   keywords: [
     "GST software for gas distribution",
     "e-way bill software NIC GSP",
     "e-invoice IRN generation software",
-    "GSTR-1 GSTR-3B software India",
     "gapless invoice numbering GSTIN financial year",
     "accounts receivable ageing and dunning",
     "cylinder demurrage billing software",
@@ -36,7 +35,7 @@ const gstDepth = [
   {
     label: "The database is the last line of defence",
     value:
-      "A trigger refuses to issue an invoice with an invalid slab, an unreconciled tax split, or an undecided intra-versus-inter-state classification. Twenty-two check constraints and eight rate-validation triggers back it up.",
+      "A trigger refuses to issue an invoice with an invalid slab, an unreconciled tax split, or an undecided intra-versus-inter-state classification. Twenty-two check constraints and twelve rate-validation triggers back it up.",
   },
   {
     label: "Gapless numbering",
@@ -49,22 +48,22 @@ const statutory = [
   {
     icon: "🧾",
     title: "E-invoice / IRN",
-    desc: "Generate, cancel and read IRNs, with reporting-window validation. Provider slots for the common GSPs. Runs against the sandbox today with the production connection as the remaining step — we would rather tell you that than let you find out at go-live.",
+    desc: "Generate, cancel and read IRNs, with reporting-window validation and every call recorded as an event. Provider slots for the common GSPs. It runs in stub mode today — no call reaches the IRP — so treat it as ready to connect, not as connected. We would rather tell you that than let you find out at go-live.",
   },
   {
     icon: "🚛",
-    title: "NIC E-Way Bills",
-    desc: "Full lifecycle across four movement sources — sales invoice, branch transfer, purchase inward and delivery challan — with Part-B update, validity extension and consolidated bills. Configurable rupee threshold, a sandbox provider and a live NIC adapter, and a full event audit of every call.",
+    title: "E-Way Bills",
+    desc: "Full lifecycle across four movement sources — sales invoice, branch transfer, purchase inward and delivery challan — with Part-B update, validity extension and consolidated bills, a configurable rupee threshold and a full event audit of every call. It ships with an offline sandbox provider; the NIC adapter is written and waiting on your GSP credentials.",
   },
   {
     icon: "📑",
-    title: "GSTR-1 and GSTR-3B",
-    desc: "B2B and B2CS supplies with credit notes as CDNR, plus net liability and inward ITC, materialised from live documents and persisted as a return export you can hand to your filing agent. A GST inward register sits alongside it.",
+    title: "Returns working, not return filing",
+    desc: "Fluids builds a draft GSTR-1 (B2B invoices plus a credit-note summary) and a draft GSTR-3B (outward liability, inward ITC and the net) from live documents, alongside a GST inward register of vendor invoices for your ITC working. It is a reconciliation working for whoever files, not a filing tool: it produces no GSTN JSON, it does not cover B2C, exports, SEZ, nil-rated, advances, amendments or the HSN summary, and it is switched off by default. Filing is the job of the Accounting product.",
   },
   {
     icon: "📲",
     title: "UPI scan-to-pay",
-    desc: "A UPI payment QR is embedded directly on the invoice, encoded so it survives the server-side PDF rendering. The customer pays from the document rather than from a follow-up email.",
+    desc: "The invoice carries a UPI pay link built from your own bank details, so the customer pays from the document rather than from a follow-up email. Rendering it as a scannable QR on the PDF is one server-side dependency away and is on the roadmap.",
   },
 ];
 
@@ -139,8 +138,9 @@ export default function Page() {
         <p className="eyebrow">Fluids capability</p>
         <h1 className="hero-title">Finance, GST &amp; Billing</h1>
         <p className="hero-subtitle">
-          Statutory compliance is handled at the moment the transaction happens, not reconstructed
-          at month end. The result is that filing becomes a review rather than a rebuild.
+          The tax is settled at the moment the transaction happens, not reconstructed at month
+          end. Fluids does not file your returns — but it means whoever does starts from documents
+          that already agree, so filing becomes a review rather than a rebuild.
         </p>
       </div>
 

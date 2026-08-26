@@ -5,7 +5,7 @@ import { standards } from "@/data/fluids";
 export const metadata = {
   title: "Quality & Compliance | Fluids | Pradrava",
   description:
-    "A laboratory information system inside your gas ERP: ISO 6141 Certificates of Analysis, ISO 6142 measurement uncertainty, ISO/IEC 17025 analyzer calibration, ISO 2859-1 AQL sampling, SPC control charts, NCR and CAPA, and e-signed results with an immutable audit trail.",
+    "A laboratory information system inside your gas ERP: ISO 6141 Certificates of Analysis, ISO 6142 measurement uncertainty, ISO/IEC 17025 analyzer calibration, ISO 2859-1 AQL sampling, SPC control charts, NCR and CAPA, and e-signed results with an append-only audit trail.",
   keywords: [
     "ISO 6141 certificate of analysis software",
     "ISO 6142 measurement uncertainty",
@@ -189,7 +189,7 @@ export default function Page() {
         <p className="eyebrow">Next</p>
         <h3>See how a compliant invoice comes out the other end</h3>
         <p>
-          Passing quality is one gate. GST, e-way bills and gapless numbering are the next.
+          Passing quality is one gate. Correct GST on the document and gapless numbering are the next.
         </p>
         <div className="hero-actions">
           <Link href="/products/fluids/finance" className="btn btn-primary">Finance &amp; GST →</Link>

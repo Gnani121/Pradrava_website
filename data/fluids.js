@@ -1,12 +1,22 @@
 // Verified feature inventory for Fluids.
 // Every claim in this file maps to shipped, working functionality in the product.
 // Do not add items here that are not live — use the roadmap list at the bottom instead.
+//
+// GST boundary, audited 2026-08-26 against the code and the live database.
+// Fluids gets the tax RIGHT ON THE DOCUMENT and produces a returns WORKING
+// (draft GSTR-1 B2B + GSTR-3B liability + a GST inward register). It does NOT
+// file: no GSTN JSON, no B2C/export/SEZ/nil-rated/advance/amendment/HSN-summary
+// sections, no GSTR-2A/2B reconciliation, and the builders are off by default.
+// E-invoice IRN is STUB and e-way bills use a SANDBOX provider until a GSP is
+// connected. Filing belongs to the Accounting product. Say so wherever GST
+// is mentioned. Tenancy and roles are enforced in the
+// application on every request — not "at the database", which this product does not do.
 
 export const fluidsStats = [
   { value: "19", label: "operational modules", note: "sales to finance, in one system" },
   { value: "84", label: "working screens", note: "not menus — real workflows" },
-  { value: "13", label: "role-based access levels", note: "enforced at the database" },
-  { value: "5", label: "ISO / statutory frameworks", note: "built in, not bolted on" },
+  { value: "13", label: "role-based access levels", note: "checked on every request" },
+  { value: "6", label: "ISO / statutory frameworks", note: "built in, not bolted on" },
 ];
 
 export const painPoints = [
@@ -24,9 +34,9 @@ export const painPoints = [
   },
   {
     icon: "🧾",
-    problem: "GST filing means a week of reconciliation.",
+    problem: "Month end is a week of rebuilding the GST working by hand.",
     answer:
-      "GSTR-1 and GSTR-3B are generated from live invoices, credit notes and inward supplies. Document numbers are gapless per GSTIN and financial year, because the database will not allow otherwise.",
+      "There is nothing to rebuild. Place of supply, intra- or inter-state, HSN and the rate are settled on the document as it is raised, and an invoice whose tax does not reconcile cannot be issued at all. Numbers are gapless per GSTIN and financial year, because the database will not allow otherwise. Your accountant files from documents that already agree with each other.",
   },
   {
     icon: "💸",
@@ -38,13 +48,13 @@ export const painPoints = [
     icon: "📄",
     problem: "The quality lab runs on paper and Excel.",
     answer:
-      "Certificates of Analysis to ISO 6141, measurement uncertainty to ISO 6142, analyzer calibration to ISO/IEC 17025, e-signed results and an audit trail no one can edit after the fact.",
+      "Certificates of Analysis to ISO 6141, measurement uncertainty to ISO 6142, analyzer calibration to ISO/IEC 17025, e-signed results and an append-only audit trail.",
   },
   {
     icon: "🔗",
     problem: "Purchase, production and accounts do not agree.",
     answer:
-      "One ledger. A purchase invoice is matched three ways against the PO and the goods receipt before it can be paid, and every posted document reaches your accounts system through a queue that retries until it lands.",
+      "One ledger. A purchase invoice is matched three ways against the PO and the goods receipt before it can be paid, and every posted document is handed to your accounts system through a durable queue with retry, backoff and voucher write-back.",
   },
 ];
 
@@ -100,8 +110,8 @@ export const pillars = [
     points: [
       "ISO 6141 Certificate of Analysis and ISO 6142 measurement uncertainty",
       "ISO/IEC 17025 analyzer and calibration register with expiry alerts",
-      "39 AQL sampling plans to ISO 2859-1, applied to production lots",
-      "Analyst and reviewer e-signature with an immutable result audit trail",
+      "39 AQL sampling plans based on ISO 2859-1, editable to your own QA standard",
+      "Analyst and reviewer e-signature with an append-only result audit trail",
     ],
   },
   {
@@ -109,12 +119,13 @@ export const pillars = [
     title: "Finance, GST & Billing",
     href: "/products/fluids/finance",
     desc:
-      "Indian statutory compliance handled at the transaction, not at month end — one tax engine, provably consistent between the application and the database.",
+      "Indian GST handled at the transaction rather than at month end — one tax engine, provably consistent between the application and the database. Fluids does not file your returns; it makes the documents you file from agree.",
     points: [
-      "GSTR-1 and GSTR-3B materialised from live documents",
-      "E-invoice IRN and NIC e-way bills across four movement types",
+      "One tax engine, computed twice and reconciled before an invoice can issue",
+      "Draft GSTR-1 and GSTR-3B working for your accountant — Fluids does not file",
+      "E-invoice IRN and e-way bills across four movement types — sandbox until a GSP is connected",
       "Credit control, AR ageing, automated dunning and demurrage",
-      "Durable accounting hand-off queue that retries until it succeeds",
+      "Durable accounting hand-off queue with retry, backoff and voucher write-back",
     ],
   },
   {
@@ -161,9 +172,9 @@ export const pillars = [
     title: "Platform & Security",
     href: "/products/fluids/platform",
     desc:
-      "Multi-company, multi-branch isolation that is a property of the schema — not something a developer has to remember on every query.",
+      "Multi-company, multi-branch isolation that every table has to declare and the build checks — not something a developer has to remember on every query.",
     points: [
-      "13 roles across three tenancy levels, 67 enforced permission keys",
+      "13 roles across three tenancy levels, 64 enforced permission keys",
       "The application refuses to start if a route is left unguarded",
       "Turn features on or off per company or per branch, without a deploy",
       "Idempotent writes — a double-tap cannot create two purchase orders",
@@ -177,7 +188,7 @@ export const standards = [
   { code: "ISO/IEC 17025", note: "Analyzer calibration and validity register" },
   { code: "ISO 2859-1", note: "Acceptance sampling by attributes (AQL)" },
   { code: "CCOE / PESO", note: "Cylinder test and licence gating before dispatch" },
-  { code: "India GST", note: "E-invoice IRN, e-way bill, GSTR-1 and GSTR-3B" },
+  { code: "India GST", note: "Place of supply, HSN/SAC, gapless series per GSTIN and FY" },
 ];
 
 export const personas = [
@@ -199,7 +210,7 @@ export const personas = [
   {
     role: "Accounts & Compliance",
     line: "Books that close from live data instead of a month of chasing.",
-    gets: ["GSTR-1 / 3B materialisation", "Gapless numbering per GSTIN and FY", "Three-way match before payment", "Accounting outbox with retry"],
+    gets: ["GST settled on the document, not at month end", "Gapless numbering per GSTIN and FY", "Three-way match before payment", "Accounting outbox with retry"],
   },
   {
     role: "Store & Dispatch",
@@ -254,7 +265,7 @@ export const fluidsFaq = [
   },
   {
     q: "How is data kept separate between our branches and group companies?",
-    a: "Tenancy is enforced in the schema, not by convention. Every table declares whether it is scoped to a branch, a company, a location or is genuinely global, and the build fails if a table is added without that declaration. A user assigned to one branch cannot read or write another branch's data through any route.",
+    a: "Tenancy is enforced on every request, not by convention. Every table declares whether it is scoped to a branch, a company, a location or is genuinely global, and the build fails if a table is added without that declaration. A user assigned to one branch cannot read or write another branch's data through any route.",
   },
   {
     q: "We only fill cylinders — do we have to take the item and manufacturing modules?",
@@ -262,7 +273,7 @@ export const fluidsFaq = [
   },
   {
     q: "Does it handle Indian GST properly, or is it a generic tax field?",
-    a: "Properly. Place of supply is resolved from the supplier and recipient state pair and the system refuses to guess; intra-state versus inter-state classification, HSN/SAC, per-line rates from a rate table you can edit without a deploy, gapless document series per GSTIN and financial year, e-invoice IRN, NIC e-way bills, and GSTR-1 and GSTR-3B materialised from live documents.",
+    a: "Properly, at the point the document is raised. Place of supply is resolved from the supplier and recipient state pair and the system refuses to guess; intra-state versus inter-state classification, HSN/SAC, per-line rates from a rate table you can edit without a deploy, and gapless document series per GSTIN and financial year. The tax split is computed independently in the application and in the database, and an invoice where the two disagree cannot be issued. It also builds a draft GSTR-1 (B2B invoices and a credit-note summary), a draft GSTR-3B (outward liability, inward ITC and the net) and a GST inward register, so your accountant reconciles from live documents instead of rebuilding them. E-invoice IRN and e-way bills are implemented and run against a sandbox provider — going live is a GSP connection we set up with you. What Fluids does not do is file. There is no GSTN JSON, no B2C, export, SEZ, nil-rated, advance, amendment or HSN-summary section, and no GSTR-2A/2B reconciliation. Filing is what the Accounting product is being built for.",
   },
   {
     q: "Can it stop an unsafe or non-compliant dispatch?",
@@ -270,11 +281,11 @@ export const fluidsFaq = [
   },
   {
     q: "What happens to quality records in an audit?",
-    a: "They hold up. Test methods are versioned, results carry analyst and reviewer electronic signatures, every edit after entry is written to an immutable audit table, analyzers must be inside their calibration validity for a result to count, and Certificates of Analysis are issued to ISO 6141 with ISO 6142 expanded uncertainty per component.",
+    a: "They hold up. Test methods are versioned, results carry analyst and reviewer electronic signatures, every edit after entry is written to a separate append-only audit table, analyzers must be inside their calibration validity for a result to count, and Certificates of Analysis are issued to ISO 6141 with ISO 6142 expanded uncertainty per component.",
   },
   {
     q: "Do field and shop-floor staff need laptops?",
-    a: "No. There is a chromeless kiosk mode for shop-floor stations with large touch targets and an audible chime for new move tasks, a phone-as-scanner mode where a desktop opens a scan session and a phone joins it by scanning a QR code, and a companion React Native scanner app for Android and iOS.",
+    a: "No. There is a chromeless kiosk mode for shop-floor stations with large touch targets and an audible chime for new move tasks, a phone-as-scanner mode where a desktop opens a scan session and a phone joins it by scanning a QR code, and a companion React Native scanner app for Android and iOS handsets that we install for you — it is in preview, not published to the app stores.",
   },
   {
     q: "How do handovers between teams actually get chased?",
@@ -292,8 +303,11 @@ export const fluidsFaq = [
 
 // Built, but not yet live. Kept separate so it never leaks into feature copy.
 export const roadmap = [
+  { title: "GST return filing", desc: "Fluids builds a draft GSTR-1 and GSTR-3B working and a GST inward register, switched off by default. Filing itself — GSTN JSON, B2C and export sections, the HSN summary and 2A/2B reconciliation — belongs to the Accounting product." },
   { title: "WhatsApp notifications", desc: "Channel is built and provider-agnostic; awaiting business API provisioning." },
-  { title: "Live e-invoice IRN", desc: "Runs against the sandbox today; the production GSP connection is the remaining step." },
+  { title: "Live e-invoice IRN and e-way bills", desc: "Both run against a sandbox provider today. The NIC adapter is written; connecting your production GSP credentials is the remaining step." },
+  { title: "UPI scan-to-pay QR on invoices", desc: "The invoice carries a UPI deep link; rendering it as a scannable QR needs one dependency enabled on the server." },
   { title: "PLC / SCADA telemetry bridge", desc: "The ingestion endpoint accepts machine and instrument data now; a live plant-floor connector is next." },
   { title: "Natural-language search", desc: "AI search over cylinders and orders is built and awaiting rollout into the operator screens." },
+  { title: "Scanner app on the app stores", desc: "The React Native handset app works and is installed directly today; store listings are not done." },
 ];

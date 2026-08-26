@@ -8,14 +8,14 @@ import DemoCard from "@/components/DemoCard";
 export const metadata = {
   title: "Pradrava | Operations Software for Industrial Gas Plants",
   description:
-    "Pradrava builds Fluids — cylinder lifecycle, sales, procurement, production, laboratory quality, dispatch and India GST compliance on one set of live data. Multi-branch, ISO-grade quality records, and a compliance gate that blocks unsafe dispatch.",
+    "Pradrava builds Fluids — cylinder lifecycle, sales, procurement, production, laboratory quality, dispatch and GST-correct invoicing on one set of live data. Multi-branch, ISO-grade quality records, and a compliance gate that blocks unsafe dispatch.",
   keywords: [
     "industrial gas ERP",
     "gas cylinder management software",
     "cylinder tracking software India",
     "gas plant operations software",
     "ISO 6141 certificate of analysis software",
-    "GST e-way bill software",
+    "GST invoicing software for gas plants",
     "cylinder rental and demurrage billing",
     "LIMS for industrial gas",
   ],

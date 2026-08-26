@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 const INTEREST_OPTIONS = [
   { value: "accounting-launch", label: "Accounting launch updates" },
   { value: "fluids-demo", label: "Fluids guided demo" },
-  { value: "ai-forecast-demo", label: "AI Forecast Studio demo" },
+  { value: "ai-forecast-demo", label: "Analytics & Insight Workspace demo" },
   { value: "general-enquiry", label: "General enquiry" },
 ];
 

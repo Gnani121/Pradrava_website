@@ -7,11 +7,11 @@ import { cookies } from "next/headers";
 
 export const metadata = {
   title: "Demo Platform | Interactive Showcase | Pradrava",
-  description: "Explore live product experiences: Fluids Intelligence Workspace, AI Forecast Studio. See what your future platform can feel like.",
+  description: "Two ways into a real, signed-in Fluids environment with worked data: the plant operations walkthrough, and the analytics and insight workspace.",
   keywords: [
     "product demos",
     "interactive software demo",
-    "AI forecast demo",
+    "live ERP demo environment",
     "industrial operations demo",
     "Pradrava demos",
   ],

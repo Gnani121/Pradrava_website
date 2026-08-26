@@ -15,13 +15,13 @@ import { depthProof, scaleFacts } from "@/data/depth";
 export const metadata = {
   title: "Fluids | Industrial Gas Plant ERP | Pradrava",
   description:
-    "Fluids is a complete operations system for industrial gas plants: cylinder lifecycle, sales and procurement, production, ISO-grade laboratory quality, dispatch, machines and India GST compliance — multi-company and multi-branch on one set of live data.",
+    "Fluids is a complete operations system for industrial gas plants: cylinder lifecycle, sales and procurement, production, ISO-grade laboratory quality, dispatch, machines and GST-correct invoicing — multi-company and multi-branch on one set of live data.",
   keywords: [
     "industrial gas ERP software",
     "gas cylinder management system",
     "cylinder lifecycle tracking",
     "gas plant quality management LIMS",
-    "GST e-invoice e-way bill software",
+    "GST invoicing software for gas plants",
     "cylinder rental demurrage billing",
     "multi branch gas distribution software",
     "CCOE PESO cylinder compliance",
@@ -37,10 +37,10 @@ const fluidsSchema = {
   name: "Fluids",
   applicationCategory: "BusinessApplication",
   applicationSubCategory: "Enterprise Resource Planning",
-  operatingSystem: "Web, Android, iOS",
+  operatingSystem: "Web",
   url: "https://pradrava.com/products/fluids",
   description:
-    "Operations system for industrial gas plants covering cylinder lifecycle, sales, procurement, production, laboratory quality, dispatch, machine maintenance and Indian GST compliance.",
+    "Operations system for industrial gas plants covering cylinder lifecycle, sales, procurement, production, laboratory quality, dispatch, machine maintenance and Indian GST-correct invoicing.",
   brand: { "@type": "Brand", name: "Pradrava" },
   offers: { "@type": "Offer", availability: "https://schema.org/InStock" },
 };
@@ -173,10 +173,10 @@ export default function FluidsPage() {
           versioned amendment history, becomes an order that reserves stock and allocates
           specific cylinders, that gets filled and tested against a method with a calibrated
           analyzer, that passes final inspection with photographic evidence, that clears a
-          compliance gate on hydro-test dates, that dispatches on a challan with an e-way bill,
-          that invoices with the tax split verified by the database itself, and that posts to
-          your accounts system through a queue which retries until it lands. Nothing in that
-          sentence is re-keyed.
+          compliance gate on hydro-test dates, that dispatches on a challan,
+          that invoices with the tax split verified by the database itself, and that hands the
+          posted document to your accounts system through a queue with retry and backoff.
+          Nothing in that sentence is re-keyed.
         </p>
       </div>
 

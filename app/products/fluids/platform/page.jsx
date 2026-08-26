@@ -5,7 +5,7 @@ import { platformProof, automations } from "@/data/fluids";
 export const metadata = {
   title: "Platform & Security | Fluids | Pradrava",
   description:
-    "Multi-company and multi-branch isolation enforced in the database schema, 13 roles across three tenancy levels, 67 enforced permission keys, module toggles per company and branch, idempotent writes, SLA-driven notifications with automatic escalation, full audit logging, and cloud deployment in the Mumbai region.",
+    "Multi-company and multi-branch isolation enforced on every request, 13 roles across three tenancy levels, 64 enforced permission keys, module toggles per company and branch, idempotent writes, SLA-driven notifications with automatic escalation, full audit logging, and cloud deployment in the Mumbai region.",
   keywords: [
     "multi tenant ERP branch isolation",
     "role based access control ERP",
@@ -30,7 +30,7 @@ const access = [
       "Role, module and sub-module permission, business mode and plant capability are all evaluated and combined. All of them fail closed — an unrecognised permission is denied, not allowed.",
   },
   {
-    label: "67 enforced permission keys",
+    label: "64 enforced permission keys",
     value:
       "Generated from a single source and shipped to the browser as well as enforced on the server, so the interface and the API cannot disagree about what a user may do.",
   },
@@ -126,7 +126,7 @@ const audit = [
   "Every unauthorised and forbidden response recorded, not just the successful ones",
   "Session heartbeat and duration tracked for security review",
   "Database-level change triggers with a viewer interface over the change log",
-  "Quality result edits written to a separate immutable audit table",
+  "Quality result edits written to a separate append-only audit table",
   "Every e-way bill and IRN call recorded as an event with its response",
   "Module configuration changes audited with who changed what and when",
   "Every dunning attempt logged whether or not it was delivered",

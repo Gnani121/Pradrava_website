@@ -2,10 +2,12 @@ import Link from "next/link";
 import { accountingFeatures, accountingModules, accountingFaq } from "@/data/products";
 
 export const metadata = {
-  title: "Accounting | In Development | Pradrava",
+  title: "Accounting & GST Returns | In Development | Pradrava",
   description:
-    "Pradrava Accounting is a companion ledger in active development, built on the same tenancy, permission and audit foundation as Fluids. Available today: the durable accounting hand-off that pushes Fluids documents into the accounts package you already run.",
+    "Pradrava Accounting is the ledger and GST returns product, in active development on the same tenancy, permission and audit foundation as Fluids. Available today: Fluids resolves GST on every document and the durable hand-off pushes those documents into the accounts package you already run.",
   keywords: [
+    "GST return filing software India",
+    "GSTR-1 GSTR-3B filing software",
     "accounting software for industrial operations",
     "ERP accounts integration",
     "operational ledger software India",
@@ -27,7 +29,7 @@ const availableNow = [
   {
     label: "Statutory outputs today",
     value:
-      "GSTR-1 and GSTR-3B materialisation, gapless document numbering per GSTIN and financial year, e-invoice IRN, NIC e-way bills, AR ageing and automated dunning all live in Fluids now — they do not wait on this product.",
+      "GST resolved on every document, gapless numbering per GSTIN and financial year, a GSTR-1 summary and GST inward register for your accountant, AR ageing and automated dunning are all live in Fluids now — they do not wait on this product. E-invoice IRN and e-way bills are built and run on a sandbox until your GSP is connected, and Fluids does not file returns.",
   },
   {
     label: "Registers you can hand to your accountant",
@@ -41,11 +43,13 @@ export default function AccountingPage() {
     <div className="container page-stack">
       <div className="product-page-hero accounting-hero reveal">
         <p className="eyebrow">Pradrava Product • In development</p>
-        <h1 className="hero-title">Accounting</h1>
+        <h1 className="hero-title">Accounting &amp; GST Returns</h1>
         <p className="hero-subtitle">
-          A companion ledger for teams that want their books inside Pradrava rather than beside
-          it. It is being built on the same tenancy, permission and audit foundation as Fluids —
-          and it is not available yet. Here is exactly where it stands.
+          The books and the GST returns, inside Pradrava rather than beside it. This is where
+          filing belongs: GSTR-1 and GSTR-3B in the GSTN format, the sections a real return needs
+          beyond B2B, 2A/2B reconciliation against your ITC, and the ledger underneath it. It is
+          being built on the same tenancy, permission and audit foundation as Fluids — and it is
+          not available yet. Here is exactly where it stands.
         </p>
         <div className="hero-actions">
           <Link href="/contact" className="btn btn-primary">Become a design partner</Link>
