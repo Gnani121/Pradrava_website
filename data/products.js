@@ -189,7 +189,7 @@ export const accountingFaq = [
   },
   {
     q: "Do we have to wait for it to start using Fluids?",
-    a: "No. Fluids is designed to sit alongside an existing accounts package. The sync bridge and the inbound payment endpoint are live and in use.",
+    a: "No. Fluids is designed to sit alongside an existing accounts package rather than replace it. The sync bridge and the inbound payment endpoint are built and tested; we point them at your accounts system and switch them on during implementation.",
   },
   {
     q: "What will it integrate with?",
