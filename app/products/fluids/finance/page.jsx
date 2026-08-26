@@ -54,12 +54,12 @@ const statutory = [
   {
     icon: "🚛",
     title: "NIC E-Way Bills",
-    desc: "Full lifecycle across four movement sources — sales invoice, branch transfer, purchase inward and delivery challan — with Part-B update, validity extension and consolidated bills. Configurable rupee threshold, a sandbox provider and a live NIC adapter, and a full event audit of every call.",
+    desc: "Full lifecycle across four movement sources — sales invoice, branch transfer, purchase inward and delivery challan — with Part-B update, validity extension and consolidated bills. Configurable rupee threshold, and every call and response kept as an event. Like the e-invoice above, it runs against a sandbox today; your production NIC connection is made at go-live.",
   },
   {
     icon: "📑",
     title: "GSTR-1 and GSTR-3B",
-    desc: "B2B and B2CS supplies with credit notes as CDNR, plus net liability and inward ITC, materialised from live documents and persisted as a return export you can hand to your filing agent. A GST inward register sits alongside it.",
+    desc: "B2B and B2CS supplies with credit notes as CDNR, plus net liability and inward ITC, built from live documents and saved as a return export you can hand to your filing agent. Switched off by default, and deliberately not a filing service — it prepares, your agent files. A GST inward register sits alongside it. The fuller version is coming with Pradrava Accounting.",
   },
   {
     icon: "📲",
@@ -77,7 +77,7 @@ const receivables = [
   {
     label: "AR ageing",
     value:
-      "A materialised ageing snapshot by customer and bucket, so exposure is a number you can look at rather than a query someone has to run.",
+      "An ageing view by customer and by how overdue they are, kept ready so your exposure is a number you can look at rather than a query someone has to run.",
   },
   {
     label: "Automated dunning",

@@ -191,7 +191,7 @@ export default function Page() {
             <div className="feature-tile-icon">🖥️</div>
             <h3>Kiosk station</h3>
             <p>
-              A chromeless shop-floor screen with large touch targets — moved, partial, cannot
+              A distraction-free shop-floor screen with large touch targets — moved, partial, cannot
               move — that polls for new tasks every eight seconds and chimes when one arrives.
               No sidebar, no menus, nothing to get lost in.
             </p>
