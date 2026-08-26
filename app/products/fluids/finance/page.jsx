@@ -4,7 +4,7 @@ import FluidsSubNav from "@/components/FluidsSubNav";
 export const metadata = {
   title: "Finance, GST & Billing | Fluids | Pradrava",
   description:
-    "Indian statutory compliance handled at the transaction: place-of-supply resolution, editable GST rate table, gapless numbering per GSTIN and financial year, e-invoice IRN, NIC e-way bills across four movement types, GSTR-1 and GSTR-3B materialisation, credit control, AR ageing, dunning and rental demurrage billing.",
+    "Indian GST handled on each document as it is raised: place of supply resolved from the state pair, an editable rate table, gapless numbering per GSTIN and financial year, e-invoice and e-way bill preparation across four movement types, GSTR-1 and GSTR-3B draft builders, credit control, AR ageing, dunning and rental demurrage billing.",
   keywords: [
     "GST software for gas distribution",
     "e-way bill software NIC GSP",
@@ -26,7 +26,7 @@ const gstDepth = [
   {
     label: "Rates are data, not code",
     value:
-      "GST slabs live in a table with validity dates. Adding or changing a rate is a configuration change, not a deployment. Every line records which rung of the resolution chain produced its rate — explicit line, price book, product master or branch default.",
+      "GST slabs live in a table with validity dates. Adding or changing a rate is a setting you change yourself, not a software release. Every line records which rung of the resolution chain produced its rate — explicit line, price book, product master or branch default.",
   },
   {
     label: "Place of supply refuses to guess",
@@ -41,7 +41,7 @@ const gstDepth = [
   {
     label: "Gapless numbering",
     value:
-      "Document series are allocated atomically per GSTIN, document type and financial year. Two users hitting save at the same instant cannot produce a duplicate or a hole in the sequence.",
+      "Document series are allocated one at a time per GSTIN, document type and financial year. Two users hitting save at the same instant cannot produce a duplicate or a hole in the sequence.",
   },
 ];
 
@@ -64,7 +64,7 @@ const statutory = [
   {
     icon: "📲",
     title: "UPI scan-to-pay",
-    desc: "A UPI payment QR is embedded directly on the invoice, encoded so it survives the server-side PDF rendering. The customer pays from the document rather than from a follow-up email.",
+    desc: "A UPI payment QR is embedded directly on the invoice, encoded so it still works on the PDF the server produces. The customer pays from the document rather than from a follow-up email.",
   },
 ];
 
@@ -99,7 +99,7 @@ const receivables = [
 const handoff = [
   {
     title: "You do not have to replace your accounts package",
-    desc: "Fluids posts documents to whatever you already run. The hand-off is a durable outbox — not a fire-and-forget webhook — with exponential backoff, voucher ID write-back onto the source document, and an hourly drain.",
+    desc: "Fluids posts documents to whatever you already run. The hand-off is a proper queue rather than a send-and-hope — it keeps retrying if your system is down, waits longer between each attempt, writes the voucher number back onto the original document, and runs daily.",
   },
   {
     title: "It tells you when it gives up",

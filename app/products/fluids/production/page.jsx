@@ -55,13 +55,13 @@ const production = [
 const machines = [
   {
     icon: "📊",
-    title: "OEE",
-    desc: "Availability multiplied by performance multiplied by quality, computed per machine from usage logs and quality outcomes rather than typed into a spreadsheet at month end.",
+    title: "How much of the day a machine really ran (OEE)",
+    desc: "Was it available, did it run at full rate, and was the output good — multiplied into one figure per machine, worked out from the usage log and the quality results rather than typed into a spreadsheet at month end.",
   },
   {
     icon: "🔧",
-    title: "Reliability analytics",
-    desc: "Mean time between failures and mean time to repair, broken down by reason code, with a downtime Pareto so the argument about what to fix first is settled by data.",
+    title: "How often it breaks, and how long it stays down",
+    desc: "The average run between breakdowns and the average time to get it going again, split by the reason it stopped — with those reasons ranked biggest first, so the argument about what to fix is settled by numbers.",
   },
   {
     icon: "⏰",

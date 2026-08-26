@@ -111,7 +111,7 @@ const safety = [
   {
     label: "Movement ledger",
     value:
-      "Every movement between locations and states is written to an immutable ledger, exportable as CSV, so a dispute over where a cylinder was on a given date has an answer.",
+      "Every movement between locations and states is written to a record that is only ever added to, never rewritten, exportable as CSV, so a dispute over where a cylinder was on a given date has an answer.",
   },
 ];
 

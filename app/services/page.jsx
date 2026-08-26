@@ -58,7 +58,7 @@ const rollout = [
       "Accounts hand-off configured against your existing package",
       "GSP connection for e-way bills, and IRN when you go live on e-invoicing",
       "Sales mailbox ingestion if you want enquiries pulled in automatically",
-      "Anything else through a documented API surface",
+      "Anything else through a documented connection your own systems can use",
     ],
   },
   {
@@ -80,7 +80,7 @@ const rollout = [
       "Named contact with agreed response times",
       "Configuration adjustments once real volume has run through",
       "Error and performance monitoring, so we often see an issue before you report it",
-      "Custom modules built inside the same tenancy, permission and audit model",
+      "Custom modules built inside the same separation, permissions and record-keeping model",
     ],
   },
 ];

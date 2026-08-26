@@ -86,8 +86,8 @@ export const fluidsModules = [
   "Gas quality testing with components, impurities, physical, stability and compliance detail",
   "Certificate of Analysis to ISO 6141 with ISO 6142 expanded uncertainty",
   "Analyzer master and calibration register to ISO/IEC 17025 with expiry alerts",
-  "LIMS controls: versioned methods, analyst and reviewer e-signature, result audit",
-  "SPC control charts, first-pass yield, cost of quality and defect Pareto",
+  "Lab controls: versioned test methods, analyst and reviewer signatures, and a record of every result edit",
+  "Trend charts that show a process drifting before it fails, how much passes first time, what quality problems cost, and the commonest defects first",
   "AQL acceptance sampling to ISO 2859-1 applied to production lots",
   "Non-conformance and CAPA workflow, auto-raised from receiving and inspection",
   "Final inspection with photographic evidence gating dispatch",
@@ -97,7 +97,7 @@ export const fluidsModules = [
   "Bulk and cryogenic tanks: tanker receipts, level events and tank-to-cylinder transfer",
   "Dispatch readiness board, delivery challans and proof-of-delivery capture",
   "Machine master, preventive maintenance, run-hour meters and spare consumption",
-  "OEE, MTBF and MTTR analytics with downtime Pareto and finite-capacity load",
+  "How much of the day each machine ran, how often it breaks, how long it stays down, the top reasons why, and how loaded it is (OEE, MTBF, MTTR)",
   "Machine and statutory calibration register with due alerts",
   "Machine and instrument telemetry ingestion with predictive maintenance rules",
   "GST engine with editable rate table and fail-closed place-of-supply resolution",
@@ -171,15 +171,23 @@ export const accountingFeatures = [
 ];
 
 export const accountingModules = [
-  "Invoice and bill posting from operational documents",
-  "Receipts, payments and party-wise ledgers",
-  "Expense recording with approval workflow",
-  "Bank statement import and reconciliation",
-  "GST computation and return preparation support",
-  "Profit and loss, balance sheet and cash position",
-  "Vendor and customer ageing",
-  "Audit log and change history",
-  "Role-based access and approval controls",
+  "Chart of accounts, journals and the general ledger",
+  "Invoice and bill posting from operational documents, so nothing is re-keyed",
+  "Receipts, payments and a running ledger per customer and per vendor",
+  "Expense recording with an approval step, and petty cash",
+  "Bank statement import, and matching statement lines against your entries",
+  "Profit and loss, balance sheet and cash position from posted entries",
+  "Customer and vendor ageing",
+  "Fixed assets with depreciation, and project-wise costing",
+  "Payroll, and Form 16 at the end of the year",
+  "TDS deduction, tracking and returns",
+  "GST: output summary, returns, and GSTR-2B matching for input credit",
+  "Income tax working papers, Form 26AS and AIS reconciliation, and ITR preparation",
+  "E-filing with digital signature support",
+  "Financial years, multiple currencies and editable tax rates",
+  "Budgets, purchase orders and approvals",
+  "Audit log and change history on every entry",
+  "Role-based access, so each person sees only their own scope",
 ];
 
 export const accountingFaq = [
@@ -193,7 +201,7 @@ export const accountingFaq = [
   },
   {
     q: "What will it integrate with?",
-    a: "It is being built on the same tenancy, permission and audit foundation as Fluids, so branch isolation, roles and change history carry over unchanged rather than being re-implemented.",
+    a: "It is being built on the same separation, permissions and record-keeping foundation as Fluids, so branch isolation, roles and change history carry over unchanged rather than being re-implemented.",
   },
   {
     q: "How do we get involved early?",

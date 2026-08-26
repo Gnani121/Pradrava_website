@@ -4,7 +4,7 @@ import { accountingFeatures, accountingModules, accountingFaq } from "@/data/pro
 export const metadata = {
   title: "Accounting | In Development | Pradrava",
   description:
-    "Pradrava Accounting is a companion ledger in active development, built on the same tenancy, permission and audit foundation as Fluids. Available today: the durable accounting hand-off that pushes Fluids documents into the accounts package you already run.",
+    "Pradrava Accounting is a companion ledger in active development, built on the same separation, permissions and record-keeping foundation as Fluids. Available today: the durable accounting hand-off that pushes Fluids documents into the accounts package you already run.",
   keywords: [
     "accounting software for industrial operations",
     "ERP accounts integration",
@@ -44,7 +44,7 @@ export default function AccountingPage() {
         <h1 className="hero-title">Accounting</h1>
         <p className="hero-subtitle">
           A companion ledger for teams that want their books inside Pradrava rather than beside
-          it. It is being built on the same tenancy, permission and audit foundation as Fluids —
+          it. It is being built on the same separation, permissions and record-keeping foundation as Fluids —
           and it is not available yet. Here is exactly where it stands.
         </p>
         <div className="hero-actions">

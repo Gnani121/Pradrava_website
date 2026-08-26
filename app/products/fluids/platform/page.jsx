@@ -5,7 +5,7 @@ import { platformProof, automations } from "@/data/fluids";
 export const metadata = {
   title: "Platform & Security | Fluids | Pradrava",
   description:
-    "Multi-company and multi-branch isolation enforced in the database schema, 13 roles across three tenancy levels, 67 enforced permission keys, module toggles per company and branch, idempotent writes, SLA-driven notifications with automatic escalation, full audit logging, and cloud deployment in the Mumbai region.",
+    "Several companies and branches on one system that genuinely cannot see each other's data, 13 roles and 67 permission keys, modules switched on or off per company and branch, saves that cannot be duplicated by a double-tap, deadlines with automatic escalation, full audit logging, and cloud hosting in the Mumbai region.",
   keywords: [
     "multi tenant ERP branch isolation",
     "role based access control ERP",
@@ -20,7 +20,7 @@ export const metadata = {
 
 const access = [
   {
-    label: "13 roles, 3 tenancy levels",
+    label: "13 roles, at three levels of reach",
     value:
       "A global support role, a company-level super administrator that spans every branch, and eleven branch-scoped roles: administrator, branch manager, accountant, sales, purchase, production, inventory, quality control, inspection, service and viewer. The list in the code and the list in the database are checked against each other automatically, so they cannot drift.",
   },
@@ -126,17 +126,17 @@ const audit = [
   "Every unauthorised and forbidden response recorded, not just the successful ones",
   "Session heartbeat and duration tracked for security review",
   "Database-level change triggers with a viewer interface over the change log",
-  "Quality result edits written to a separate immutable audit table",
+  "Quality result edits written to a separate record that nobody can go back and change",
   "Every e-way bill and IRN call recorded as an event with its response",
   "Module configuration changes audited with who changed what and when",
   "Every dunning attempt logged whether or not it was delivered",
 ];
 
 const runtime = [
-  { label: "Hosting", value: "Managed serverless infrastructure in the Mumbai region, with a managed PostgreSQL database. Nothing to run or patch in your plant." },
+  { label: "Hosting", value: "Managed cloud infrastructure in the Mumbai region, with a managed PostgreSQL database. Nothing to run or patch in your plant." },
   { label: "Hardening", value: "Security headers with content security policy and strict transport security, a fail-closed cross-origin allowlist that refuses cross-origin requests in production if it is empty, and three-tier rate limiting across authentication, write and read traffic." },
   { label: "Observability", value: "Error tracking and structured logging on the server, plus error and performance monitoring in the browser, so a problem is usually seen before it is reported." },
-  { label: "Reliability of writes", value: "Every write accepts an idempotency key: a retry replays the original response, and a duplicate arriving while the first is still running is rejected rather than duplicated." },
+  { label: "Reliability of writes", value: "Every write carries a key that identifies it: a retry replays the original response, and a duplicate arriving while the first is still running is rejected rather than duplicated." },
   { label: "Documentation", value: "80 written operating guides across 10 categories ship with the product, generated from the specifications and checked for freshness in continuous integration." },
 ];
 
