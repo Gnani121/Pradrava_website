@@ -36,7 +36,7 @@ const gstDepth = [
   {
     label: "The database is the last line of defence",
     value:
-      "A trigger refuses to issue an invoice with an invalid slab, an unreconciled tax split, or an undecided intra-versus-inter-state classification. Twenty-two check constraints and eight rate-validation triggers back it up.",
+      "A trigger refuses to issue an invoice with an invalid slab, an unreconciled tax split, or an undecided intra-versus-inter-state classification. Twenty-two check constraints and twelve rate-validation triggers back it up.",
   },
   {
     label: "Gapless numbering",
@@ -64,7 +64,7 @@ const statutory = [
   {
     icon: "📲",
     title: "UPI scan-to-pay",
-    desc: "A UPI payment QR is embedded directly on the invoice, encoded so it still works on the PDF the server produces. The customer pays from the document rather than from a follow-up email.",
+    desc: "The invoice carries a UPI pay link built from your own bank details, so the customer pays from the document rather than from a follow-up email. Printing it as a scannable QR on the PDF is one server-side switch away and is on the roadmap.",
   },
 ];
 

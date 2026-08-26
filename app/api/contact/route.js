@@ -11,7 +11,7 @@ const VALID_INTERESTS = new Set([
 const INTEREST_LABELS = {
   "accounting-launch": "Accounting launch updates",
   "fluids-demo": "Fluids guided demo",
-  "ai-forecast-demo": "AI Forecast Studio demo",
+  "ai-forecast-demo": "Analytics & Insight Workspace demo",
   "general-enquiry": "General enquiry",
 };
 

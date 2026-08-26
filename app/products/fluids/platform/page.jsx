@@ -30,7 +30,7 @@ const access = [
       "Role, module and sub-module permission, business mode and plant capability are all evaluated and combined. All of them fail closed — an unrecognised permission is denied, not allowed.",
   },
   {
-    label: "67 enforced permission keys",
+    label: "64 enforced permission keys",
     value:
       "Generated from a single source and shipped to the browser as well as enforced on the server, so the interface and the API cannot disagree about what a user may do.",
   },

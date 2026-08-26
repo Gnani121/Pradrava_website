@@ -279,7 +279,7 @@ export const fluidsFaq = [
   },
   {
     q: "Do field and shop-floor staff need laptops?",
-    a: "No. There is a simplified full-screen mode for shop-floor stations with big touch targets and a chime for new tasks, a phone-as-scanner mode where a desktop opens a session and a phone joins it by scanning a QR code, and a companion scanner app for Android and iOS.",
+    a: "No. There is a simplified full-screen mode for shop-floor stations with big touch targets and a chime for new tasks, a phone-as-scanner mode where a desktop opens a session and a phone joins it by scanning a QR code, and a companion scanner app for Android and iOS handsets that we install on your devices — it is in preview, not on the app stores.",
   },
   {
     q: "How do handovers between teams actually get chased?",
@@ -300,7 +300,7 @@ export const fluidsFaq = [
 export const roadmap = [
   { title: "WhatsApp notifications", desc: "The channel is built and works with any provider; it is waiting on business API provisioning." },
   { title: "Live e-invoice and e-way bill", desc: "Both run against a sandbox today. Connecting your production GSP is the remaining step, and we do it with you at go-live." },
-  { title: "GST return preparation", desc: "GSTR-1 and GSTR-3B builders produce the correct return shape from live documents, but they are switched off by default and this is not a filing service. The fuller version belongs to Pradrava Accounting." },
+  { title: "GST return preparation", desc: "The builders produce a working from live documents — GSTR-1 covering your B2B invoices and a credit-note summary, and a GSTR-3B liability figure. They stop short of a filable return: no GSTN file, and no B2C, export, nil-rated or HSN-summary sections. They are off by default, and the full version belongs to Pradrava Accounting." },
   { title: "PLC / SCADA telemetry bridge", desc: "The system already accepts machine and instrument readings; a live plant-floor connector is next." },
   { title: "Natural-language search", desc: "Search over cylinders and orders in plain English is built and awaiting rollout into the operator screens." },
 ];

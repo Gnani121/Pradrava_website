@@ -2,10 +2,13 @@ import Link from "next/link";
 import { accountingFeatures, accountingModules, accountingFaq } from "@/data/products";
 
 export const metadata = {
-  title: "Accounting | In Development | Pradrava",
+  title: "Accounting & GST Returns | In Development | Pradrava",
   description:
-    "Pradrava Accounting is a companion ledger in active development, built on the same separation, permissions and record-keeping foundation as Fluids. Available today: the durable accounting hand-off that pushes Fluids documents into the accounts package you already run.",
+    "Pradrava Accounting is the books and the GST returns, in active development on the same separation, permissions and record-keeping foundation as Fluids. Available today: Fluids gets the GST right on every document you raise, and hands those documents to the accounts package you already run.",
   keywords: [
+    "GST return filing software India",
+    "GSTR-1 GSTR-3B filing software",
+    "GSTR-2B input credit matching",
     "accounting software for industrial operations",
     "ERP accounts integration",
     "operational ledger software India",
@@ -32,7 +35,7 @@ const availableNow = [
   {
     label: "Statutory portals — payload ready, connection is the last step",
     value:
-      "Fluids prepares the e-invoice IRN and NIC e-way bill payloads across four movement types and records every call and its response as an event. Both currently run against a sandbox; connecting your production GSP is a step we do with you at go-live, not something already switched on. The GSTR-1 and GSTR-3B builders produce the correct return shape from live documents, but they are off by default and this is not a filing service.",
+      "Fluids prepares the e-invoice IRN and e-way bill payloads across four movement types and records every call and its response as an event. Both currently run against a sandbox; connecting your production GSP is a step we do with you at go-live, not something already switched on. The GSTR-1 and GSTR-3B builders give you a working from live documents — B2B invoices, a credit-note summary and a liability figure — but they are off by default, and the GSTN file and the remaining return sections are what this product adds.",
   },
 ];
 
@@ -41,11 +44,13 @@ export default function AccountingPage() {
     <div className="container page-stack">
       <div className="product-page-hero accounting-hero reveal">
         <p className="eyebrow">Pradrava Product • In development</p>
-        <h1 className="hero-title">Accounting</h1>
+        <h1 className="hero-title">Accounting &amp; GST Returns</h1>
         <p className="hero-subtitle">
-          A companion ledger for teams that want their books inside Pradrava rather than beside
-          it. It is being built on the same separation, permissions and record-keeping foundation as Fluids —
-          and it is not available yet. Here is exactly where it stands.
+          The books and the GST returns, inside Pradrava rather than beside it. This is where
+          filing belongs — the parts of a return Fluids deliberately stops short of: the GSTN
+          file itself, the B2C, export and HSN-summary sections, and 2B matching against your
+          input credit. It is being built on the same separation, permissions and record-keeping
+          foundation as Fluids — and it is not available yet. Here is exactly where it stands.
         </p>
         <div className="hero-actions">
           <Link href="/contact" className="btn btn-primary">Become a design partner</Link>

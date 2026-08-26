@@ -2,14 +2,14 @@ export const products = [
   {
     title: "Fluids",
     tag: "Industrial Gas Operations",
-    desc: "The operating system for a gas plant — cylinder lifecycle, sales, procurement, production, laboratory quality, dispatch and GST compliance on one set of live data.",
+    desc: "The operating system for a gas plant — cylinder lifecycle, sales, procurement, production, laboratory quality, dispatch and GST-correct invoicing on one set of live data.",
     href: "/products/fluids",
     status: "Available",
   },
   {
-    title: "Accounting",
-    tag: "Finance Operations",
-    desc: "A companion ledger for teams that want their books inside Pradrava. In development — Fluids already hands documents to your existing accounts system today.",
+    title: "Accounting & GST Returns",
+    tag: "Finance, GST & Compliance",
+    desc: "The books and the GST returns — filing, 2B matching and the ledger. In development. Fluids already gets the GST right on every document and hands them to your existing accounts system today.",
     href: "/products/accounting",
     status: "In Development",
   },
@@ -25,7 +25,7 @@ export const fluidsFeatures = [
   {
     icon: "🧪",
     title: "Laboratory-Grade Quality",
-    desc: "ISO 6141 Certificates of Analysis, ISO 6142 measurement uncertainty, ISO/IEC 17025 analyzer calibration, e-signed results and an audit trail that cannot be rewritten.",
+    desc: "ISO 6141 Certificates of Analysis, ISO 6142 measurement uncertainty, ISO/IEC 17025 analyzer calibration, e-signed results and an audit trail that only ever gets added to.",
   },
   {
     icon: "🛡️",
@@ -99,7 +99,7 @@ export const fluidsModules = [
   "Machine master, preventive maintenance, run-hour meters and spare consumption",
   "How much of the day each machine ran, how often it breaks, how long it stays down, the top reasons why, and how loaded it is (OEE, MTBF, MTTR)",
   "Machine and statutory calibration register with due alerts",
-  "Machine and instrument telemetry ingestion with predictive maintenance rules",
+  "Machine and instrument readings taken in, with maintenance rules you set over them",
   "GST engine with editable rate table and fail-closed place-of-supply resolution",
   "E-invoice payload preparation, cancellation and reporting-window checks — connected to your GSP at go-live",
   "E-way bill preparation across invoice, branch transfer, purchase inward and delivery challan",
@@ -110,7 +110,7 @@ export const fluidsModules = [
   "Durable accounting hand-off queue with retry, backoff and voucher write-back",
   "Print Center: 17 document types with per-branch templates and server-rendered PDF",
   "Email Center: sender identity and recipient routing per branch and per department",
-  "UPI scan-to-pay QR embedded on invoices",
+  "UPI pay link on the invoice, built from your own bank details",
   "Notification and SLA engine: 71 editable rules over 65 stages, with due dates, additional recipients, priorities and automatic escalation",
   "Unstaffed-role fallback and a delivery report showing every alert that could not be raised, and why",
   "Ten scheduled reminder engines: escalation sweep, quote funnel, dunning, rental billing, reorder, calibration expiry, hydro-test bands, reservation reclaim, contract price expiry and accounting hand-off alarms",
@@ -154,7 +154,7 @@ export const fluidsFaq = [
   },
   {
     q: "Will our shop floor and drivers manage on it?",
-    a: "There is a distraction-free kiosk station for the shop floor with large touch targets and an audible chime for new tasks, a phone-as-scanner mode joined by scanning a QR code, and a companion scanner app for Android and iOS.",
+    a: "There is a distraction-free kiosk station for the shop floor with large touch targets and an audible chime for new tasks, a phone-as-scanner mode joined by scanning a QR code, and a companion scanner app for Android and iOS handsets that we install on your devices — it is in preview, not on the app stores.",
   },
 ];
 

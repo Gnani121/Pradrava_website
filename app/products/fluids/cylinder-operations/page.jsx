@@ -208,8 +208,9 @@ export default function Page() {
             <div className="feature-tile-icon">📦</div>
             <h3>Companion scanner app</h3>
             <p>
-              A React Native application for Android and iOS with camera scanning and haptic
-              feedback, talking to the same backend as everything else.
+              A React Native application for Android and iOS handsets with camera scanning and
+              haptic feedback, talking to the same backend as everything else. We install it on
+              your devices — it is in preview, not on the app stores.
             </p>
           </article>
           <article className="feature-tile">
