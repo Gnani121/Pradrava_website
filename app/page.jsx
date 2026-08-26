@@ -33,12 +33,12 @@ const differentiators = [
   {
     icon: "🧱",
     title: "You decide how much of it you take",
-    desc: "28 modules and 48 sub-modules switch on or off per company and per branch. Plant profiles and gas-only or item-only modes are enforced on writes, not just hidden in the menu. Start narrow, widen later, without a migration.",
+    desc: "28 modules and 48 sub-modules switch on or off per company and per branch. If you only fill cylinders, the item and manufacturing side genuinely is not there — not merely hidden from the menu. Start narrow and widen later, without moving your data.",
   },
   {
     icon: "🛡️",
-    title: "Correctness is enforced, not promised",
-    desc: "The application refuses to start if a route that changes data is left unguarded. Every table declares its tenancy scope or the build fails. The database blocks an invoice whose tax does not reconcile.",
+    title: "The system stops you making the expensive mistakes",
+    desc: "If a screen were ever left unprotected, it refuses to start rather than expose your data. One branch cannot see another's, because that is built into how the data is stored. And an invoice whose tax does not add up will not issue at all.",
   },
 ];
 

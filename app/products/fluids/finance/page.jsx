@@ -4,7 +4,7 @@ import FluidsSubNav from "@/components/FluidsSubNav";
 export const metadata = {
   title: "Finance, GST & Billing | Fluids | Pradrava",
   description:
-    "Indian statutory compliance handled at the transaction: place-of-supply resolution, editable GST rate table, gapless numbering per GSTIN and financial year, e-invoice IRN, NIC e-way bills across four movement types, GSTR-1 and GSTR-3B materialisation, credit control, AR ageing, dunning and rental demurrage billing.",
+    "Indian GST handled on each document as it is raised: place of supply resolved from the state pair, an editable rate table, gapless numbering per GSTIN and financial year, e-invoice and e-way bill preparation across four movement types, GSTR-1 and GSTR-3B draft builders, credit control, AR ageing, dunning and rental demurrage billing.",
   keywords: [
     "GST software for gas distribution",
     "e-way bill software NIC GSP",
@@ -26,7 +26,7 @@ const gstDepth = [
   {
     label: "Rates are data, not code",
     value:
-      "GST slabs live in a table with validity dates. Adding or changing a rate is a configuration change, not a deployment. Every line records which rung of the resolution chain produced its rate — explicit line, price book, product master or branch default.",
+      "GST slabs live in a table with validity dates. Adding or changing a rate is a setting you change yourself, not a software release. Every line records which rung of the resolution chain produced its rate — explicit line, price book, product master or branch default.",
   },
   {
     label: "Place of supply refuses to guess",
@@ -41,7 +41,7 @@ const gstDepth = [
   {
     label: "Gapless numbering",
     value:
-      "Document series are allocated atomically per GSTIN, document type and financial year. Two users hitting save at the same instant cannot produce a duplicate or a hole in the sequence.",
+      "Document series are allocated one at a time per GSTIN, document type and financial year. Two users hitting save at the same instant cannot produce a duplicate or a hole in the sequence.",
   },
 ];
 
@@ -54,17 +54,17 @@ const statutory = [
   {
     icon: "🚛",
     title: "NIC E-Way Bills",
-    desc: "Full lifecycle across four movement sources — sales invoice, branch transfer, purchase inward and delivery challan — with Part-B update, validity extension and consolidated bills. Configurable rupee threshold, a sandbox provider and a live NIC adapter, and a full event audit of every call.",
+    desc: "Full lifecycle across four movement sources — sales invoice, branch transfer, purchase inward and delivery challan — with Part-B update, validity extension and consolidated bills. Configurable rupee threshold, and every call and response kept as an event. Like the e-invoice above, it runs against a sandbox today; your production NIC connection is made at go-live.",
   },
   {
     icon: "📑",
     title: "GSTR-1 and GSTR-3B",
-    desc: "B2B and B2CS supplies with credit notes as CDNR, plus net liability and inward ITC, materialised from live documents and persisted as a return export you can hand to your filing agent. A GST inward register sits alongside it.",
+    desc: "B2B and B2CS supplies with credit notes as CDNR, plus net liability and inward ITC, built from live documents and saved as a return export you can hand to your filing agent. Switched off by default, and deliberately not a filing service — it prepares, your agent files. A GST inward register sits alongside it. The fuller version is coming with Pradrava Accounting.",
   },
   {
     icon: "📲",
     title: "UPI scan-to-pay",
-    desc: "A UPI payment QR is embedded directly on the invoice, encoded so it survives the server-side PDF rendering. The customer pays from the document rather than from a follow-up email.",
+    desc: "A UPI payment QR is embedded directly on the invoice, encoded so it still works on the PDF the server produces. The customer pays from the document rather than from a follow-up email.",
   },
 ];
 
@@ -77,7 +77,7 @@ const receivables = [
   {
     label: "AR ageing",
     value:
-      "A materialised ageing snapshot by customer and bucket, so exposure is a number you can look at rather than a query someone has to run.",
+      "An ageing view by customer and by how overdue they are, kept ready so your exposure is a number you can look at rather than a query someone has to run.",
   },
   {
     label: "Automated dunning",
@@ -99,7 +99,7 @@ const receivables = [
 const handoff = [
   {
     title: "You do not have to replace your accounts package",
-    desc: "Fluids posts documents to whatever you already run. The hand-off is a durable outbox — not a fire-and-forget webhook — with exponential backoff, voucher ID write-back onto the source document, and an hourly drain.",
+    desc: "Fluids posts documents to whatever you already run. The hand-off is a proper queue rather than a send-and-hope — it keeps retrying if your system is down, waits longer between each attempt, writes the voucher number back onto the original document, and runs daily.",
   },
   {
     title: "It tells you when it gives up",

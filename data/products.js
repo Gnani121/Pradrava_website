@@ -34,8 +34,8 @@ export const fluidsFeatures = [
   },
   {
     icon: "🧾",
-    title: "GST Handled at the Transaction",
-    desc: "Place of supply resolved from the state pair, gapless numbering per GSTIN and financial year, e-invoice IRN, NIC e-way bills, and GSTR-1 and 3B built from live documents.",
+    title: "GST Right on the Document, Not at Month End",
+    desc: "The place of supply is worked out from the two states involved and the system refuses to guess, rates come from a table you control, and your numbering cannot have a gap. E-invoice and e-way bill paperwork is prepared for your GSP.",
   },
   {
     icon: "🔎",
@@ -45,17 +45,17 @@ export const fluidsFeatures = [
   {
     icon: "🏢",
     title: "Multi-Company, Multi-Branch",
-    desc: "Group companies and branches in one deployment with isolation enforced in the database schema, plus approved cross-branch stock transfer with in-transit tracking.",
+    desc: "Group companies and branches on one system, genuinely unable to see each other's data. Moving stock between them is an approval step, and you can watch it while it is in transit.",
   },
   {
     icon: "⏱️",
     title: "SLA Engine with Escalation",
-    desc: "71 rules over 65 stages give every hand-off an owner and a deadline. Miss the clock and it escalates to the role you nominated — plus ten scheduled engines chasing overdue invoices, expiring quotes and cylinders coming due for test.",
+    desc: "Every handover in the plant gets an owner and a deadline — seventy-one rules in all. Miss the deadline and it goes to the person you nominated. Ten more jobs chase overdue invoices, expiring quotes and cylinders coming due for test.",
   },
   {
     icon: "🎛️",
     title: "Turn Modules On and Off",
-    desc: "28 modules and 48 sub-modules switched per company or per branch, plus plant profiles and gas-only or item-only business modes — enforced server-side, not just hidden.",
+    desc: "28 modules and 48 sub-modules switched on or off per company or per branch, plus plant profiles and gas-only or item-only modes. What you switch off genuinely is not there, rather than hidden from the menu.",
   },
 ];
 
@@ -86,24 +86,24 @@ export const fluidsModules = [
   "Gas quality testing with components, impurities, physical, stability and compliance detail",
   "Certificate of Analysis to ISO 6141 with ISO 6142 expanded uncertainty",
   "Analyzer master and calibration register to ISO/IEC 17025 with expiry alerts",
-  "LIMS controls: versioned methods, analyst and reviewer e-signature, result audit",
-  "SPC control charts, first-pass yield, cost of quality and defect Pareto",
+  "Lab controls: versioned test methods, analyst and reviewer signatures, and a record of every result edit",
+  "Trend charts that show a process drifting before it fails, how much passes first time, what quality problems cost, and the commonest defects first",
   "AQL acceptance sampling to ISO 2859-1 applied to production lots",
   "Non-conformance and CAPA workflow, auto-raised from receiving and inspection",
   "Final inspection with photographic evidence gating dispatch",
-  "Append-only inventory ledger with reservations, reclaim and stock snapshots",
+  "A stock ledger that is only ever added to, never rewritten — with holds, releases and running balances",
   "Picking batches, packing units, packing material consumption and box catalogue",
   "Branch transfer with requested, approved, dispatched and received states",
   "Bulk and cryogenic tanks: tanker receipts, level events and tank-to-cylinder transfer",
   "Dispatch readiness board, delivery challans and proof-of-delivery capture",
   "Machine master, preventive maintenance, run-hour meters and spare consumption",
-  "OEE, MTBF and MTTR analytics with downtime Pareto and finite-capacity load",
+  "How much of the day each machine ran, how often it breaks, how long it stays down, the top reasons why, and how loaded it is (OEE, MTBF, MTTR)",
   "Machine and statutory calibration register with due alerts",
   "Machine and instrument telemetry ingestion with predictive maintenance rules",
   "GST engine with editable rate table and fail-closed place-of-supply resolution",
-  "E-invoice IRN generation, cancellation and reporting-window checks",
-  "NIC e-way bills across invoice, branch transfer, purchase inward and delivery challan",
-  "GSTR-1 and GSTR-3B materialisation and GST inward register",
+  "E-invoice payload preparation, cancellation and reporting-window checks — connected to your GSP at go-live",
+  "E-way bill preparation across invoice, branch transfer, purchase inward and delivery challan",
+  "GST inward register, and GSTR-1 / GSTR-3B draft builders (off by default — not a filing service)",
   "Gapless document numbering per GSTIN, document type and financial year",
   "Credit control with limit gate at order entry, and AR ageing snapshots",
   "Automated dunning with per-attempt logging, and credit and debit notes",
@@ -142,7 +142,7 @@ export const fluidsFaq = [
   },
   {
     q: "Can we run more than one plant or company on it?",
-    a: "Yes. Multiple companies and branches run in a single deployment with isolation enforced in the database schema, plus an approved cross-branch transfer workflow with in-transit tracking.",
+    a: "Yes. Several companies and branches run on one system, and they genuinely cannot see each other's data — it is built into how the data is stored rather than left to whoever writes the next screen. Moving stock between branches goes through an approval step, and you can see it while it is in transit.",
   },
   {
     q: "Does it stop non-compliant dispatch?",
@@ -150,11 +150,11 @@ export const fluidsFaq = [
   },
   {
     q: "Is Indian GST properly supported?",
-    a: "Yes — place of supply resolved from the supplier and recipient state pair, per-line rates from an editable rate table, gapless numbering per GSTIN and financial year, e-invoice IRN, NIC e-way bills, and GSTR-1 and GSTR-3B built from live documents.",
+    a: "Yes, on the documents you raise. The place of supply comes from the supplier and recipient states and the system refuses to guess, rates are per line from a table you can edit yourself, and numbering is gapless per GSTIN and financial year. The tax is calculated twice by separate code and an invoice will not issue if the two disagree. E-invoice and e-way bill payloads are prepared and connected to your GSP at go-live. Filing the returns themselves is not something Fluids does.",
   },
   {
     q: "Will our shop floor and drivers manage on it?",
-    a: "There is a chromeless kiosk station for the shop floor with large touch targets and an audible chime for new tasks, a phone-as-scanner mode joined by scanning a QR code, and a companion scanner app for Android and iOS.",
+    a: "There is a distraction-free kiosk station for the shop floor with large touch targets and an audible chime for new tasks, a phone-as-scanner mode joined by scanning a QR code, and a companion scanner app for Android and iOS.",
   },
 ];
 
@@ -171,15 +171,23 @@ export const accountingFeatures = [
 ];
 
 export const accountingModules = [
-  "Invoice and bill posting from operational documents",
-  "Receipts, payments and party-wise ledgers",
-  "Expense recording with approval workflow",
-  "Bank statement import and reconciliation",
-  "GST computation and return preparation support",
-  "Profit and loss, balance sheet and cash position",
-  "Vendor and customer ageing",
-  "Audit log and change history",
-  "Role-based access and approval controls",
+  "Chart of accounts, journals and the general ledger",
+  "Invoice and bill posting from operational documents, so nothing is re-keyed",
+  "Receipts, payments and a running ledger per customer and per vendor",
+  "Expense recording with an approval step, and petty cash",
+  "Bank statement import, and matching statement lines against your entries",
+  "Profit and loss, balance sheet and cash position from posted entries",
+  "Customer and vendor ageing",
+  "Fixed assets with depreciation, and project-wise costing",
+  "Payroll, and Form 16 at the end of the year",
+  "TDS deduction, tracking and returns",
+  "GST: output summary, returns, and GSTR-2B matching for input credit",
+  "Income tax working papers, Form 26AS and AIS reconciliation, and ITR preparation",
+  "E-filing with digital signature support",
+  "Financial years, multiple currencies and editable tax rates",
+  "Budgets, purchase orders and approvals",
+  "Audit log and change history on every entry",
+  "Role-based access, so each person sees only their own scope",
 ];
 
 export const accountingFaq = [
@@ -189,11 +197,11 @@ export const accountingFaq = [
   },
   {
     q: "Do we have to wait for it to start using Fluids?",
-    a: "No. Fluids is designed to sit alongside an existing accounts package. The sync bridge and the inbound payment endpoint are live and in use.",
+    a: "No. Fluids is designed to sit alongside an existing accounts package rather than replace it. The sync bridge and the inbound payment endpoint are built and tested; we point them at your accounts system and switch them on during implementation.",
   },
   {
     q: "What will it integrate with?",
-    a: "It is being built on the same tenancy, permission and audit foundation as Fluids, so branch isolation, roles and change history carry over unchanged rather than being re-implemented.",
+    a: "It is being built on the same separation, permissions and record-keeping foundation as Fluids, so branch isolation, roles and change history carry over unchanged rather than being re-implemented.",
   },
   {
     q: "How do we get involved early?",

@@ -236,7 +236,7 @@ export const notificationChannels = [
   {
     channel: "Shop-floor station",
     state: "Live",
-    desc: "A chromeless kiosk with large touch targets and an audible chime when a new move task lands — for the bay, where nobody is watching a browser tab.",
+    desc: "A distraction-free kiosk with large touch targets and an audible chime when a new move task lands — for the bay, where nobody is watching a browser tab.",
   },
   {
     channel: "Email",

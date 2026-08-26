@@ -61,9 +61,9 @@ export const depthProof = [
   },
   {
     icon: "🔒",
-    title: "Idempotent by construction",
+    title: "A double-tap cannot create a duplicate",
     desc:
-      "Every write accepts an idempotency key. A double-tap, a flaky connection, a retried request or a second browser tab replays the original answer instead of creating a second purchase order — and a mutating request that times out tells you it may have succeeded rather than inviting you to try again.",
+      "Every save carries a key that identifies it, so an impatient second tap, a patchy connection or two tabs open on the same form give you back the original answer instead of a second purchase order — and if a save times out, it tells you it may have gone through rather than inviting you to try again and make two.",
   },
   {
     icon: "🧊",

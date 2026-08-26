@@ -111,7 +111,7 @@ const safety = [
   {
     label: "Movement ledger",
     value:
-      "Every movement between locations and states is written to an immutable ledger, exportable as CSV, so a dispute over where a cylinder was on a given date has an answer.",
+      "Every movement between locations and states is written to a record that is only ever added to, never rewritten, exportable as CSV, so a dispute over where a cylinder was on a given date has an answer.",
   },
 ];
 
@@ -191,7 +191,7 @@ export default function Page() {
             <div className="feature-tile-icon">🖥️</div>
             <h3>Kiosk station</h3>
             <p>
-              A chromeless shop-floor screen with large touch targets — moved, partial, cannot
+              A distraction-free shop-floor screen with large touch targets — moved, partial, cannot
               move — that polls for new tasks every eight seconds and chimes when one arrives.
               No sidebar, no menus, nothing to get lost in.
             </p>

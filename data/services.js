@@ -22,7 +22,7 @@ export const services = [
   {
     icon: "🧩",
     title: "Custom Modules",
-    desc: "When your process needs something the standard product does not have, we build it on the same platform — inside the same tenancy, permission and audit model, not as a bolt-on that breaks at the next upgrade."
+    desc: "When your process needs something the standard product does not have, we build it on the same platform — inside the same separation, permissions and record-keeping model, not as a bolt-on that breaks at the next upgrade."
   },
   {
     icon: "🛟",

@@ -4,7 +4,7 @@ import { accountingFeatures, accountingModules, accountingFaq } from "@/data/pro
 export const metadata = {
   title: "Accounting | In Development | Pradrava",
   description:
-    "Pradrava Accounting is a companion ledger in active development, built on the same tenancy, permission and audit foundation as Fluids. Available today: the durable accounting hand-off that pushes Fluids documents into the accounts package you already run.",
+    "Pradrava Accounting is a companion ledger in active development, built on the same separation, permissions and record-keeping foundation as Fluids. Available today: the durable accounting hand-off that pushes Fluids documents into the accounts package you already run.",
   keywords: [
     "accounting software for industrial operations",
     "ERP accounts integration",
@@ -15,24 +15,24 @@ export const metadata = {
 
 const availableNow = [
   {
-    label: "Durable accounting outbox",
-    value:
-      "Invoices, credit notes and debit notes are queued to your existing accounts system with exponential backoff and voucher ID write-back onto the source document. It drains hourly, and raises a high-priority alert if a document exhausts its retries rather than failing silently.",
-  },
-  {
-    label: "Inbound payment bridge",
-    value:
-      "Your accounts system can mark documents synced or failed and post payments against invoices through a secured endpoint, so payment status in Fluids reflects your books without anyone re-keying it.",
-  },
-  {
-    label: "Statutory outputs today",
-    value:
-      "GSTR-1 and GSTR-3B materialisation, gapless document numbering per GSTIN and financial year, e-invoice IRN, NIC e-way bills, AR ageing and automated dunning all live in Fluids now — they do not wait on this product.",
-  },
-  {
     label: "Registers you can hand to your accountant",
     value:
-      "Sales register, credit note register, delivery-challan-pending-invoice, GST inward register, receivables ageing and rental ageing, exportable today.",
+      "Sales register, credit note register, delivery-challan-pending-invoice, GST inward register, receivables ageing and rental ageing. All six run today and export today.",
+  },
+  {
+    label: "GST-correct documents at the point of sale",
+    value:
+      "Place of supply is resolved from the supplier and recipient state pair and the system refuses to guess, with per-line rates from an editable slab table, gapless numbering per GSTIN and financial year, and a database rule that will not let an invoice be issued if its tax does not reconcile. Credit and debit notes reverse correctly against the original.",
+  },
+  {
+    label: "Accounting hand-off — built, connected during implementation",
+    value:
+      "Invoices, credit notes and debit notes queue to your existing accounts package with exponential backoff and voucher ID write-back onto the source document, and raise a high-priority alert if a document exhausts its retries rather than failing silently. The queue runs daily. Your accounts endpoint and the inbound payment key are configured as part of implementation — until they are, nothing is sent and nothing is lost.",
+  },
+  {
+    label: "Statutory portals — payload ready, connection is the last step",
+    value:
+      "Fluids prepares the e-invoice IRN and NIC e-way bill payloads across four movement types and records every call and its response as an event. Both currently run against a sandbox; connecting your production GSP is a step we do with you at go-live, not something already switched on. The GSTR-1 and GSTR-3B builders produce the correct return shape from live documents, but they are off by default and this is not a filing service.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function AccountingPage() {
         <h1 className="hero-title">Accounting</h1>
         <p className="hero-subtitle">
           A companion ledger for teams that want their books inside Pradrava rather than beside
-          it. It is being built on the same tenancy, permission and audit foundation as Fluids —
+          it. It is being built on the same separation, permissions and record-keeping foundation as Fluids —
           and it is not available yet. Here is exactly where it stands.
         </p>
         <div className="hero-actions">
