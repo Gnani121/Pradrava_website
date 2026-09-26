@@ -12,7 +12,7 @@ import {
 } from "@/data/notifications";
 
 export const metadata = {
-  title: "Notifications, SLA & Escalation | Fluids | Pradrava",
+  title: "Notifications, SLA & Escalation | Fluids",
   description:
     "71 configurable hand-off rules across 65 stages give every step in a gas plant an owner, a deadline and an escalation path. Miss the clock and it goes to the role you nominated — plus ten scheduled reminder engines chasing overdue invoices, expiring quotes, due calibrations and cylinders approaching hydro-test.",
   keywords: [

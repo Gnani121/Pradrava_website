@@ -13,7 +13,7 @@ import {
 import { depthProof, scaleFacts } from "@/data/depth";
 
 export const metadata = {
-  title: "Fluids | Industrial Gas Plant ERP | Pradrava",
+  title: "Fluids | Industrial Gas Plant ERP",
   description:
     "Fluids is a complete operations system for industrial gas plants: cylinder lifecycle, sales and procurement, production, ISO-grade laboratory quality, dispatch, machines and GST-correct invoicing — multi-company and multi-branch on one set of live data.",
   keywords: [

@@ -32,6 +32,7 @@ export default function Footer() {
           <h4>Company</h4>
           <Link href="/products">All Products</Link>
           <Link href="/products/accounting">Accounting</Link>
+          <Link href="/pricing">Pricing</Link>
           <Link href="/services">Services</Link>
           <Link href="/demo">Live Demos</Link>
           <Link href="/showcase">Poster Set</Link>

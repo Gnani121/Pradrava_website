@@ -3,7 +3,7 @@ import { products } from "@/data/products";
 import { pillars, standards } from "@/data/fluids";
 
 export const metadata = {
-  title: "Products | Pradrava",
+  title: "Products",
   description:
     "Pradrava products: Fluids, a complete operations system for industrial gas plants covering cylinder lifecycle, quality, procurement, production, dispatch and GST-correct invoicing — and Accounting, a companion ledger in development.",
   keywords: [

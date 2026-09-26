@@ -2,7 +2,7 @@ import Link from "next/link";
 import PosterBoard from "@/components/PosterBoard";
 
 export const metadata = {
-  title: "Poster Set | Fluids | Pradrava",
+  title: "Poster Set | Fluids",
   description:
     "Six print-ready posters on what Fluids actually does — the SLA engine, the compliance gate, the cylinder trace passport, the GST engine, order to cash, and rental billing. Download as vector or image.",
   alternates: { canonical: "/showcase" },

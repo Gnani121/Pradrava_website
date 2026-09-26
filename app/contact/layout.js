@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Contact | Pradrava",
+  title: "Contact",
   description: "Share your interest and email to receive launch updates or request a guided demo.",
   keywords: [
     "contact Pradrava",

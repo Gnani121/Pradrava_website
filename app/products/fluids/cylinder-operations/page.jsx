@@ -2,7 +2,7 @@ import Link from "next/link";
 import FluidsSubNav from "@/components/FluidsSubNav";
 
 export const metadata = {
-  title: "Cylinder Operations | Fluids | Pradrava",
+  title: "Cylinder Operations | Fluids",
   description:
     "Full cylinder lifecycle in Fluids: receiving inspection, ownership segmentation, allocation without double-claim, filling, third-party refill, hydro test and valve service, rental and demurrage billing, hazard-class segregation and CCOE compliance gating.",
   keywords: [
@@ -37,6 +37,8 @@ const lifecycle = [
       "Unified per-cylinder history that merges every record source into one timeline",
       "Trace Passport shows current position, idle hours and a low, medium or high risk flag",
       "Ownership transfer recorded when a cylinder is sold, with the assignment mapped to the invoice",
+      "Ownership changes only at the events that really change it — a delivered sale, a customer's cylinder arriving, an exchange",
+      "Cylinder exchange: keep a customer's bottle and give them one of yours, with the reason and the swap on a register",
     ],
   },
   {

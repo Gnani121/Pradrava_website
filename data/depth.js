@@ -69,20 +69,38 @@ export const depthProof = [
     icon: "🧊",
     title: "Bulk and cryogenic, not only cylinders",
     desc:
-      "Tanker receipts weighed gross and tare, tank level events, boil-off, and tank-to-cylinder transfer — with the tank ledger reconciling to the kilogram. A finalise that would overfill a tank is refused, and the room remaining is shown while the weights are being keyed rather than at the end.",
+      "Buy liquid by the tanker against a purchase order, make it on site, fill cylinders from it on a manifold, and sell it by the tanker — all into and out of the same tank, with the ledger reconciling to the kilogram. Transit loss, filling loss and what vented to air are each recorded rather than absorbed.",
+  },
+  {
+    icon: "📦",
+    title: "Load your master data from a spreadsheet",
+    desc:
+      "Download a template for any of eleven masters — customers, gases, mixtures, cylinders, items and more — fill it in, and upload it. The whole file is checked first and nothing is saved while any line has a problem, each named by its line number.",
+  },
+  {
+    icon: "🤝",
+    title: "Rate contracts that stay open",
+    desc:
+      "Tick one box and a quotation keeps accepting orders until its validity date, each numbered as a call-off. When a price has to change mid-contract, reprice it — orders already placed keep the rate they were placed at.",
+  },
+  {
+    icon: "🔎",
+    title: "Find any screen by what you want to do",
+    desc:
+      "Press Ctrl+K and type what you are trying to do — “record a payment”, “where is my cylinder” — and it takes you there. It only offers screens you are allowed to open.",
   },
   {
     icon: "🖨️",
-    title: "Seventeen documents, your letterhead",
+    title: "Nineteen documents, your letterhead",
     desc:
-      "Quotation, order, delivery challan, invoice, credit and debit note, certificate of analysis, goods receipt, purchase order and more — server-rendered to PDF with your own header, footer, terms and sections, configured per branch and per document type. Email them from the same screen, routed to the right department mailbox.",
+      "Quotation, order, delivery challan, invoice, credit and debit note, certificate of analysis, calibration certificate, goods receipt, purchase order and more — server-rendered to PDF with your own header, footer, terms and sections, configured per branch and per document type. Email them from the same screen, routed to the right department mailbox.",
   },
 ];
 
 // Numbers that are true today, measured rather than rounded up.
 export const scaleFacts = [
   { value: "71", label: "SLA rules", note: "over 65 stages, all editable" },
-  { value: "17", label: "print & email document types", note: "your letterhead, per branch" },
+  { value: "19", label: "print & email document types", note: "your letterhead, per branch" },
   { value: "13", label: "jobs that run on a schedule", note: "chasing dates, not hand-offs" },
-  { value: "5", label: "sale types", note: "sale, refill, rental, quality check, service" },
+  { value: "6", label: "sale types", note: "sale, refill, rental, quality check, service, bulk by tanker" },
 ];

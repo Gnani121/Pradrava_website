@@ -3,7 +3,7 @@ import FluidsSubNav from "@/components/FluidsSubNav";
 import { standards } from "@/data/fluids";
 
 export const metadata = {
-  title: "Quality & Compliance | Fluids | Pradrava",
+  title: "Quality & Compliance | Fluids",
   description:
     "A laboratory information system inside your gas ERP: ISO 6141 Certificates of Analysis, ISO 6142 measurement uncertainty, ISO/IEC 17025 analyzer calibration, ISO 2859-1 AQL sampling, SPC control charts, NCR and CAPA, and e-signed results with an append-only audit trail.",
   keywords: [
@@ -33,6 +33,31 @@ const capabilities = [
     icon: "🔬",
     title: "Analyzer Register — ISO/IEC 17025",
     desc: "Every analyzer registered with its calibration history and validity window. A result recorded on an out-of-calibration instrument is caught, and due dates raise alerts before they expire.",
+  },
+  {
+    icon: "🧾",
+    title: "Calibration Certificates You Can Print",
+    desc: "Record what the instrument read before and after adjustment, point by point, against the reference you used. The pass or fail is worked out from the readings, not ticked — a calibration with no readings cannot pass — and the finalised record prints as a calibration certificate on your letterhead.",
+  },
+  {
+    icon: "🔗",
+    title: "Traceability You Can Walk",
+    desc: "Every reference standard carries its route back to a national standard: a bought-in certificate traceable to NPL India or NIST, or one of your own certified cylinders traced through its certificate, its weighed batch and the balance it was weighed on. Any missing link is named, never hidden.",
+  },
+  {
+    icon: "⚖️",
+    title: "Gravimetric Blending — ISO 6142",
+    desc: "Make calibration mixtures by weight. Each addition is weighed on a calibrated balance, purity is applied, and the mole fraction and its uncertainty are worked out as you go — so a wrong addition shows up before the cylinder is finished. The certificate then quotes the prepared composition beside the analysed one.",
+  },
+  {
+    icon: "⏳",
+    title: "Retest Dates and Shelf Life",
+    desc: "Set the hydrostatic retest interval once per gas service and the next due date is worked out for the whole fleet. Each mixture's shelf life gives every certificate an expiry, and QC and the branch manager are told before a cylinder falls due or a mixture expires. Gas made for your own use is kept out of it.",
+  },
+  {
+    icon: "📬",
+    title: "Reminders to Your Customers' Instruments",
+    desc: "If you calibrate instruments for clients, register them against the customer who owns them. When one comes due, the customer is sent one letter listing everything of theirs that needs re-certifying.",
   },
   {
     icon: "✍️",

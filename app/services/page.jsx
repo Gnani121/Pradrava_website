@@ -3,7 +3,7 @@ import { services } from "@/data/services";
 import ServiceCard from "@/components/ServiceCard";
 
 export const metadata = {
-  title: "Services | Pradrava",
+  title: "Services",
   description:
     "Implementation, master data migration, workflow and module configuration, integration with your existing accounts package and GSP, role-based training backed by 80 written operating guides, custom modules, and support on defined SLAs.",
   keywords: [

@@ -2,7 +2,7 @@ import Link from "next/link";
 import FluidsSubNav from "@/components/FluidsSubNav";
 
 export const metadata = {
-  title: "Finance, GST & Billing | Fluids | Pradrava",
+  title: "Finance, GST & Billing | Fluids",
   description:
     "Indian GST handled on each document as it is raised: place of supply resolved from the state pair, an editable rate table, gapless numbering per GSTIN and financial year, e-invoice and e-way bill preparation across four movement types, GSTR-1 and GSTR-3B draft builders, credit control, AR ageing, dunning and rental demurrage billing.",
   keywords: [

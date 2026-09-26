@@ -2,7 +2,7 @@ import Link from "next/link";
 import FluidsSubNav from "@/components/FluidsSubNav";
 
 export const metadata = {
-  title: "Production & Machines | Fluids | Pradrava",
+  title: "Production & Machines | Fluids",
   description:
     "Filling and transfilling with donor and receiver gas logging, item production with bill of materials and planned-versus-actual variance, production costing that feeds margin, genealogy traceability, plus OEE, MTBF and MTTR, preventive maintenance on run hours, calibration registers and telemetry ingestion.",
   keywords: [
@@ -42,6 +42,29 @@ const production = [
   },
   {
     n: "03",
+    title: "On-site gas production and bulk",
+    desc: "For plants that make gas, store it as liquid and sell it by the tanker as well as by the cylinder.",
+    items: [
+      "Production runs credit each product to its own tank, including argon and oxygen as by-products",
+      "The run's power and running cost split across products by mass, volume or value — you choose, and see all three before you commit",
+      "Gas vented to air carries no cost, so the cost of what you did sell is not understated",
+      "Bulk liquid sold by the tanker on a weighbridge, meter or tank-level reading, priced from the agreed rate and invoiced as a draft",
+    ],
+  },
+  {
+    n: "04",
+    title: "Bulk filling on a manifold",
+    desc: "Fill many cylinders from a tank in one session, for several customers at once.",
+    items: [
+      "Paste cylinder numbers — a bottle seen for the first time is recorded automatically",
+      "A cylinder that last held a different gas is refused before it is filled",
+      "Filling loss worked out from what the tank gave against what the cylinders took",
+      "One delivery challan per customer on release, and the invoice follows from it",
+      "Swapped cylinders are tracked both ways, so at the end of a contract you know who still holds whose",
+    ],
+  },
+  {
+    n: "05",
     title: "Traceability",
     desc: "Answering the recall question before anyone asks it.",
     items: [

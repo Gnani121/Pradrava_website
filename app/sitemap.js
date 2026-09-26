@@ -13,6 +13,7 @@ const routes = [
   { path: "/products/fluids/platform", priority: 0.8, changeFrequency: "monthly" },
   { path: "/products/accounting", priority: 0.5, changeFrequency: "monthly" },
   { path: "/showcase", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/pricing", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services", priority: 0.7, changeFrequency: "monthly" },
   { path: "/demo", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.6, changeFrequency: "yearly" },

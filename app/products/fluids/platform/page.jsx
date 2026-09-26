@@ -3,7 +3,7 @@ import FluidsSubNav from "@/components/FluidsSubNav";
 import { platformProof, automations } from "@/data/fluids";
 
 export const metadata = {
-  title: "Platform & Security | Fluids | Pradrava",
+  title: "Platform & Security | Fluids",
   description:
     "Several companies and branches on one system that genuinely cannot see each other's data, 13 roles and 67 permission keys, modules switched on or off per company and branch, saves that cannot be duplicated by a double-tap, deadlines with automatic escalation, full audit logging, and cloud hosting in the Mumbai region.",
   keywords: [

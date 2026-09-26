@@ -6,7 +6,7 @@ import DemoLogoutButton from "@/components/DemoLogoutButton";
 import { cookies } from "next/headers";
 
 export const metadata = {
-  title: "Demo Platform | Interactive Showcase | Pradrava",
+  title: "Demo Platform | Interactive Showcase",
   description: "Two ways into a real, signed-in Fluids environment with worked data: the plant operations walkthrough, and the analytics and insight workspace.",
   keywords: [
     "product demos",

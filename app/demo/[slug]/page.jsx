@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
 
   if (!demo) {
     return {
-      title: "Demo Not Found | Pradrava",
+      title: "Demo Not Found",
       description: "The requested demo page is not available.",
       robots: {
         index: false,

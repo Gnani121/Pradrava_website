@@ -2,7 +2,7 @@ import Link from "next/link";
 import { accountingFeatures, accountingModules, accountingFaq } from "@/data/products";
 
 export const metadata = {
-  title: "Accounting & GST Returns | In Development | Pradrava",
+  title: "Accounting & GST Returns | In Development",
   description:
     "Pradrava Accounting is the books and the GST returns, in active development on the same separation, permissions and record-keeping foundation as Fluids. Available today: Fluids gets the GST right on every document you raise, and hands those documents to the accounts package you already run.",
   keywords: [

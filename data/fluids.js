@@ -106,6 +106,7 @@ export const pillars = [
       "Certificates your customer's auditor will accept — ISO 6141, with ISO 6142 uncertainty",
       "Analyzers tracked against their calibration dates and flagged before they lapse (ISO/IEC 17025)",
       "Tells the inspector how many cylinders to check from a batch, and when to reject it (ISO 2859-1)",
+      "Calibration mixtures made by weight, and calibration certificates traceable to NPL India",
       "Signed by the analyst and the reviewer, and nobody can quietly edit a result afterwards",
     ],
   },
@@ -143,6 +144,7 @@ export const pillars = [
       "Filling, transfilling and manufacture — and how well the equipment doing it is actually performing.",
     points: [
       "A filling queue that records which cylinder gave gas to which",
+      "On-site production, manifold bulk filling and tanker sales from the same tank",
       "What a batch was meant to consume, what it did consume, and the difference in rupees",
       "How much of the day each machine actually ran, and the top reasons it stopped",
       "Servicing driven by running hours rather than by somebody remembering",
@@ -178,7 +180,7 @@ export const pillars = [
 
 export const standards = [
   { code: "ISO 6141", note: "Certificate of Analysis for gas mixtures" },
-  { code: "ISO 6142", note: "Expanded measurement uncertainty (k=2)" },
+  { code: "ISO 6142", note: "Gravimetric preparation and expanded uncertainty (k=2)" },
   { code: "ISO/IEC 17025", note: "Analyzer calibration and validity register" },
   { code: "ISO 2859-1", note: "Acceptance sampling by attributes (AQL)" },
   { code: "CCOE / PESO", note: "Cylinder test and licence gating before dispatch" },
@@ -287,7 +289,7 @@ export const fluidsFaq = [
   },
   {
     q: "Can we get our data out?",
-    a: "Yes. CSV export on the operational registers, seventeen printable document types with your own header, footer and template, and a documented API if you want to pull it programmatically.",
+    a: "Yes. CSV export on the operational registers, nineteen printable document types with your own header, footer and template, and a documented API if you want to pull it programmatically.",
   },
   {
     q: "How is it deployed?",

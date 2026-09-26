@@ -2244,3 +2244,116 @@ textarea.field-input { resize: vertical; min-height: 110px; }
   .sub-nav::-webkit-scrollbar { display: none; }
   .sub-nav a { flex: 0 0 auto; }
 }
+
+/* ---------------------------------------------------------------- Pricing */
+.pricing-disclaimer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 720px;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 1.4rem;
+  align-items: stretch;
+}
+.plan-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.9rem 1.8rem;
+  box-shadow: var(--shadow-sm);
+}
+.plan-card-highlight {
+  border: 2px solid var(--brand);
+  box-shadow: var(--shadow);
+}
+.plan-badge {
+  position: absolute;
+  top: -0.8rem;
+  left: 1.6rem;
+  background: var(--grad);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+.plan-card h2 { font-size: 1.4rem; }
+.plan-tagline { color: var(--muted); font-size: 0.94rem; min-height: 2.8em; }
+.plan-price { display: flex; align-items: baseline; gap: 0.4rem; flex-wrap: wrap; margin: 0.4rem 0; }
+.plan-price strong { font-family: "Sora", sans-serif; font-size: 2rem; color: var(--ink); }
+.plan-price span, .plan-from { color: var(--muted); font-size: 0.9rem; }
+.plan-meta { color: var(--ink-soft); font-size: 0.86rem; }
+.plan-card .flow-list { margin: 0.8rem 0 1.2rem; }
+.plan-cta { margin-top: auto; text-align: center; }
+.pricing-two {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 1.4rem;
+}
+.pricing-two .flow-list { margin-top: 0.6rem; }
+
+.estimator {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  box-shadow: var(--shadow-sm);
+}
+.estimator-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+.estimator-inputs label { display: grid; gap: 0.35rem; font-size: 0.88rem; color: var(--muted); }
+.estimator-inputs select,
+.estimator-inputs input[type="number"] {
+  font: inherit;
+  color: var(--ink);
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+.estimator-check { display: flex !important; align-items: center; gap: 0.5rem; min-height: 2.6rem; }
+.estimator-result {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+.estimator-result > div {
+  display: grid;
+  gap: 0.2rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--grad-soft);
+}
+.estimator-result span { font-size: 0.82rem; color: var(--muted); }
+.estimator-result strong { font-family: "Sora", sans-serif; font-size: 1.45rem; color: var(--ink); }
+.estimator-result small { font-size: 0.8rem; color: var(--muted); }
+.estimator-note { margin-top: 1rem; font-size: 0.86rem; color: var(--muted); }
+.estimator-note a { color: var(--brand); font-weight: 600; }
+.fluids-hero .pricing-disclaimer { color: rgba(255, 255, 255, 0.78); }
+.estimator-heading { font-size: 1.1rem; margin: 1.8rem 0 0.9rem; }
+.price-table-wrap { overflow-x: auto; margin-top: 1.2rem; }
+.price-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; background: var(--surface); }
+.price-table caption { text-align: left; color: var(--muted); font-size: 0.86rem; padding-bottom: 0.6rem; }
+.price-table th, .price-table td { padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.price-table th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.price-table .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.price-table tbody tr { cursor: default; }
+.estimator .price-table tbody tr { cursor: pointer; }
+.price-table tbody tr.selected { background: var(--grad-soft); }
+.price-pop { margin-left: 0.5rem; font-size: 0.72rem; font-weight: 700; color: var(--brand); border: 1px solid var(--brand); border-radius: 999px; padding: 0.05rem 0.45rem; }
+/* A <select> sizes to its longest option; without these it widens the whole section on a phone. */
+.estimator { min-width: 0; max-width: 100%; }
+.estimator-inputs > label { min-width: 0; }
+.estimator-inputs select { width: 100%; min-width: 0; max-width: 100%; }

@@ -2,7 +2,7 @@ import Link from "next/link";
 import FluidsSubNav from "@/components/FluidsSubNav";
 
 export const metadata = {
-  title: "Procurement & Inventory | Fluids | Pradrava",
+  title: "Procurement & Inventory | Fluids",
   description:
     "Requisition to payment with real controls: three-way match against PO and goods receipt, landed cost apportionment into weighted-average valuation, import documentation, blanket rate contracts, budgets enforced at approval, reorder policies with EOQ, vendor scorecards, and an append-only inventory ledger with reservations.",
   keywords: [
@@ -74,7 +74,7 @@ const inventory = [
   {
     label: "Picking and packing",
     value:
-      "Picking batches and lines, packing batches, packing units and lines, packing material consumption, and a box catalogue — with pick lists, wave pick lists, packing slips, carton labels and shipping labels printable.",
+      "One worklist of orders, each showing whether it is ready to pick, to pack or to ship. Record a shelf that came up short and the rest carries on, with the shortfall owed back to the order. Packing must be confirmed before anything can be dispatched, and the same box cannot be shipped twice. Pick lists, packing slips, carton and shipping labels print from the same screen.",
   },
   {
     label: "Locations with roles",
@@ -84,12 +84,12 @@ const inventory = [
   {
     label: "Branch transfer",
     value:
-      "Requested, approved, dispatched, received, with rejection and cancellation paths, covering both cylinders and item stock, visible from both ends of the transfer.",
+      "Requested, approved, dispatched, received, with rejection and cancellation paths, covering both cylinders and item stock, visible from both ends of the transfer. Each branch sells only its own stock — a backorder shows which other branch has the item free, and stock transferred for an order goes to that order first.",
   },
   {
     label: "Bulk and cryogenic",
     value:
-      "Bulk tanks with tanker receipts, tank level events and tank-to-cylinder transfers, so the bulk side of the plant is in the same ledger as everything else.",
+      "Bulk tanks with tanker receipts, tank level events and tank-to-cylinder transfers, so the bulk side of the plant is in the same ledger as everything else. A tanker delivery is received against its purchase order, the loss in transit is recorded against what the supplier dispatched, and the landed cost per kilogram is worked out on what actually arrived.",
   },
 ];
 
