@@ -108,6 +108,10 @@ p { margin: 0; }
 .page-stack {
   padding-block: 2.6rem 5rem;
   display: grid;
+  /* One track that may shrink. An implicit grid track is sized to its widest
+     child's min-content, so on a phone every section was 359px inside a 334px
+     container: the whole page ran 5px off the right edge and side-scrolled. */
+  grid-template-columns: minmax(0, 1fr);
   gap: 3.4rem;
 }
 
@@ -524,7 +528,7 @@ p { margin: 0; }
 /* ── Generic cards ─────────────────────────────────────── */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 1.4rem;
 }
 
@@ -553,7 +557,7 @@ p { margin: 0; }
 /* Why-Pradrava pulse cards */
 .pulse-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 1.4rem;
 }
 
@@ -667,7 +671,7 @@ p { margin: 0; }
 /* ── Feature grids / tiles ─────────────────────────────── */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 1.4rem;
 }
 
@@ -717,7 +721,7 @@ p { margin: 0; }
 /* ── Flow cards / steps ────────────────────────────────── */
 .flow-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 1.4rem;
 }
 
@@ -781,7 +785,7 @@ p { margin: 0; }
 /* ── Zones ─────────────────────────────────────────────── */
 .zones-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 1.2rem;
 }
 
@@ -834,7 +838,7 @@ p { margin: 0; }
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 0.7rem 1.6rem;
 }
 
@@ -875,7 +879,7 @@ p { margin: 0; }
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: 0.7rem 1.6rem;
 }
 
@@ -936,7 +940,7 @@ p { margin: 0; }
 
 .product-hero-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr));
   gap: 1rem;
   margin-top: 2rem;
   padding-top: 1.7rem;
@@ -996,7 +1000,7 @@ p { margin: 0; }
 /* Chips grid (accounting planned features) */
 .showcase-chip-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
   gap: 0.9rem;
 }
 
@@ -1154,7 +1158,7 @@ p { margin: 0; }
 
 .contact-people-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
 }
@@ -1456,7 +1460,7 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 /* --- Problem / answer grid --- */
 .pain-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(310px, 100%), 1fr));
   gap: 1.1rem;
 }
 
@@ -1494,7 +1498,7 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 /* --- Standards / certification chips --- */
 .standards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
   gap: 0.8rem;
 }
 
@@ -1525,7 +1529,7 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 /* --- Pillar cards with bullet proof-points --- */
 .pillar-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
   gap: 1.2rem;
 }
 
@@ -1589,7 +1593,7 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 /* --- Persona table --- */
 .persona-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 1rem;
 }
 
@@ -1639,7 +1643,7 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 /* --- Proof cards on dark panels --- */
 .proof-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 1rem;
   margin-top: 1.6rem;
 }
@@ -1710,7 +1714,7 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 /* --- Compact stat band --- */
 .stat-band {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr));
   gap: 1rem;
 }
 
@@ -1851,7 +1855,7 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 /* --- Spreadsheet contrast cards (dark panel) --- */
 .contrast-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 1rem;
   margin-top: 1.8rem;
 }
@@ -1918,7 +1922,7 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 
 .sla-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: 1.1rem;
 }
 
@@ -2048,7 +2052,7 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 /* --- Module rule counts --- */
 .module-rule-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
   gap: 0.9rem;
 }
 
@@ -2089,7 +2093,7 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 /* --- Channels --- */
 .channel-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 1rem;
 }
 
@@ -2141,7 +2145,7 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 
 .poster-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
   gap: 1.6rem;
 }
 
@@ -2206,4 +2210,37 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 
 @media (max-width: 640px) {
   .poster-grid { grid-template-columns: 1fr; }
+}
+
+/* =====================================================================
+   Phone pass (2026-09-26). Measured at 375px wide.
+   ===================================================================== */
+@media (max-width: 640px) {
+  /* Two 21px gutters plus the hero's own 32px padding left the headline and
+     body copy a 262px column on a 375px phone. */
+  .container { width: calc(100% - 1.6rem); }
+  .hero { padding: 1.6rem 1.25rem; }
+  .hero-visual { min-height: 220px; }
+
+  /* The strip is word · word · word; wrapped on a phone the dots landed alone
+     at the start and end of lines. Drop the dots and show the words as a
+     tidy wrapped row instead. */
+  .trust-strip { gap: 0.5rem 1.1rem; padding: 1rem 0; }
+  .trust-strip span:nth-child(even) { display: none; }
+  .trust-strip span { font-size: 0.85rem; }
+}
+
+@media (max-width: 640px) {
+  /* The capability sub-menu is a 999px-radius pill. Wrapped onto six rows on a
+     phone it became a large rounded blob with links floating inside it. On a
+     phone it is one row that scrolls sideways, like an app's tab strip. */
+  .sub-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    border-radius: 16px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sub-nav::-webkit-scrollbar { display: none; }
+  .sub-nav a { flex: 0 0 auto; }
 }

@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 
 export const fluidsNav = [
@@ -12,6 +15,17 @@ export const fluidsNav = [
 ];
 
 export default function FluidsSubNav({ current }) {
+  // On a phone the sub-menu is a sideways-scrolling strip (globals.css), so the
+  // page you are on can start out of view. Bring it into view once, without
+  // moving the page vertically.
+  const navRef = useRef(null);
+  useEffect(() => {
+    const nav = navRef.current;
+    const active = nav && nav.querySelector("a.active");
+    if (!nav || !active || nav.scrollWidth <= nav.clientWidth) return;
+    nav.scrollLeft = active.offsetLeft - (nav.clientWidth - active.offsetWidth) / 2;
+  }, [current]);
+
   return (
     <div className="reveal">
       <p className="crumb">
@@ -19,7 +33,7 @@ export default function FluidsSubNav({ current }) {
         <span>/</span>
         <Link href="/products/fluids">Fluids</Link>
       </p>
-      <nav className="sub-nav" aria-label="Fluids capability areas">
+      <nav ref={navRef} className="sub-nav" aria-label="Fluids capability areas">
         {fluidsNav.map((l) => (
           <Link
             key={l.href}
