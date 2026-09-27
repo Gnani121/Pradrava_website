@@ -7,7 +7,7 @@ import {
   services,
   supportPlans,
   pricingFaq,
-  typicalImplementation,
+  implementationPackages,
   bundlePrice,
   approx,
   gstNote,
@@ -32,7 +32,7 @@ const faqSchema = {
 };
 
 const smallest = bands[0];
-const lakh = (n) => `₹${(n / 100000).toFixed(1)} lakh`;
+const lakh = (n) => `₹${+(n / 100000).toFixed(1)} lakh`;
 
 export default function PricingPage() {
   return (
@@ -112,8 +112,14 @@ export default function PricingPage() {
           <p className="eyebrow">Implementation</p>
           <h2>Getting you live</h2>
           <p className="lead">
-            One-time services, priced to what your plant needs. A typical medium-sized plant spends
-            about {lakh(typicalImplementation)} in all, paid in stages from signing to go-live.
+            A one-time package by the size of your plant, paid in stages from signing to go-live:{" "}
+            {bands.map((b, i) => (
+              <span key={b.id}>
+                {i > 0 && (i === bands.length - 1 ? " and " : ", ")}
+                {b.name.toLowerCase()} {implementationPackages[b.id] ? `about ${lakh(implementationPackages[b.id])}` : "quoted after a site visit"}
+              </span>
+            ))}
+            . The services below are what a package is built from; anything beyond it is charged at these rates.
           </p>
         </div>
         <div className="price-table-wrap">

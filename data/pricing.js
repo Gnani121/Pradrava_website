@@ -7,11 +7,17 @@
 //
 // The workbook's own formula, reproduced exactly (verified against its grid):
 //   subscription (shared cloud), per branch / month
-//        = bundle.base (band S price, discounts already applied) x band.multiplier
+//        = bundle.base (the workbook's band S figure, discounts already applied) x band.multiplier
+//   Small is priced at 80% of that base (multiplier 0.8, market review Sept 2026):
+//   a single-plant filler compares against Tally plus spreadsheets, and the
+//   workbook's full base put the entry bundle above what that buyer will pay.
 //   dedicated database, per branch / month = shared x 1.6   (+ managed hosting per band)
 //   one-time perpetual licence, per branch = dedicated x 12 x 3   (+ AMC 18% or 22% a year)
 //   branch 2 onwards = 60% of the first branch's licence line
 //   users beyond the band's included count = band.extraUser per user / month
+//
+// Paying a year in advance takes ANNUAL_PREPAY_DISCOUNT off the subscription
+// (inside the 12% a sales manager may give on the "Discount Floors" sheet).
 //
 // All amounts are in Indian rupees and EXCLUDE GST (18%).
 
@@ -22,17 +28,18 @@ export const PERPETUAL_YEARS = 3;          // perpetual = 3 x the annual dedicat
 export const ADDITIONAL_BRANCH_FACTOR = 0.6;
 export const AMC_STANDARD = 0.18;
 export const AMC_PREMIUM = 0.22;
+export const ANNUAL_PREPAY_DISCOUNT = 0.10; // subscriptions paid a year in advance
 
 // Size bands: a gas plant is sized by the cylinders it manages, not by revenue.
 export const bands = [
-  { id: "S", name: "Small", who: "One plant, one filling line", cylinders: "up to 2,000 cylinders", users: 10, multiplier: 1, extraUser: 450, hosting: 18000 },
+  { id: "S", name: "Small", who: "One plant, one filling line", cylinders: "up to 2,000 cylinders", users: 10, multiplier: 0.8, extraUser: 450, hosting: 18000 },
   { id: "M", name: "Medium", who: "One or two plants with your own transport", cylinders: "up to 10,000 cylinders", users: 30, multiplier: 1.8, extraUser: 400, hosting: 32000 },
   { id: "L", name: "Large", who: "A group of 3 to 6 locations with its own lab", cylinders: "up to 35,000 cylinders", users: 80, multiplier: 3.2, extraUser: 350, hosting: 58000 },
   { id: "XL", name: "Extra large", who: "A national or regional player, 7+ branches, bulk plant", cylinders: "35,000+ cylinders", users: 200, multiplier: 5, extraUser: 300, hosting: 95000 },
 ];
 
-// Cumulative bundles: each one adds to the one before. `base` is the band S,
-// shared-cloud price from the workbook's grid.
+// Cumulative bundles: each one adds to the one before. `base` is the workbook's
+// band S shared-cloud figure; the Small band itself sells at 80% of it.
 export const bundles = [
   { id: "B1", name: "Cylinder Basic", base: 13000, adds: "Platform and cylinder core", desc: "Know every cylinder: where it is, whose it is, when it was last tested." },
   { id: "B2", name: "Stock & Movement", base: 16715, adds: "Inventory and warehouse", desc: "Valves, seals, caps and packing material — stock, reserve, pick and transfer between branches." },
@@ -100,7 +107,17 @@ export const services = [
   { name: "Hypercare, 4 weeks after go-live", price: 150000, note: "named engineer and a daily check-in with your team" },
   { name: "Custom development", price: 9500, unit: "per person-day", note: "quoted from a written specification" },
 ];
-export const typicalImplementation = 1834000; // "TYPICAL BAND M IMPLEMENTATION" in the workbook
+// Implementation packages by size: configuration, data migration, training and
+// go-live support for a typical plant of that size. They sit inside the workbook's
+// rule that services run at 35-60% of first-year revenue. Extra Large is quoted
+// from a site visit. The line items above are what a package is built from, and
+// anything beyond the package is charged at those rates.
+export const implementationPackages = {
+  S: 300000,
+  M: 800000,
+  L: 1500000,
+  XL: null,
+};
 
 export const supportPlans = [
   { name: "Standard", response: "Next business day, 9×6", subscription: "Included", perpetual: "18% of licence a year", covers: "Bug fixes, every minor release, statutory updates when GST, e-invoice or e-way bill formats change, email and portal support." },
@@ -126,7 +143,11 @@ export const pricingFaq = [
   },
   {
     q: "Why is implementation priced separately?",
-    a: "Because it is real work: walking your plant, loading your data, configuring your workflows, training each team and standing at the dispatch gate on go-live day. A typical medium-sized plant spends about as much on implementation in the first year as on the licence — and it is what decides whether the project succeeds.",
+    a: "Because it is real work: walking your plant, loading your data, configuring your workflows, training each team and standing at the dispatch gate on go-live day. It is sold as a package by size — about ₹3 lakh for a Small plant, ₹8 lakh for Medium and ₹15 lakh for Large, with Extra large quoted after a site visit — paid in stages from signing to go-live. It is what decides whether the project succeeds.",
+  },
+  {
+    q: "Is there a discount for paying annually?",
+    a: "Yes. Pay a year of the cloud or dedicated subscription in advance and it is 10% less than paying monthly.",
   },
   {
     q: "Does the price include GST filing?",

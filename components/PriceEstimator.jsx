@@ -12,6 +12,8 @@ import {
   ADDITIONAL_BRANCH_FACTOR,
   AMC_STANDARD,
   PERPETUAL_YEARS,
+  ANNUAL_PREPAY_DISCOUNT,
+  implementationPackages,
 } from "@/data/pricing";
 
 // The price grid for a chosen size band and way of paying, plus an estimate for
@@ -38,6 +40,8 @@ export default function PriceEstimator() {
   const extraUserCost = perpetual ? extraUsers * band.extraUser * 12 * PERPETUAL_YEARS : extraUsers * band.extraUser;
   const hosting = tierId === "dedicated" ? band.hosting : 0;
   const recurring = licence + extraUserCost + hosting;
+  const setup = implementationPackages[band.id];
+  const prepayPct = Math.round(ANNUAL_PREPAY_DISCOUNT * 100);
 
   return (
     <div className="estimator">
@@ -132,16 +136,16 @@ export default function PriceEstimator() {
               <small>{breakdown(nBranches, first, extraUsers)}{hosting ? ` + hosting ${inr(hosting)}` : ""}</small>
             </div>
             <div>
-              <span>Per year</span>
-              <strong>{inr(approx(recurring * 12))}</strong>
-              <small>{tierId === "dedicated" ? "billed annually in advance" : "monthly or annual"}</small>
+              <span>Per year, paid in advance</span>
+              <strong>{inr(approx(recurring * 12 * (1 - ANNUAL_PREPAY_DISCOUNT)))}</strong>
+              <small>{prepayPct}% off {inr(approx(recurring * 12))} for paying a year up front</small>
             </div>
           </>
         )}
         <div>
           <span>Implementation</span>
-          <strong>Quoted separately</strong>
-          <small>one-time; see the services below</small>
+          <strong>{setup ? `about ${inr(setup)}` : "Quoted"}</strong>
+          <small>{setup ? `one-time package for a ${band.name.toLowerCase()} plant` : "one-time; quoted after a site visit"}</small>
         </div>
       </div>
 
