@@ -53,7 +53,7 @@ export default function AccountingPage() {
           foundation as Fluids — and it is not available yet. Here is exactly where it stands.
         </p>
         <div className="hero-actions">
-          <Link href="/contact" className="btn btn-primary">Become a design partner</Link>
+          <Link href="/contact?interest=accounting-launch" className="btn btn-primary">Become a design partner</Link>
           <Link href="/products/fluids/finance" className="btn btn-ghost">See what Fluids does today</Link>
         </div>
       </div>
@@ -144,7 +144,7 @@ export default function AccountingPage() {
           and the report formats built around how you actually close a month.
         </p>
         <div className="hero-actions">
-          <Link href="/contact" className="btn btn-primary">Talk to us</Link>
+          <Link href="/contact?interest=accounting-launch" className="btn btn-primary">Talk to us</Link>
           <Link href="/products" className="btn btn-ghost">← Back to Products</Link>
         </div>
       </div>

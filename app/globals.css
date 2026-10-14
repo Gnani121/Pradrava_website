@@ -188,6 +188,8 @@ p { margin: 0; }
   gap: 0.7rem;
 }
 
+.nav-links .nav-cta-mobile { display: none; }
+
 .nav-toggle {
   display: none;
   width: 44px;
@@ -1364,9 +1366,60 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 }
 
 /* ── Responsive ────────────────────────────────────────── */
+/* End-to-end workflow rail */
+.flow-rail {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(186px, 1fr));
+  gap: 0.9rem;
+}
+.flow-step { display: flex; }
+.flow-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1.1rem 1.1rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+.flow-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(79, 70, 229, 0.35);
+  box-shadow: var(--shadow);
+}
+.flow-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.flow-card h3 { font-size: 1rem; margin: 0; }
+.flow-card p { font-size: 0.86rem; color: var(--ink-soft); margin: 0; }
+.flow-card::after {
+  content: "→";
+  position: absolute;
+  top: 1.1rem;
+  right: 1rem;
+  color: var(--brand);
+  font-weight: 700;
+  opacity: 0.4;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+.flow-card:hover::after { opacity: 1; transform: translateX(2px); }
+
 @media (max-width: 980px) {
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-visual { min-height: 260px; order: -1; }
+  .hero-visual { min-height: 260px; order: 2; }
   .product-showcase-header { flex-direction: column; }
   .contact-main-stack { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; }
@@ -1399,6 +1452,7 @@ textarea.field-input { resize: vertical; min-height: 110px; }
   .nav-link { padding: 0.85rem 0.9rem; font-size: 1rem; }
   .nav-toggle { display: inline-flex; }
   .nav-cta-desktop { display: none; }
+  .nav-links .nav-cta-mobile { display: inline-flex; justify-content: center; margin-top: 0.7rem; }
   .hero-stats { grid-template-columns: 1fr; gap: 0.9rem; }
   .footer-top { grid-template-columns: 1fr; gap: 1.6rem; }
   .page-stack { gap: 2.6rem; }

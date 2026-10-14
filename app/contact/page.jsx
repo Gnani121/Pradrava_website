@@ -5,15 +5,16 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 const INTEREST_OPTIONS = [
-  { value: "accounting-launch", label: "Accounting launch updates" },
   { value: "fluids-demo", label: "Fluids guided demo" },
+  { value: "pricing-quote", label: "Pricing & a written quote" },
   { value: "ai-forecast-demo", label: "Analytics & Insight Workspace demo" },
+  { value: "accounting-launch", label: "Accounting launch updates" },
   { value: "general-enquiry", label: "General enquiry" },
 ];
 
 export default function ContactPage() {
   const searchParams = useSearchParams();
-  const presetInterest = searchParams.get("interest") || "accounting-launch";
+  const presetInterest = searchParams.get("interest") || "fluids-demo";
 
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -66,8 +67,8 @@ export default function ContactPage() {
         <h1>Let us plan your rollout</h1>
       </div>
       <p className="lead reveal delay-1">
-        Tell us whether you need Fluids, Accounting updates, or a product walkthrough.
-        Our team will respond with next steps and a tailored plan.
+        Tell us what you run and where it hurts — a Fluids demo, a written quote, or a
+        walkthrough. Our team will respond with next steps and a tailored plan.
       </p>
 
       <div className="contact-main-stack reveal delay-1">
@@ -88,7 +89,7 @@ export default function ContactPage() {
               </article>
               <article>
                 <h3>Gnanendra A</h3>
-                <p>Principle Consultant</p>
+                <p>Principal Consultant</p>
                 <a href="tel:+918310084720">+91 83100 84720</a>
               </article>
             </div>

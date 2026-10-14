@@ -36,6 +36,9 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
+          <Link href="/demo" className="btn btn-primary nav-cta-mobile">
+            Try a Demo
+          </Link>
         </div>
 
         <div className="nav-actions">

@@ -185,7 +185,7 @@ export default function Page() {
         </p>
         <div className="hero-actions">
           <Link href="/products/fluids/platform" className="btn btn-primary">Platform &amp; Security →</Link>
-          <Link href="/contact" className="btn btn-ghost">Talk to us</Link>
+          <Link href="/contact?interest=fluids-demo" className="btn btn-ghost">Talk to us</Link>
         </div>
       </div>
     </div>

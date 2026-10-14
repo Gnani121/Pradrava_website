@@ -150,7 +150,7 @@ export default function PriceEstimator() {
       </div>
 
       <p className="estimator-note">
-        An approximate estimate, excluding GST. <Link href="/contact">Ask for a quote</Link> for the exact figure.
+        An approximate estimate, excluding GST. <Link href="/contact?interest=pricing-quote">Ask for a quote</Link> for the exact figure.
       </p>
     </div>
   );

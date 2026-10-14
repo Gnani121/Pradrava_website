@@ -148,7 +148,7 @@ function PosterSla() {
       <Copy
         y="712"
         lines={[
-          "65 stages. 17 modules. 8 roles. Every hand-off in the",
+          "65 stages. 28 modules. 13 roles. Every hand-off in the",
           "operation gets an owner, a deadline, and a named person",
           "it escalates to when the clock runs out.",
         ]}

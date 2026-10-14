@@ -14,16 +14,16 @@ export default function Hero() {
           </h1>
           <p className="hero-subtitle">
             Pradrava builds Fluids — the operating system for a gas plant. Cylinder lifecycle,
-            sales, procurement, production, laboratory quality, dispatch and GST-correct invoicing
-            stop being seven disconnected records and become one.
+            sales, procurement, production, laboratory quality, inventory, dispatch and GST-correct
+            billing stop being disconnected records and become one.
           </p>
 
           <div className="hero-actions">
-            <Link href="/products/fluids" className="btn btn-primary">
-              See what Fluids does
+            <Link href="/demo" className="btn btn-primary">
+              Book a live demo
             </Link>
-            <Link href="/demo" className="btn btn-ghost">
-              Try a live demo
+            <Link href="/products/fluids" className="btn btn-ghost">
+              Explore Fluids
             </Link>
           </div>
 

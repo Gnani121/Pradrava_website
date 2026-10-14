@@ -54,7 +54,7 @@ const withoutWith = [
   },
   {
     was: "Everyone gets a copy of everything, so nobody reads any of it.",
-    now: "Eight roles, 71 rules, and fifteen of them deliberately carry no deadline at all. What turns red is a small enough set that red still means something.",
+    now: "Eight roles receive hand-offs, 71 rules in all, and fifteen of them deliberately carry no deadline. What turns red is a small enough set that red still means something.",
   },
   {
     was: "We have SLAs. They are in the quality manual, and nobody has read it since the audit.",

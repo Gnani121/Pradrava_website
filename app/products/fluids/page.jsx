@@ -151,7 +151,7 @@ export default function FluidsPage() {
         </p>
         <div className="hero-actions">
           <Link href="/demo" className="btn btn-primary">Try a live demo</Link>
-          <Link href="/contact" className="btn btn-ghost">Talk to sales</Link>
+          <Link href="/contact?interest=fluids-demo" className="btn btn-ghost">Talk to sales</Link>
         </div>
 
         <div className="product-hero-stats">
@@ -413,7 +413,7 @@ export default function FluidsPage() {
         </p>
         <div className="hero-actions">
           <Link href="/demo" className="btn btn-primary">Try a live demo</Link>
-          <Link href="/contact" className="btn btn-ghost">Talk to us</Link>
+          <Link href="/contact?interest=fluids-demo" className="btn btn-ghost">Talk to us</Link>
         </div>
       </div>
     </div>

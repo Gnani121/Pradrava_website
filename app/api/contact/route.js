@@ -4,6 +4,7 @@ import nodemailer from "nodemailer";
 const VALID_INTERESTS = new Set([
   "accounting-launch",
   "fluids-demo",
+  "pricing-quote",
   "ai-forecast-demo",
   "general-enquiry",
 ]);
@@ -11,6 +12,7 @@ const VALID_INTERESTS = new Set([
 const INTEREST_LABELS = {
   "accounting-launch": "Accounting launch updates",
   "fluids-demo": "Fluids guided demo",
+  "pricing-quote": "Pricing & a written quote",
   "ai-forecast-demo": "Analytics & Insight Workspace demo",
   "general-enquiry": "General enquiry",
 };

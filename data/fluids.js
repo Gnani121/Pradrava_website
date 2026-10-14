@@ -160,7 +160,7 @@ export const pillars = [
       "Seventy-one rules covering every handover, from enquiry to cylinder return",
       "Each has a deadline, and a person it escalates to when that deadline passes",
       "If nobody holds that role, it goes to the branch manager — and that is recorded",
-      "Thirteen more jobs that watch dates instead: rent due, invoices overdue, stock held too long",
+      "Ten more jobs that watch dates instead: rent due, invoices overdue, stock held too long",
     ],
   },
   {

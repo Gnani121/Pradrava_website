@@ -93,7 +93,7 @@ export default function ProductsPage() {
           leave switched off.
         </p>
         <div className="hero-actions">
-          <Link href="/contact" className="btn btn-primary">Talk to us</Link>
+          <Link href="/contact?interest=fluids-demo" className="btn btn-primary">Talk to us</Link>
           <Link href="/demo" className="btn btn-ghost">Try a live demo</Link>
         </div>
       </div>

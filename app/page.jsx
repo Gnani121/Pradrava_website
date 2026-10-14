@@ -42,6 +42,17 @@ const differentiators = [
   },
 ];
 
+// The real order-to-delivery chain, each step the next desk's starting point.
+const workflow = [
+  { n: "01", title: "Order & quotation", desc: "An enquiry becomes a quotation, then a confirmed order — and stock is reserved the moment it is placed.", href: "/products/fluids/finance" },
+  { n: "02", title: "Allocation & inventory", desc: "Cylinders are allocated with no double-claim; valves, caps and packing reserved against the order.", href: "/products/fluids/cylinder-operations" },
+  { n: "03", title: "Production & filling", desc: "The refill queue records which cylinder gave gas to which, with the consumption costed.", href: "/products/fluids/production" },
+  { n: "04", title: "Laboratory & quality", desc: "Gas is analysed and a certificate issued — results e-signed, instruments inside their calibration dates.", href: "/products/fluids/quality" },
+  { n: "05", title: "Compliance gate", desc: "An out-of-test cylinder, or one missing its CCOE papers, is blocked before it reaches the vehicle.", href: "/products/fluids/quality" },
+  { n: "06", title: "Dispatch & delivery", desc: "A challan is printed, the cylinder leaves the right bay, and delivery is confirmed with proof.", href: "/products/fluids/cylinder-operations" },
+  { n: "07", title: "Invoice & accounts", desc: "A GST-correct invoice is raised from the delivery and handed to your accounts package.", href: "/products/fluids/finance" },
+];
+
 export default function Home() {
   return (
     <div className="container page-stack">
@@ -79,6 +90,29 @@ export default function Home() {
             </article>
           ))}
         </div>
+      </section>
+
+      {/* End-to-end workflow */}
+      <section className="section-block reveal">
+        <div className="section-head">
+          <p className="eyebrow">How it connects</p>
+          <h2>From customer order to final delivery — one connected workflow</h2>
+          <p className="lead" style={{ marginTop: "0.9rem" }}>
+            No re-keying between desks. Each hand-off is the next desk's starting point, and the
+            system carries the record — and the checks — all the way through.
+          </p>
+        </div>
+        <ol className="flow-rail">
+          {workflow.map((s) => (
+            <li key={s.n} className="flow-step">
+              <Link href={s.href} className="flow-card">
+                <span className="flow-num">{s.n}</span>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </Link>
+            </li>
+          ))}
+        </ol>
       </section>
 
       {/* Capability pillars */}
@@ -274,7 +308,7 @@ export default function Home() {
         </p>
         <div className="hero-actions">
           <Link href="/demo" className="btn btn-primary">Try a live demo</Link>
-          <Link href="/contact" className="btn btn-ghost">Talk to us</Link>
+          <Link href="/contact?interest=fluids-demo" className="btn btn-ghost">Talk to us</Link>
         </div>
       </section>
     </div>

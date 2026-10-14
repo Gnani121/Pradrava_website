@@ -280,7 +280,7 @@ export default function Page() {
           at contract stage. Ask us anything on this page in detail.
         </p>
         <div className="hero-actions">
-          <Link href="/contact" className="btn btn-primary">Talk to us</Link>
+          <Link href="/contact?interest=fluids-demo" className="btn btn-primary">Talk to us</Link>
           <Link href="/products/fluids" className="btn btn-ghost">← Back to Fluids</Link>
         </div>
       </div>

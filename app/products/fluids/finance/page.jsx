@@ -236,7 +236,7 @@ export default function Page() {
         </p>
         <div className="hero-actions">
           <Link href="/products/fluids/procurement" className="btn btn-primary">Procurement &amp; Inventory →</Link>
-          <Link href="/contact" className="btn btn-ghost">Talk to us</Link>
+          <Link href="/contact?interest=fluids-demo" className="btn btn-ghost">Talk to us</Link>
         </div>
       </div>
     </div>

@@ -186,7 +186,7 @@ export default function PricingPage() {
         </p>
         <div className="hero-actions">
           <Link href="/demo" className="btn btn-primary">Try a live demo</Link>
-          <Link href="/contact" className="btn btn-ghost">Ask for a quote</Link>
+          <Link href="/contact?interest=pricing-quote" className="btn btn-ghost">Ask for a quote</Link>
         </div>
       </div>
     </div>
