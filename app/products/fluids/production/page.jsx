@@ -180,7 +180,7 @@ export default function Page() {
         <p className="eyebrow">Next</p>
         <h3>See what holds all of this together</h3>
         <p>
-          Multi-company isolation, thirteen roles, module toggles per branch, and the checks that
+          Branch isolation, thirteen roles, module toggles per branch, and the checks that
           run before the application will even start.
         </p>
         <div className="hero-actions">

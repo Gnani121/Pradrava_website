@@ -132,6 +132,24 @@ export default function Page() {
         </p>
       </div>
 
+      <figure className="product-hero-shot reveal delay-1">
+        <div className="shot-frame">
+          <div className="shot-bar"><span /><span /><span /></div>
+          <img
+            src="/screens/cylinder-360.jpg"
+            alt="A screen showing every cylinder in the fleet grouped by who owns it"
+            width={800}
+            height={398}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <figcaption>
+          Every cylinder on one screen — which are yours, which belong to customers, which are
+          sold or out on rent. Tap any one to see its full history.
+        </figcaption>
+      </figure>
+
       <div className="feature-panel reveal delay-1">
         <h3>Why this is the hard part</h3>
         <p>

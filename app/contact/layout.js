@@ -1,12 +1,13 @@
 export const metadata = {
-  title: "Contact",
-  description: "Share your interest and email to receive launch updates or request a guided demo.",
+  title: "Book a Demo or Request a Quote",
+  description:
+    "Book a live demo of Fluids or ask for a written price quote for your gas plant. Tell us your branches, cylinders and the one job that is costing you time, and we will show you the screen that does it.",
   keywords: [
+    "Fluids demo",
+    "gas cylinder software demo",
+    "gas plant software quote",
+    "industrial gas software India",
     "contact Pradrava",
-    "request demo",
-    "launch updates",
-    "product enquiry",
-    "software consultation",
   ],
   alternates: {
     canonical: "/contact",

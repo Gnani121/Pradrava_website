@@ -44,8 +44,8 @@ export const fluidsFeatures = [
   },
   {
     icon: "🏢",
-    title: "Multi-Company, Multi-Branch",
-    desc: "Group companies and branches on one system, genuinely unable to see each other's data. Moving stock between them is an approval step, and you can watch it while it is in transit.",
+    title: "Multi-Branch",
+    desc: "All your branches on one system, genuinely unable to see each other's data. Moving stock between branches is an approval step, and you can watch it while it is in transit.",
   },
   {
     icon: "⏱️",
@@ -55,7 +55,7 @@ export const fluidsFeatures = [
   {
     icon: "🎛️",
     title: "Turn Modules On and Off",
-    desc: "28 modules and 45 sub-modules switched on or off per company or per branch, plus plant profiles and gas-only or item-only modes. What you switch off genuinely is not there, rather than hidden from the menu.",
+    desc: "28 modules and 45 sub-modules switched on or off per branch, plus plant profiles and gas-only or item-only modes. What you switch off genuinely is not there, rather than hidden from the menu.",
   },
 ];
 
@@ -115,7 +115,7 @@ export const fluidsModules = [
   "Unstaffed-role fallback and a delivery report showing every alert that could not be raised, and why",
   "Thirteen jobs that run on a schedule: the escalation sweep, alert dispatch and its delivery report, overdue-invoice dunning, monthly invoice consolidation, rental billing, reservation reclaim, e-way bill expiry, the accounting hand-off, purchase and sales automation, item-cost reconciliation and log retention",
   "Run-on-demand sweeps for the quote funnel, reordering, calibrations coming due, cylinders approaching hydro test and lapsing contract prices",
-  "Module Control Panel: 28 modules and 45 sub-modules toggled per company or branch",
+  "Module Control Panel: 28 modules and 45 sub-modules toggled per branch",
   "Plant profiles and gas-only, item-only or combined business modes",
   "Activity and security audit log with database-level change tracking",
   "Shop-floor kiosk station, phone-as-scanner QR sessions, and a companion scanner app in preview",
@@ -143,7 +143,7 @@ export const fluidsFaq = [
   },
   {
     q: "Can we run more than one plant or company on it?",
-    a: "Yes. Several companies and branches run on one system, and they genuinely cannot see each other's data — it is built into how the data is stored rather than left to whoever writes the next screen. Moving stock between branches goes through an approval step, and you can see it while it is in transit.",
+    a: "Yes. All your branches run on one system, and they genuinely cannot see each other's data — it is built into how the data is stored rather than left to whoever writes the next screen. Moving stock between branches goes through an approval step, and you can see it while it is in transit.",
   },
   {
     q: "Does it stop non-compliant dispatch?",

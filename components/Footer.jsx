@@ -11,8 +11,8 @@ export default function Footer() {
           </Link>
           <p>
             Operations software for industrial gas. Cylinder lifecycle, laboratory quality,
-            procurement, production and GST-correct invoicing on one set of live data — multi-company
-            and multi-branch from the first day.
+            procurement, production and GST-correct invoicing on one set of live data —
+            multi-branch from the first day.
           </p>
         </div>
 

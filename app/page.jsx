@@ -10,14 +10,18 @@ export const metadata = {
   description:
     "Pradrava builds Fluids — cylinder lifecycle, sales, procurement, production, laboratory quality, dispatch and GST-correct invoicing on one set of live data. Multi-branch, ISO-grade quality records, and a compliance gate that blocks unsafe dispatch.",
   keywords: [
-    "industrial gas ERP",
     "gas cylinder management software",
-    "cylinder tracking software India",
-    "gas plant operations software",
-    "ISO 6141 certificate of analysis software",
-    "GST invoicing software for gas plants",
+    "gas cylinder tracking software",
+    "industrial gas plant software",
+    "gas filling plant software",
+    "oxygen plant software",
+    "gas cylinder billing software",
+    "GST billing software for gas cylinders",
     "cylinder rental and demurrage billing",
-    "LIMS for industrial gas",
+    "gas cylinder inventory software",
+    "gas plant ERP India",
+    "cylinder management software for gas agency",
+    "ISO 6141 certificate of analysis software",
   ],
   alternates: {
     canonical: "/",
@@ -33,7 +37,7 @@ const differentiators = [
   {
     icon: "🧱",
     title: "You decide how much of it you take",
-    desc: "28 modules and 45 sub-modules switch on or off per company and per branch. If you only fill cylinders, the item and manufacturing side genuinely is not there — not merely hidden from the menu. Start narrow and widen later, without moving your data.",
+    desc: "28 modules and 45 sub-modules switch on or off per branch. If you only fill cylinders, the item and manufacturing side genuinely is not there — not merely hidden from the menu. Start narrow and widen later, without moving your data.",
   },
   {
     icon: "🛡️",
@@ -54,40 +58,41 @@ const workflow = [
 ];
 
 // Real screens from the running product (sample data, no customer information).
+// Plain language — the reader is a plant owner, not an engineer.
 const productShots = [
   {
     src: "/screens/cylinder-360.jpg",
-    alt: "Cylinder 360 showing a 128-cylinder fleet split by ownership",
-    title: "Every cylinder, by who owns it and where",
-    desc: "The fleet split into company stock, the customer's bottles in your plant, sold and on-rent — click any one for its full life history.",
+    alt: "A screen showing every cylinder in the fleet grouped by who owns it",
+    title: "Know every cylinder — whose it is, where it is",
+    desc: "See all your cylinders at once: which are yours, which belong to customers, which are sold or out on rent. Tap any one to see its full story.",
     href: "/products/fluids/cylinder-operations",
   },
   {
     src: "/screens/certification-retest.jpg",
-    alt: "Certification and retest intervals by gas service",
-    title: "Test validity is built in, not a reminder",
-    desc: "Hydro-test intervals by gas, and the expiry printed on every certificate — so an out-of-test bottle is caught before dispatch, never after.",
+    alt: "A screen showing cylinder test dates by gas type",
+    title: "Stops an out-of-test cylinder leaving the gate",
+    desc: "The system keeps each cylinder's test date. If a test has expired, it will not let the cylinder go out — it is caught before it reaches the truck, not after.",
     href: "/products/fluids/quality",
   },
   {
     src: "/screens/certificate-of-analysis.jpg",
-    alt: "Certificate of Analysis with ISO 6142 uncertainty budget",
-    title: "Lab records an auditor will accept",
-    desc: "ISO 6141 Certificates of Analysis with an ISO 6142 uncertainty budget computed per component — not a spreadsheet printout.",
+    alt: "A screen that issues a gas test certificate",
+    title: "Gas test certificates your customer will accept",
+    desc: "Print proper quality certificates straight from the system — ready for your customer's auditor. No more typing them into Excel by hand.",
     href: "/products/fluids/quality",
   },
   {
     src: "/screens/sales-invoices.jpg",
-    alt: "Sales invoices with gapless numbering and payment status",
-    title: "GST-correct invoices, numbered without a gap",
-    desc: "Every invoice numbered without a gap per GSTIN and financial year, with due dates and payment tracked against each one.",
+    alt: "A screen listing GST sales invoices with payment status",
+    title: "GST bills that are right the first time",
+    desc: "Make correct GST bills in one click. The bill numbers never skip, and you can see at a glance who has paid and who is running late.",
     href: "/products/fluids/finance",
   },
   {
     src: "/screens/plant-flow.jpg",
-    alt: "Plant Flow live zone-by-zone command center",
-    title: "Nothing sits idle without you knowing",
-    desc: "A live zone-by-zone view of the plant that surfaces the cylinders standing still the longest — the work nobody is chasing.",
+    alt: "A screen showing where cylinders are across the plant",
+    title: "See what is stuck and sitting idle",
+    desc: "A live map of your plant showing where every cylinder is — and which ones have been standing too long with nobody moving them.",
     href: "/products/fluids/production",
   },
 ];
@@ -114,10 +119,11 @@ export default function Home() {
       <section className="section-block reveal">
         <div className="section-head">
           <p className="eyebrow">See it running</p>
-          <h2>The actual product, not a slide deck</h2>
+          <h2>A look inside the software</h2>
           <p className="lead" style={{ marginTop: "0.9rem" }}>
-            This is the Command Center — every order, cylinder, overdue task and quality
-            figure for the plant in one live view. Open the real thing with sample data.
+            This is the main screen. Everything happening in your plant — money, orders,
+            cylinders out with customers, and the jobs running late — in one place, updating
+            on its own. Open it yourself with sample data.
           </p>
         </div>
         <figure className="product-hero-shot">
@@ -133,8 +139,8 @@ export default function Home() {
             />
           </div>
           <figcaption>
-            Live revenue, open orders, cylinders in the field and quality pass-rate — with the
-            tasks that are overdue surfaced first.
+            Money this month, open orders, cylinders out with customers, and pass rate — with
+            the late jobs shown right at the top.
           </figcaption>
         </figure>
         <div className="section-cta-row">
@@ -190,10 +196,10 @@ export default function Home() {
       <section className="section-block reveal">
         <div className="section-head">
           <p className="eyebrow">What you actually see</p>
-          <h2>Real screens from the running product</h2>
+          <h2>Real screens from the software</h2>
           <p className="lead" style={{ marginTop: "0.9rem" }}>
-            Not stock dashboards. Each screen below is live in the product, and each one does
-            something a spreadsheet cannot — refuse, chase, or prove.
+            These are the actual screens, not stock pictures. Each one does a job Excel cannot —
+            it stops mistakes, chases late work, and keeps the proof.
           </p>
         </div>
         <div className="shot-grid">

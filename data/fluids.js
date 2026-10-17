@@ -168,7 +168,7 @@ export const pillars = [
     title: "Platform & Security",
     href: "/products/fluids/platform",
     desc:
-      "Several companies and several branches on one system, kept apart by how the data is built rather than by anyone remembering to keep them apart.",
+      "Several branches on one system, kept apart by how the data is built rather than by anyone remembering to keep them apart.",
     points: [
       "Thirteen roles — your sales team cannot open the lab's records, and no branch sees another's",
       "If a screen were ever left unprotected, the system refuses to start rather than expose it",
@@ -260,12 +260,12 @@ export const fluidsFaq = [
     a: "It is a full operations system for a gas plant. Sales, procurement, inventory, production, quality, machines, dispatch and finance all run on the same data, with cylinder operations as the domain core. If you already run accounts elsewhere, Fluids hands documents over to it rather than replacing it.",
   },
   {
-    q: "How is data kept separate between our branches and group companies?",
+    q: "How is data kept separate between our branches?",
     a: "It is built into the structure of the data rather than left to convention. Every table says whether it belongs to a branch, a company, a location or is genuinely shared, and the build fails if a new one is added without saying. Somebody assigned to one branch cannot read or write another branch's data by any route.",
   },
   {
     q: "We only fill cylinders — do we have to take the item and manufacturing modules?",
-    a: "No. You can set the system to gas only, items only, or both, and it is enforced when data is saved rather than just hidden from the menu. Beyond that, your plant profile — full plant, on-site production, import-and-fill, bulk-fill — decides which capabilities exist at all, and any of 28 modules and 45 sub-modules can be switched on or off per company or per branch without a code change.",
+    a: "No. You can set the system to gas only, items only, or both, and it is enforced when data is saved rather than just hidden from the menu. Beyond that, your plant profile — full plant, on-site production, import-and-fill, bulk-fill — decides which capabilities exist at all, and any of 28 modules and 45 sub-modules can be switched on or off per branch without a code change.",
   },
   {
     q: "Does it handle Indian GST properly, or is it a generic tax field?",

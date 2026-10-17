@@ -17,7 +17,15 @@ import {
 export const metadata = {
   title: "Pricing | Fluids",
   description:
-    "Approximate pricing for Fluids, the operations system for industrial gas plants: eight bundles, four plant sizes, and three ways to pay — cloud subscription, dedicated database or a one-time licence with annual maintenance.",
+    "Fluids pricing for industrial gas plants: cloud subscriptions from about ₹10,400 per branch a month, eight bundles, four plant sizes, and three ways to pay — cloud, dedicated database or a one-time licence. Approximate starting prices, GST excluded.",
+  keywords: [
+    "gas cylinder software price India",
+    "gas plant software cost",
+    "cylinder management software price",
+    "gas cylinder billing software price",
+    "industrial gas ERP pricing",
+    "gas plant software subscription cost",
+  ],
   alternates: { canonical: "/pricing" },
 };
 

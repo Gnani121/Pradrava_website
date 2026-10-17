@@ -130,6 +130,24 @@ export default function Page() {
         </p>
       </div>
 
+      <figure className="product-hero-shot reveal delay-1">
+        <div className="shot-frame">
+          <div className="shot-bar"><span /><span /><span /></div>
+          <img
+            src="/screens/certification-retest.jpg"
+            alt="A screen showing cylinder test dates by gas type"
+            width={800}
+            height={398}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <figcaption>
+          The system keeps each cylinder's test date. If a test has run out, the cylinder is not
+          allowed to go out — it is stopped here, before it ever reaches the truck.
+        </figcaption>
+      </figure>
+
       <div className="feature-panel reveal delay-1">
         <h3>The test it has to pass</h3>
         <p>

@@ -8,16 +8,26 @@ export const metadata = {
     template: "%s | Pradrava",
   },
   description:
-    "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and GST-correct invoicing on one set of live data, multi-company and multi-branch.",
+    "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and GST-correct invoicing on one set of live data, multi-branch.",
   applicationName: "Pradrava",
   metadataBase: new URL("https://pradrava.com"),
   keywords: [
-    "industrial gas ERP",
     "gas cylinder management software",
+    "gas cylinder tracking software",
     "cylinder tracking software India",
-    "gas plant operations software",
-    "GST invoicing software for gas plants",
+    "industrial gas plant software",
+    "gas plant ERP India",
+    "gas filling plant software",
+    "oxygen plant software",
+    "gas cylinder billing software",
+    "GST billing software for gas cylinders",
+    "cylinder rental management software",
+    "gas cylinder inventory software",
+    "medical gas cylinder software",
+    "cylinder management software for gas agency",
+    "gas distribution software",
     "LIMS for industrial gas",
+    "Fluids",
     "Pradrava",
   ],
   alternates: {
@@ -39,7 +49,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Pradrava | Operations Software for Industrial Gas Plants",
-    description: "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and GST-correct invoicing on one set of live data, multi-company and multi-branch.",
+    description: "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and GST-correct invoicing on one set of live data, multi-branch.",
     url: "https://pradrava.com",
     siteName: "Pradrava",
     images: [
@@ -56,7 +66,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Pradrava | Operations Software for Industrial Gas Plants",
-    description: "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and GST-correct invoicing on one set of live data, multi-company and multi-branch.",
+    description: "Pradrava builds Fluids — cylinder lifecycle, laboratory quality, procurement, production, dispatch and GST-correct invoicing on one set of live data, multi-branch.",
     images: ["/og-image.svg"],
   },
 };
@@ -94,6 +104,27 @@ const websiteSchema = {
   inLanguage: "en",
 };
 
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Fluids",
+  applicationCategory: "BusinessApplication",
+  applicationSubCategory: "ERP for industrial gas plants",
+  operatingSystem: "Web",
+  url: "https://pradrava.com/products/fluids",
+  description:
+    "Fluids runs an industrial gas plant end to end — cylinder tracking, filling, laboratory quality, dispatch and GST-correct billing on one system.",
+  publisher: { "@type": "Organization", name: "Pradrava", url: "https://pradrava.com" },
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "INR",
+    price: "10400",
+    description: "Cloud subscription, per branch per month (approximate starting price, excludes GST).",
+    url: "https://pradrava.com/pricing",
+  },
+  areaServed: "IN",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -105,6 +136,10 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
         />
         <Navbar />
         <main className="site-main">{children}</main>

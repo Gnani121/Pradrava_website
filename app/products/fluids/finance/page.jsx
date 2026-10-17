@@ -144,6 +144,24 @@ export default function Page() {
         </p>
       </div>
 
+      <figure className="product-hero-shot reveal delay-1">
+        <div className="shot-frame">
+          <div className="shot-bar"><span /><span /><span /></div>
+          <img
+            src="/screens/sales-invoices.jpg"
+            alt="A screen listing GST sales invoices with payment status"
+            width={800}
+            height={398}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <figcaption>
+          Make a correct GST bill in one click. The bill numbers never skip, and you can see at a
+          glance who has paid and who is running late.
+        </figcaption>
+      </figure>
+
       <div className="feature-panel reveal delay-1">
         <h3>Why we went this deep on tax</h3>
         <p>

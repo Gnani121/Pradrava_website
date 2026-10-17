@@ -15,7 +15,7 @@ import { depthProof, scaleFacts } from "@/data/depth";
 export const metadata = {
   title: "Fluids | Industrial Gas Plant ERP",
   description:
-    "Fluids is a complete operations system for industrial gas plants: cylinder lifecycle, sales and procurement, production, ISO-grade laboratory quality, dispatch, machines and GST-correct invoicing — multi-company and multi-branch on one set of live data.",
+    "Fluids is a complete operations system for industrial gas plants: cylinder lifecycle, sales and procurement, production, ISO-grade laboratory quality, dispatch, machines and GST-correct invoicing — multi-branch on one set of live data.",
   keywords: [
     "industrial gas ERP software",
     "gas cylinder management system",
@@ -147,7 +147,7 @@ export default function FluidsPage() {
         <p className="hero-subtitle">
           The operating system for an industrial gas plant. Cylinder lifecycle, sales,
           procurement, production, laboratory quality, machines, dispatch and Indian statutory
-          compliance — one system, one set of live data, multi-company and multi-branch.
+          compliance — one system, one set of live data, across all your branches.
         </p>
         <div className="hero-actions">
           <Link href="/demo" className="btn btn-primary">Try a live demo</Link>

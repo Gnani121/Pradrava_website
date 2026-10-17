@@ -341,12 +341,14 @@ p { margin: 0; }
   width: 340px; height: 340px;
   background: rgba(79, 70, 229, 0.5);
   top: -80px; left: -60px;
+  animation: drift-a 15s ease-in-out infinite;
 }
 
 .hero-orb-right {
   width: 300px; height: 300px;
   background: rgba(6, 182, 212, 0.42);
   bottom: -100px; right: -40px;
+  animation: drift-b 17s ease-in-out infinite;
 }
 
 .hero-grid {
@@ -373,10 +375,12 @@ p { margin: 0; }
 }
 
 .hero-title .grad-text {
-  background: linear-gradient(100deg, #7dd3fc, #a5b4fc, #f0abfc);
+  background: linear-gradient(100deg, #7dd3fc, #a5b4fc, #f0abfc, #7dd3fc);
+  background-size: 220% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: grad-pan 9s ease-in-out infinite;
 }
 
 .hero-subtitle {
@@ -1339,13 +1343,30 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 }
 
 /* ── Reveal animations ─────────────────────────────────── */
+/* Base (every browser): a single gentle rise as the page loads. Content is
+   always visible — the animation only plays in, it never leaves it hidden. */
 .reveal {
   animation: rise-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-
 .delay-1 { animation-delay: 120ms; }
 .delay-2 { animation-delay: 240ms; }
 .delay-3 { animation-delay: 360ms; }
+
+/* Modern browsers: reveal each block as it scrolls into view, driven purely by
+   CSS (no JavaScript, so no hydration or stuck-hidden content). Browsers that
+   do not support scroll-driven animations simply keep the load animation. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise-in both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    .delay-1 { animation-range: entry 6% entry 60%; }
+    .delay-2 { animation-range: entry 12% entry 66%; }
+    .delay-3 { animation-range: entry 18% entry 72%; }
+  }
+}
 
 @keyframes rise-in {
   from { opacity: 0; transform: translateY(22px); }
@@ -1357,11 +1378,29 @@ textarea.field-input { resize: vertical; min-height: 110px; }
   50% { transform: translateY(-10px); }
 }
 
+/* Slow pan across the headline gradient. */
+@keyframes grad-pan {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+/* Gentle drift of the hero glow orbs. */
+@keyframes drift-a {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -16px); }
+}
+@keyframes drift-b {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-22px, 18px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *, .reveal, .mock-card-top, .mock-bag, .mock-cup {
+  *, .reveal, .mock-card-top, .mock-bag, .mock-cup, .hero-orb,
+  .hero-title .grad-text {
     animation: none !important;
     transition: none !important;
   }
+  .reveal { opacity: 1 !important; transform: none !important; }
   html { scroll-behavior: auto; }
 }
 

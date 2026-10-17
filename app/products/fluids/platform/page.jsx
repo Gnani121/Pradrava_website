@@ -5,7 +5,7 @@ import { platformProof, automations } from "@/data/fluids";
 export const metadata = {
   title: "Platform & Security | Fluids",
   description:
-    "Several companies and branches on one system that genuinely cannot see each other's data, 13 roles and 67 permission keys, modules switched on or off per company and branch, saves that cannot be duplicated by a double-tap, deadlines with automatic escalation, full audit logging, and cloud hosting in the Mumbai region.",
+    "Several branches on one system that genuinely cannot see each other's data, 13 roles and 67 permission keys, modules switched on or off per branch, saves that cannot be duplicated by a double-tap, deadlines with automatic escalation, full audit logging, and cloud hosting in the Mumbai region.",
   keywords: [
     "multi tenant ERP branch isolation",
     "role based access control ERP",
@@ -22,7 +22,7 @@ const access = [
   {
     label: "13 roles, at three levels of reach",
     value:
-      "A global support role, a company-level super administrator that spans every branch, and eleven branch-scoped roles: administrator, branch manager, accountant, sales, purchase, production, inventory, quality control, inspection, service and viewer. The list in the code and the list in the database are checked against each other automatically, so they cannot drift.",
+      "A global support role, a super administrator that spans every branch, and eleven branch-scoped roles: administrator, branch manager, accountant, sales, purchase, production, inventory, quality control, inspection, service and viewer. The list in the code and the list in the database are checked against each other automatically, so they cannot drift.",
   },
   {
     label: "Four independent authorisation axes",
@@ -49,7 +49,7 @@ const access = [
 const tenancy = [
   {
     title: "Every table declares its scope",
-    desc: "All 239 tables in the database are registered against an explicit scoping axis — branch, company, location, inherited from a parent, or genuinely global. A global table has to state a reason. Continuous integration fails if a table exists without an entry.",
+    desc: "All 239 tables in the database are registered against an explicit scoping axis — branch, location, inherited from a parent, or genuinely global. A global table has to state a reason. Continuous integration fails if a table exists without an entry.",
   },
   {
     title: "The query cannot forget",
@@ -69,12 +69,12 @@ const control = [
   {
     icon: "🎛️",
     title: "Module Control Panel",
-    desc: "28 top-level modules and 45 sub-modules switched on or off at global, customer or branch scope, with the more specific scope winning and inherited-versus-overridden shown clearly. Turning a parent off cascades to its children. Core modules are always on, so an administrator cannot lock everybody out.",
+    desc: "28 top-level modules and 45 sub-modules switched on or off per branch, with the more specific scope winning and inherited-versus-overridden shown clearly. Turning a parent off cascades to its children. Core modules are always on, so an administrator cannot lock everybody out.",
   },
   {
     icon: "🏭",
     title: "Plant profiles",
-    desc: "Four presets — full plant, on-site production, import and fill, bulk fill — expanding into capability flags for gas sourcing, bulk storage, mandatory quality control and servicing. The company sets the ceiling; a branch may narrow it but never widen it.",
+    desc: "Four presets — full plant, on-site production, import and fill, bulk fill — expanding into capability flags for gas sourcing, bulk storage, mandatory quality control and servicing. The profile sets the ceiling; a branch may narrow it but never widen it.",
   },
   {
     icon: "⚗️",
@@ -171,7 +171,7 @@ export default function Page() {
       <div className="section-block reveal delay-1">
         <div className="section-head" style={{ marginBottom: "1.2rem" }}>
           <p className="eyebrow">Tenancy</p>
-          <h2>Multi-company and multi-branch, done properly</h2>
+          <h2>Multi-branch, done properly</h2>
         </div>
         <div className="pain-grid">
           {tenancy.map((t) => (
