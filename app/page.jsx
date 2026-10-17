@@ -53,6 +53,45 @@ const workflow = [
   { n: "07", title: "Invoice & accounts", desc: "A GST-correct invoice is raised from the delivery and handed to your accounts package.", href: "/products/fluids/finance" },
 ];
 
+// Real screens from the running product (sample data, no customer information).
+const productShots = [
+  {
+    src: "/screens/cylinder-360.jpg",
+    alt: "Cylinder 360 showing a 128-cylinder fleet split by ownership",
+    title: "Every cylinder, by who owns it and where",
+    desc: "The fleet split into company stock, the customer's bottles in your plant, sold and on-rent — click any one for its full life history.",
+    href: "/products/fluids/cylinder-operations",
+  },
+  {
+    src: "/screens/certification-retest.jpg",
+    alt: "Certification and retest intervals by gas service",
+    title: "Test validity is built in, not a reminder",
+    desc: "Hydro-test intervals by gas, and the expiry printed on every certificate — so an out-of-test bottle is caught before dispatch, never after.",
+    href: "/products/fluids/quality",
+  },
+  {
+    src: "/screens/certificate-of-analysis.jpg",
+    alt: "Certificate of Analysis with ISO 6142 uncertainty budget",
+    title: "Lab records an auditor will accept",
+    desc: "ISO 6141 Certificates of Analysis with an ISO 6142 uncertainty budget computed per component — not a spreadsheet printout.",
+    href: "/products/fluids/quality",
+  },
+  {
+    src: "/screens/sales-invoices.jpg",
+    alt: "Sales invoices with gapless numbering and payment status",
+    title: "GST-correct invoices, numbered without a gap",
+    desc: "Every invoice numbered without a gap per GSTIN and financial year, with due dates and payment tracked against each one.",
+    href: "/products/fluids/finance",
+  },
+  {
+    src: "/screens/plant-flow.jpg",
+    alt: "Plant Flow live zone-by-zone command center",
+    title: "Nothing sits idle without you knowing",
+    desc: "A live zone-by-zone view of the plant that surfaces the cylinders standing still the longest — the work nobody is chasing.",
+    href: "/products/fluids/production",
+  },
+];
+
 export default function Home() {
   return (
     <div className="container page-stack">
@@ -70,6 +109,38 @@ export default function Home() {
         <span>·</span>
         <span>Multi-Branch Groups</span>
       </div>
+
+      {/* Product shot — see it running */}
+      <section className="section-block reveal">
+        <div className="section-head">
+          <p className="eyebrow">See it running</p>
+          <h2>The actual product, not a slide deck</h2>
+          <p className="lead" style={{ marginTop: "0.9rem" }}>
+            This is the Command Center — every order, cylinder, overdue task and quality
+            figure for the plant in one live view. Open the real thing with sample data.
+          </p>
+        </div>
+        <figure className="product-hero-shot">
+          <div className="shot-frame">
+            <div className="shot-bar"><span /><span /><span /></div>
+            <img
+              src="/screens/command-center.jpg"
+              alt="Fluids Command Center dashboard with live plant KPIs and a prioritised work queue"
+              width={800}
+              height={465}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption>
+            Live revenue, open orders, cylinders in the field and quality pass-rate — with the
+            tasks that are overdue surfaced first.
+          </figcaption>
+        </figure>
+        <div className="section-cta-row">
+          <Link href="/demo" className="btn btn-primary">Book a live demo</Link>
+        </div>
+      </section>
 
       {/* The problems */}
       <section className="section-block reveal">
@@ -113,6 +184,33 @@ export default function Home() {
             </li>
           ))}
         </ol>
+      </section>
+
+      {/* Product screenshots grid */}
+      <section className="section-block reveal">
+        <div className="section-head">
+          <p className="eyebrow">What you actually see</p>
+          <h2>Real screens from the running product</h2>
+          <p className="lead" style={{ marginTop: "0.9rem" }}>
+            Not stock dashboards. Each screen below is live in the product, and each one does
+            something a spreadsheet cannot — refuse, chase, or prove.
+          </p>
+        </div>
+        <div className="shot-grid">
+          {productShots.map((s) => (
+            <article key={s.src} className="shot-card">
+              <Link href={s.href} className="shot-frame shot-frame-link">
+                <div className="shot-bar"><span /><span /><span /></div>
+                <img src={s.src} alt={s.alt} width={800} height={398} loading="lazy" decoding="async" />
+              </Link>
+              <div className="shot-caption">
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+                <Link href={s.href} className="inline-cta">Explore →</Link>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       {/* Capability pillars */}
