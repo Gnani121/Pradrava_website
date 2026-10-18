@@ -14,6 +14,8 @@ import {
   PERPETUAL_YEARS,
   ANNUAL_PREPAY_DISCOUNT,
   implementationPackages,
+  launchOffer,
+  offerAppliesTo,
 } from "@/data/pricing";
 
 // The price grid for a chosen size band and way of paying, plus an estimate for
@@ -42,6 +44,10 @@ export default function PriceEstimator() {
   const recurring = licence + extraUserCost + hosting;
   const setup = implementationPackages[band.id];
   const prepayPct = Math.round(ANNUAL_PREPAY_DISCOUNT * 100);
+  // The launch offer replaces the prepay discount (it does not stack), so the
+  // first-year figure uses whichever applies — never both.
+  const offer = offerAppliesTo(tierId);
+  const offerPct = Math.round(launchOffer.pct * 100);
 
   return (
     <div className="estimator">
@@ -91,6 +97,7 @@ export default function PriceEstimator() {
           {tierId === "dedicated" && ` Managed hosting for this size is ${inr(band.hosting)} a month on top.`}
           {perpetual && ` Annual maintenance (AMC) is ${Math.round(AMC_STANDARD * 100)}% of the licence a year from year two.`}
           {" "}Extra users beyond {band.users}: {inr(band.extraUser)} each a month.
+          {offer && ` ${launchOffer.name}: these prices are ${offerPct}% lower for the first year if you sign by ${launchOffer.endsLabel}.`}
         </p>
       </div>
 
@@ -135,11 +142,21 @@ export default function PriceEstimator() {
               <strong>{inr(approx(recurring))}</strong>
               <small>{breakdown(nBranches, first, extraUsers)}{hosting ? ` + hosting ${inr(hosting)}` : ""}</small>
             </div>
-            <div>
-              <span>Per year, paid in advance</span>
-              <strong>{inr(approx(recurring * 12 * (1 - ANNUAL_PREPAY_DISCOUNT)))}</strong>
-              <small>{prepayPct}% off {inr(approx(recurring * 12))} for paying a year up front</small>
-            </div>
+            {offer ? (
+              <div className="estimator-offer">
+                <span>First year, {launchOffer.name.toLowerCase()}</span>
+                <strong>{inr(approx(recurring * 12 * (1 - launchOffer.pct)))}</strong>
+                <small>
+                  {offerPct}% off {inr(approx(recurring * 12))} if you sign by {launchOffer.endsLabel}; replaces the {prepayPct}% prepay discount
+                </small>
+              </div>
+            ) : (
+              <div>
+                <span>Per year, paid in advance</span>
+                <strong>{inr(approx(recurring * 12 * (1 - ANNUAL_PREPAY_DISCOUNT)))}</strong>
+                <small>{prepayPct}% off {inr(approx(recurring * 12))} for paying a year up front</small>
+              </div>
+            )}
           </>
         )}
         <div>

@@ -30,6 +30,27 @@ export const AMC_STANDARD = 0.18;
 export const AMC_PREMIUM = 0.22;
 export const ANNUAL_PREPAY_DISCOUNT = 0.10; // subscriptions paid a year in advance
 
+// Launch offer (Oct 2026). 12% off the CLOUD subscription for the first year,
+// for plants that sign before the end date. It REPLACES the annual-prepay
+// discount rather than stacking with it: the workbook's "Discount Floors" sheet
+// caps a sales discount at 12%, and 12% + 10% would breach it. The offer stops
+// showing on its own after `endsOn` (the pricing page re-renders daily).
+export const launchOffer = {
+  pct: 0.12,
+  endsOn: "2027-03-31",            // last day the offer can be signed, inclusive (IST)
+  endsLabel: "31 March 2027",
+  tiers: ["shared"],               // cloud subscription only
+  name: "Launch offer",
+};
+
+/** Is the launch offer still open on `now`? Ends at the close of endsOn in India. */
+export function offerOpen(now = new Date()) {
+  return now.getTime() <= new Date(`${launchOffer.endsOn}T23:59:59+05:30`).getTime();
+}
+
+/** Does the offer apply to this way of paying, today? */
+export const offerAppliesTo = (tierId, now) => offerOpen(now) && launchOffer.tiers.includes(tierId);
+
 // Size bands: a gas plant is sized by the cylinders it manages, not by revenue.
 export const bands = [
   { id: "S", name: "Small", who: "One plant, one filling line", cylinders: "up to 2,000 cylinders", users: 10, multiplier: 0.8, extraUser: 450, hosting: 18000 },
@@ -144,6 +165,11 @@ export const pricingFaq = [
   {
     q: "Why is implementation priced separately?",
     a: "Because it is real work: walking your plant, loading your data, configuring your workflows, training each team and standing at the dispatch gate on go-live day. It is sold as a package by size — about ₹3 lakh for a Small plant, ₹8 lakh for Medium and ₹15 lakh for Large, with Extra large quoted after a site visit — paid in stages from signing to go-live. It is what decides whether the project succeeds.",
+  },
+  {
+    offer: true, // hidden once the offer closes
+    q: "What is the launch offer?",
+    a: "Plants that sign a Fluids cloud subscription by 31 March 2027 get 12% off the subscription for the first year. It applies to any bundle and any size, and replaces the 10% annual-prepayment discount rather than adding to it. Implementation, extra services, the dedicated-database option and the one-time licence are not included.",
   },
   {
     q: "Is there a discount for paying annually?",

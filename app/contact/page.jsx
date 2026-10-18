@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 const INTEREST_OPTIONS = [
   { value: "fluids-demo", label: "Fluids guided demo" },
   { value: "pricing-quote", label: "Pricing & a written quote" },
+  { value: "launch-offer", label: "Launch offer — 12% off the first year" },
   { value: "ai-forecast-demo", label: "Analytics & Insight Workspace demo" },
   { value: "accounting-launch", label: "Accounting launch updates" },
   { value: "general-enquiry", label: "General enquiry" },
@@ -91,6 +92,7 @@ export default function ContactPage() {
                 <h3>Gnanendra A</h3>
                 <p>Principal Consultant</p>
                 <a href="tel:+918310084720">+91 83100 84720</a>
+                <a href="mailto:gnanendra.a@pradrava.com">gnanendra.a<wbr />@pradrava.com</a>
               </article>
             </div>
           </div>

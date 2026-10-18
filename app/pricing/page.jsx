@@ -12,7 +12,13 @@ import {
   approx,
   gstNote,
   inr,
+  launchOffer,
+  offerOpen,
+  offerAppliesTo,
 } from "@/data/pricing";
+
+// Re-render daily so the launch offer disappears on its own after it closes.
+export const revalidate = 86400;
 
 export const metadata = {
   title: "Pricing | Fluids",
@@ -29,25 +35,29 @@ export const metadata = {
   alternates: { canonical: "/pricing" },
 };
 
-const faqSchema = {
+const liveFaq = () => pricingFaq.filter((f) => !f.offer || offerOpen());
+
+const faqSchema = () => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: pricingFaq.map((f) => ({
+  mainEntity: liveFaq().map((f) => ({
     "@type": "Question",
     name: f.q,
     acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
-};
+});
 
 const smallest = bands[0];
 const lakh = (n) => `₹${+(n / 100000).toFixed(1)} lakh`;
 
 export default function PricingPage() {
+  const offer = offerOpen();
+  const offerPct = Math.round(launchOffer.pct * 100);
   return (
     <div className="container page-stack">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema()) }}
       />
 
       <div className="product-page-hero fluids-hero reveal">
@@ -64,6 +74,23 @@ export default function PricingPage() {
         </p>
       </div>
 
+      {offer && (
+        <div className="offer-banner reveal" role="region" aria-label={launchOffer.name}>
+          <div>
+            <p className="offer-eyebrow">{launchOffer.name} · until {launchOffer.endsLabel}</p>
+            <h2>{offerPct}% off your first year on the cloud subscription</h2>
+            <p>
+              Sign a Fluids cloud subscription by {launchOffer.endsLabel} and the first year costs{" "}
+              {offerPct}% less — any bundle, any size. It replaces the 10% annual-prepayment
+              discount rather than adding to it. Implementation and services are priced as usual.
+            </p>
+          </div>
+          <Link href="/contact?interest=launch-offer&source=pricing-offer" className="btn btn-primary">
+            Claim the offer
+          </Link>
+        </div>
+      )}
+
       <div className="section-block reveal delay-1">
         <div className="section-head" style={{ marginBottom: "1.2rem" }}>
           <p className="eyebrow">Three ways to pay</p>
@@ -77,9 +104,19 @@ export default function PricingPage() {
               <p className="plan-tagline">{t.desc}</p>
               <div className="plan-price">
                 <span className="plan-from">from</span>
-                <strong>{inr(approx(bundlePrice(bundles[0], smallest, t.id)))}</strong>
+                {offerAppliesTo(t.id) ? (
+                  <>
+                    <s className="plan-was">{inr(approx(bundlePrice(bundles[0], smallest, t.id)))}</s>
+                    <strong>{inr(approx(bundlePrice(bundles[0], smallest, t.id) * (1 - launchOffer.pct)))}</strong>
+                  </>
+                ) : (
+                  <strong>{inr(approx(bundlePrice(bundles[0], smallest, t.id)))}</strong>
+                )}
                 <span>{t.short}</span>
               </div>
+              {offerAppliesTo(t.id) && (
+                <p className="plan-offer">{launchOffer.name}: {offerPct}% off the first year, until {launchOffer.endsLabel}</p>
+              )}
               <p className="plan-meta">{t.billing}</p>
               <p className="plan-meta">Best for: {t.bestFor}</p>
             </article>
@@ -176,7 +213,7 @@ export default function PricingPage() {
           <h2>Questions about pricing</h2>
         </div>
         <div className="faq-list">
-          {pricingFaq.map((item) => (
+          {liveFaq().map((item) => (
             <details key={item.q} className="faq-item">
               <summary>{item.q}</summary>
               <p className="faq-body">{item.a}</p>

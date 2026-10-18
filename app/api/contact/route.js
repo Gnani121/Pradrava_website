@@ -5,6 +5,7 @@ const VALID_INTERESTS = new Set([
   "accounting-launch",
   "fluids-demo",
   "pricing-quote",
+  "launch-offer",
   "ai-forecast-demo",
   "general-enquiry",
 ]);
@@ -13,6 +14,7 @@ const INTEREST_LABELS = {
   "accounting-launch": "Accounting launch updates",
   "fluids-demo": "Fluids guided demo",
   "pricing-quote": "Pricing & a written quote",
+  "launch-offer": "Launch offer — 12% off the first year",
   "ai-forecast-demo": "Analytics & Insight Workspace demo",
   "general-enquiry": "General enquiry",
 };

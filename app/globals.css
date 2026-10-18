@@ -1179,6 +1179,8 @@ p { margin: 0; }
 .contact-people-grid h3 { font-size: 1.02rem; margin-bottom: 0.2rem; }
 .contact-people-grid p { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
 .contact-people-grid a {
+  display: block;
+  overflow-wrap: break-word;
   color: var(--brand);
   font-weight: 700;
   font-size: 0.94rem;
@@ -2432,6 +2434,24 @@ textarea.field-input { resize: vertical; min-height: 110px; }
 .plan-price strong { font-family: "Sora", sans-serif; font-size: 2rem; color: var(--ink); }
 .plan-price span, .plan-from { color: var(--muted); font-size: 0.9rem; }
 .plan-meta { color: var(--ink-soft); font-size: 0.86rem; }
+.plan-was { color: var(--muted); font-size: 1rem; }
+.plan-offer { color: var(--accent-deep); font-size: 0.84rem; font-weight: 700; }
+.offer-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 1.7rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--accent);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.10), rgba(79, 70, 229, 0.06));
+}
+.offer-banner > div { flex: 1 1 320px; }
+.offer-banner h2 { font-size: 1.35rem; margin: 0.2rem 0 0.4rem; }
+.offer-banner p { color: var(--ink-soft); font-size: 0.94rem; }
+.offer-eyebrow { color: var(--accent-deep) !important; font-weight: 700; font-size: 0.8rem !important; text-transform: uppercase; letter-spacing: 0.06em; }
+.estimator-offer strong { color: var(--accent-deep); }
 .plan-card .flow-list { margin: 0.8rem 0 1.2rem; }
 .plan-cta { margin-top: auto; text-align: center; }
 .pricing-two {
