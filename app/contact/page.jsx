@@ -89,10 +89,9 @@ export default function ContactPage() {
                 <a href="tel:+919738388683">+91 97383 88683</a>
               </article>
               <article>
-                <h3>Gnanendra A</h3>
-                <p>Principal Consultant</p>
-                <a href="tel:+918310084720">+91 83100 84720</a>
-                <a href="mailto:gnanendra.a@pradrava.com">gnanendra.a<wbr />@pradrava.com</a>
+                <h3>General enquiries</h3>
+                <p>Pradrava Private Limited</p>
+                <a href="mailto:info@pradrava.com">info@pradrava.com</a>
               </article>
             </div>
           </div>

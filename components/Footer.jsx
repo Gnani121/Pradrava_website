@@ -43,8 +43,6 @@ export default function Footer() {
           <h4>Get in touch</h4>
           <a href="tel:+919738388683">+91 97383 88683</a>
           <a href="mailto:info@pradrava.com">info@pradrava.com</a>
-          <a href="tel:+918310084720">Gnanendra A · +91 83100 84720</a>
-          <a href="mailto:gnanendra.a@pradrava.com">gnanendra.a@pradrava.com</a>
           <p style={{ marginTop: "0.6rem" }}>Pradrava Private Limited</p>
           <p>4th Floor, Om Chambers, Indiranagar, Bengaluru, Karnataka 560038</p>
         </div>
