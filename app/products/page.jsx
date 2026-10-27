@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { products } from "@/data/products";
-import { pillars, standards } from "@/data/fluids";
+import { standards } from "@/data/fluids";
+import { ownerPages } from "@/data/ownerPages";
+
+const areas = ownerPages.overview.areas.items;
 
 export const metadata = {
   title: "Products",
@@ -50,20 +53,15 @@ export default function ProductsPage() {
       <div className="section-block reveal delay-1">
         <div className="section-head" style={{ marginBottom: "1.2rem" }}>
           <p className="eyebrow">Inside Fluids</p>
-          <h2>Six capability areas, each with its own depth</h2>
+          <h2>Seven areas, one connected plant</h2>
         </div>
         <div className="pillar-grid">
-          {pillars.map((p) => (
-            <article key={p.title} className="pillar-card">
-              <div className="feature-tile-icon">{p.icon}</div>
+          {areas.map((p) => (
+            <article key={p.title} className="home-plant">
               <h3>{p.title}</h3>
               <p>{p.desc}</p>
-              <ul className="pillar-list">
-                {p.points.map((pt) => (
-                  <li key={pt}>{pt}</li>
-                ))}
-              </ul>
-              <Link href={p.href} className="inline-cta">Explore in detail</Link>
+              <p className="home-plant-gain">{p.gain}</p>
+              <Link href={p.href} className="inline-cta">See how →</Link>
             </article>
           ))}
         </div>

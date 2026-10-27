@@ -6,12 +6,12 @@ import Link from "next/link";
 export const fluidsNav = [
   { href: "/products/fluids", label: "Overview" },
   { href: "/products/fluids/cylinder-operations", label: "Cylinder Operations" },
-  { href: "/products/fluids/quality", label: "Quality & Compliance" },
+  { href: "/products/fluids/quality", label: "Quality & Lab" },
   { href: "/products/fluids/production", label: "Production & Machines" },
-  { href: "/products/fluids/procurement", label: "Procurement & Inventory" },
-  { href: "/products/fluids/finance", label: "Finance & GST" },
-  { href: "/products/fluids/notifications", label: "Notifications & SLA" },
-  { href: "/products/fluids/platform", label: "Platform & Security" },
+  { href: "/products/fluids/procurement", label: "Purchasing & Stock" },
+  { href: "/products/fluids/finance", label: "Billing & GST" },
+  { href: "/products/fluids/notifications", label: "Alerts & Reminders" },
+  { href: "/products/fluids/platform", label: "Security & Branches" },
 ];
 
 export default function FluidsSubNav({ current }) {

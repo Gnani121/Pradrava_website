@@ -15,160 +15,15 @@ export const products = [
   },
 ];
 
-// Headline capabilities used on the home page. All shipped and verified.
-export const fluidsFeatures = [
-  {
-    icon: "🧭",
-    title: "Command Center",
-    desc: "One live cockpit across demand, procurement, cylinder operations and item operations — with the queues that are stuck longest surfaced first, not buried in a report.",
-  },
-  {
-    icon: "🧪",
-    title: "Laboratory-Grade Quality",
-    desc: "ISO 6141 Certificates of Analysis, ISO 6142 measurement uncertainty, ISO/IEC 17025 analyzer calibration, e-signed results and an audit trail that only ever gets added to.",
-  },
-  {
-    icon: "🛡️",
-    title: "Compliance Gate",
-    desc: "Cylinders past their hydro-test date or missing CCOE documentation are blocked from dispatch. Storage bays refuse gases outside their declared hazard class.",
-  },
-  {
-    icon: "🧾",
-    title: "GST Right on the Document, Not at Month End",
-    desc: "The place of supply is worked out from the two states involved and the system refuses to guess, rates come from a table you control, and your numbering cannot have a gap. E-invoice and e-way bill paperwork is prepared for your GSP.",
-  },
-  {
-    icon: "🔎",
-    title: "Trace Passport",
-    desc: "Any cylinder, gas composition, item or order — its full lifecycle, current position, idle hours and risk level, assembled from every module at once.",
-  },
-  {
-    icon: "🏢",
-    title: "Multi-Branch",
-    desc: "All your branches on one system, genuinely unable to see each other's data. Moving stock between branches is an approval step, and you can watch it while it is in transit.",
-  },
-  {
-    icon: "⏱️",
-    title: "SLA Engine with Escalation",
-    desc: "Every handover in the plant gets an owner and a deadline — seventy-one rules in all. Miss the deadline and it goes to the person you nominated. Ten more jobs chase overdue invoices, expiring quotes and cylinders coming due for test.",
-  },
-  {
-    icon: "🎛️",
-    title: "Turn Modules On and Off",
-    desc: "28 modules and 45 sub-modules switched on or off per branch, plus plant profiles and gas-only or item-only modes. What you switch off genuinely is not there, rather than hidden from the menu.",
-  },
-];
-
-// Complete verified module list for the Fluids product page.
-export const fluidsModules = [
-  "Sales: enquiry, quotation with versioned amendments, sales order, sales review",
-  "Five sale types: full sale, gas-only refill, rental, quality check, service",
-  "Quote funnel with stale-enquiry and quote-expiry sweeps",
-  "Sales price book with tier and quantity-band slabs, plus promotional schemes",
-  "Standing orders, backorders and customer product aliases",
-  "Purchase: requisition, RFQ, vendor quotation comparison, purchase order",
-  "Three-way match of purchase order, goods receipt and vendor invoice",
-  "Landed cost apportionment and import documentation with Bill of Entry",
-  "Blanket rate contracts with call-off drawdown, and departmental budgets",
-  "Reorder policies with min/max, reorder point, EOQ and safety stock",
-  "Vendor scorecards on on-time delivery, reject rate, lead time and spend",
-  "Cylinder receiving inspection and customer cylinder intake reconciliation",
-  "Cylinder allocation across rental, full-sale, quality-check and service lanes",
-  "Cylinder 360 fleet view segmented by ownership",
-  "Cylinder service: hydro test, valve change, guard fitting, gas change, replacement",
-  "Refill dispatch to third-party fillers, and vendor-supply inward",
-  "Rental and demurrage accrual with a customer deposit ledger",
-  "Compliance gate on next test due, tested date, test pressure and CCOE licence",
-  "Storage bays with accepted gas hazard classes and segregation enforcement",
-  "Production and transfilling queue with donor and receiver gas consumption log",
-  "Item production, bill of materials, planned-versus-actual variance and costing",
-  "Genealogy and forward/backward traceability reporting",
-  "Gas quality testing with components, impurities, physical, stability and compliance detail",
-  "Certificate of Analysis to ISO 6141 with ISO 6142 expanded uncertainty",
-  "Analyzer master and calibration register to ISO/IEC 17025 with expiry alerts",
-  "Lab controls: versioned test methods, analyst and reviewer signatures, and a record of every result edit",
-  "Trend charts that show a process drifting before it fails, how much passes first time, what quality problems cost, and the commonest defects first",
-  "AQL acceptance sampling to ISO 2859-1 applied to production lots",
-  "Non-conformance and CAPA workflow, auto-raised from receiving and inspection",
-  "Final inspection with photographic evidence gating dispatch",
-  "A stock ledger that is only ever added to, never rewritten — with holds, releases and running balances",
-  "Picking batches, packing units, packing material consumption and box catalogue",
-  "Branch transfer with requested, approved, dispatched and received states",
-  "Bulk and cryogenic tanks: tanker receipts, level events and tank-to-cylinder transfer",
-  "Dispatch readiness board, delivery challans and proof-of-delivery capture",
-  "Machine master, preventive maintenance, run-hour meters and spare consumption",
-  "How much of the day each machine ran, how often it breaks, how long it stays down, the top reasons why, and how loaded it is (OEE, MTBF, MTTR)",
-  "Machine and statutory calibration register with due alerts",
-  "Machine and instrument readings taken in, with maintenance rules you set over them",
-  "GST engine with editable rate table and fail-closed place-of-supply resolution",
-  "E-invoice payload preparation, cancellation and reporting-window checks — connected to your GSP at go-live",
-  "E-way bill preparation across invoice, branch transfer, purchase inward and delivery challan",
-  "GST inward register, and GSTR-1 / GSTR-3B draft builders (off by default — not a filing service)",
-  "Gapless document numbering per GSTIN, document type and financial year",
-  "Credit control with limit gate at order entry, and AR ageing snapshots",
-  "Automated dunning with per-attempt logging, and credit and debit notes",
-  "Durable accounting hand-off queue with retry, backoff and voucher write-back",
-  "Print Center: 17 document types with per-branch templates and server-rendered PDF",
-  "Email Center: sender identity and recipient routing per branch and per department",
-  "UPI pay link on the invoice, built from your own bank details",
-  "Notification and SLA engine: 71 editable rules over 65 stages, with due dates, additional recipients, priorities and automatic escalation",
-  "Unstaffed-role fallback and a delivery report showing every alert that could not be raised, and why",
-  "Thirteen jobs that run on a schedule: the escalation sweep, alert dispatch and its delivery report, overdue-invoice dunning, monthly invoice consolidation, rental billing, reservation reclaim, e-way bill expiry, the accounting hand-off, purchase and sales automation, item-cost reconciliation and log retention",
-  "Run-on-demand sweeps for the quote funnel, reordering, calibrations coming due, cylinders approaching hydro test and lapsing contract prices",
-  "Module Control Panel: 28 modules and 45 sub-modules toggled per branch",
-  "Plant profiles and gas-only, item-only or combined business modes",
-  "Activity and security audit log with database-level change tracking",
-  "Shop-floor kiosk station, phone-as-scanner QR sessions, and a companion scanner app in preview",
-  "Advanced analytics across eight views, including consumption history, customer and quality insight",
-  "Customer receipts ledger: part payment, seven payment modes, over-payment refused, void with a stated reason",
-  "Receivables summary with collected, outstanding, and unpaid, part-paid and settled counts",
-  "Order cancellation with a cylinder disposition queue — decide, then confirm the physical move",
-  "Cylinder retirement with a stated reason and full history retained, instead of deletion",
-  "Cylinder lookup by the number stencilled on the bottle: position, holder, order, vendor, challan and next step",
-  "Configurable three-way match tolerance bands per branch, with the effective source shown",
-  "Fill quantity ranges gating the return leg, with a worklist of capacity and gas pairs that have none",
-  "Master-data readiness worklist ranked by what each gap breaks downstream",
-  "Optional segregation of duties on requisition approval, vendor invoice approval and order cancellation",
-  "Administrator console: sessions, activity, permission denials, client errors, endpoint and system health",
-  "Failed sign-in capture with repeat-failure lockout, and configurable log retention with an audited purge",
-  "Stock corrections entered as a physical count, with the system deriving the adjustment",
-  "Acceptance sampling plan editor with a lot-size lookup that matches what production QC applies",
-  "Demurrage run log recording when a sweep ran, through what date, and what it accrued",
-];
-
-export const fluidsFaq = [
-  {
-    q: "What exactly does Fluids replace?",
-    a: "Typically a stack of spreadsheets, a cylinder register, a separate quality logbook, and manual GST workings. Sales, procurement, inventory, production, quality, machines, dispatch and statutory compliance all move onto one set of live data.",
-  },
-  {
-    q: "Can we run more than one plant or company on it?",
-    a: "Yes. All your branches run on one system, and they genuinely cannot see each other's data — it is built into how the data is stored rather than left to whoever writes the next screen. Moving stock between branches goes through an approval step, and you can see it while it is in transit.",
-  },
-  {
-    q: "Does it stop non-compliant dispatch?",
-    a: "Yes. Cylinders past their hydro-test date or missing CCOE documentation are blocked, storage bays refuse gases outside their declared hazard class, and final inspection with photographic evidence gates the readiness board.",
-  },
-  {
-    q: "Is Indian GST properly supported?",
-    a: "Yes, on the documents you raise. The place of supply comes from the supplier and recipient states and the system refuses to guess, rates are per line from a table you can edit yourself, and numbering is gapless per GSTIN and financial year. The tax is calculated twice by separate code and an invoice will not issue if the two disagree. E-invoice and e-way bill payloads are prepared and connected to your GSP at go-live. Filing the returns themselves is not something Fluids does.",
-  },
-  {
-    q: "Will our shop floor and drivers manage on it?",
-    a: "There is a distraction-free kiosk station for the shop floor with large touch targets and an audible chime for new tasks, a phone-as-scanner mode joined by scanning a QR code, and a companion scanner app for Android and iOS handsets that we install on your devices — it is in preview, not on the app stores.",
-  },
-];
-
-// Accounting is pre-release. Nothing here is presented as available today.
 export const accountingFeatures = [
   { icon: "🧾", title: "Invoicing on live documents", desc: "Invoices raised from the same dispatch and delivery data your operations team already works in, rather than re-keyed at month end." },
   { icon: "💰", title: "Receipts and payment tracking", desc: "Customer receipts, vendor payments and running balances against the ledgers Fluids already maintains." },
   { icon: "📈", title: "Financial statements", desc: "Profit and loss, balance sheet and cash position generated from posted transactions instead of exported and rebuilt in a spreadsheet." },
   { icon: "🧮", title: "Expense capture and approval", desc: "Log, categorise and approve spend with the same approval and budget controls used in procurement." },
   { icon: "🏦", title: "Bank reconciliation", desc: "Match statement lines against ledger entries, clear the matches and surface only the exceptions for review." },
-  { icon: "📋", title: "Audit trail", desc: "Every entry timestamped and attributed, on the same activity and change-log foundation the rest of the platform uses." },
+  { icon: "📋", title: "Audit trail", desc: "Every entry timestamped and attributed, the same way as everything else in Fluids." },
   { icon: "🧷", title: "Vendor and customer ledgers", desc: "Party-wise ledgers that reconcile to the operational documents they came from, not a parallel set of books." },
-  { icon: "🔐", title: "Role-based access", desc: "Accountants, approvers and auditors see exactly their scope, using the same permission model as Fluids." },
+  { icon: "🔐", title: "Role-based access", desc: "Accountants, approvers and auditors see exactly their scope, just as in Fluids." },
 ];
 
 export const accountingModules = [
@@ -194,15 +49,15 @@ export const accountingModules = [
 export const accountingFaq = [
   {
     q: "Is Accounting available today?",
-    a: "No. It is in active development. What is available today is the accounting hand-off in Fluids — a durable queue that pushes invoices, credit notes and payments into whatever accounts system you already run, with retry and voucher write-back.",
+    a: "No. It is in active development. What is available today is the accounting hand-off in Fluids — Fluids sends invoices, credit notes and payments to whatever accounts system you already run.",
   },
   {
     q: "Do we have to wait for it to start using Fluids?",
-    a: "No. Fluids is designed to sit alongside an existing accounts package rather than replace it. The sync bridge and the inbound payment endpoint are built and tested; we point them at your accounts system and switch them on during implementation.",
+    a: "No. Fluids is designed to sit alongside an existing accounts package rather than replace it. The connection to your accounts package is built; we set it up with you when you go live.",
   },
   {
     q: "What will it integrate with?",
-    a: "It is being built on the same separation, permissions and record-keeping foundation as Fluids, so branch isolation, roles and change history carry over unchanged rather than being re-implemented.",
+    a: "It works with Fluids directly, so your branches, roles and change history carry over unchanged.",
   },
   {
     q: "How do we get involved early?",

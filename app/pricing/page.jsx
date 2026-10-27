@@ -94,7 +94,7 @@ export default function PricingPage() {
       <div className="section-block reveal delay-1">
         <div className="section-head" style={{ marginBottom: "1.2rem" }}>
           <p className="eyebrow">Three ways to pay</p>
-          <h2>Rent it, run it on your own database, or buy it outright</h2>
+          <h2>Rent it, run it on your own server, or buy it outright</h2>
         </div>
         <div className="pricing-grid">
           {tiers.map((t) => (

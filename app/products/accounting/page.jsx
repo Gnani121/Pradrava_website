@@ -4,7 +4,7 @@ import { accountingFeatures, accountingModules, accountingFaq } from "@/data/pro
 export const metadata = {
   title: "Accounting & GST Returns | In Development",
   description:
-    "Pradrava Accounting is the books and the GST returns, in active development on the same separation, permissions and record-keeping foundation as Fluids. Available today: Fluids gets the GST right on every document you raise, and hands those documents to the accounts package you already run.",
+    "Pradrava Accounting is the books and the GST returns, in active development, built to work hand in hand with Fluids. Available today: Fluids gets the GST right on every document you raise, and hands those documents to the accounts package you already run.",
   keywords: [
     "GST return filing software India",
     "GSTR-1 GSTR-3B filing software",
@@ -25,17 +25,17 @@ const availableNow = [
   {
     label: "GST-correct documents at the point of sale",
     value:
-      "Place of supply is resolved from the supplier and recipient state pair and the system refuses to guess, with per-line rates from an editable slab table, gapless numbering per GSTIN and financial year, and a database rule that will not let an invoice be issued if its tax does not reconcile. Credit and debit notes reverse correctly against the original.",
+      "The right split between CGST and SGST or IGST, HSN codes, and invoice numbers that never skip. An invoice whose tax does not add up will not issue, and credit and debit notes reverse correctly against the original.",
   },
   {
-    label: "Accounting hand-off — built, connected during implementation",
+    label: "Hand-off to your accounts package — connected when you go live",
     value:
-      "Invoices, credit notes and debit notes queue to your existing accounts package with exponential backoff and voucher ID write-back onto the source document, and raise a high-priority alert if a document exhausts its retries rather than failing silently. The queue runs daily. Your accounts endpoint and the inbound payment key are configured as part of implementation — until they are, nothing is sent and nothing is lost.",
+      "Invoices, credit notes and debit notes go to the accounts package you already use. If it is unavailable they wait and try again, and if one cannot be sent your accounts team is told. We connect it with you when you go live; until then nothing is sent and nothing is lost.",
   },
   {
-    label: "Statutory portals — payload ready, connection is the last step",
+    label: "E-invoice and e-way bill — built, not yet switched on",
     value:
-      "Fluids prepares the e-invoice IRN and e-way bill payloads across four movement types and records every call and its response as an event. Both currently run against a sandbox; connecting your production GSP is a step we do with you at go-live, not something already switched on. The GSTR-1 and GSTR-3B builders give you a working from live documents — B2B invoices, a credit-note summary and a liability figure — but they are off by default, and the GSTN file and the remaining return sections are what this product adds.",
+      "E-invoice and e-way bill are built in Fluids and are being connected to the government portal provider; they are not switched on for customers yet. Filing your GST returns is what this product adds.",
   },
 ];
 

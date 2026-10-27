@@ -44,7 +44,7 @@ const rollout = [
     title: "Configure",
     desc: "Almost everything that matters is configuration, and we set it with your team in the room.",
     items: [
-      "Plant profile, business mode and the module toggles per branch",
+      "Which parts of Fluids each branch uses",
       "Roles assigned, with the permission set reviewed against who actually approves what",
       "Notification routing, SLA hours and escalation roles per stage hand-off",
       "Document series per GSTIN, print templates, and department email routing",
@@ -92,7 +92,7 @@ export default function ServicesPage() {
         <p className="eyebrow">Professional Services</p>
         <h1>Software this deep needs someone who knows it</h1>
         <p className="lead" style={{ marginTop: "1rem" }}>
-          Fluids has 28 modules, 13 roles and several hundred configuration decisions behind it.
+          Fluids runs a whole plant, and every plant runs a little differently.
           Handing you a login and a manual would be a poor way to start. We migrate your data,
           set the configuration to how your plant runs, connect what you already use, train each
           role separately, and stay on a defined SLA afterwards.

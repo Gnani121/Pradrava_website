@@ -114,18 +114,18 @@ function Copy({ lines, x = 96, y, size = 26, fill = "rgba(226,232,240,0.78)", lh
   );
 }
 
-/* ── 1. The SLA engine ─────────────────────────────────────────────── */
+/* ── 1. Alerts ─────────────────────────────────────────────── */
 function PosterSla() {
   const id = "p1";
   const ladder = [
-    { t: "0 h", l: "Gas test fails", c: "#f87171" },
-    { t: "8 h", l: "Due — production", c: "#fbbf24" },
-    { t: "16 h", l: "Branch manager", c: "#7dd3fc" },
+    { t: "Now", l: "Gas test fails", c: "#f87171" },
+    { t: "Late", l: "Production told", c: "#fbbf24" },
+    { t: "Later", l: "Manager told", c: "#7dd3fc" },
   ];
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="71 rules that chase your plant">
+    <svg viewBox={`0 0 ${W} ${H}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An owner for every step in your plant">
       <Backdrop id={id} />
-      <Eyebrow text="NOTIFICATIONS · SLA · ESCALATION" />
+      <Eyebrow text="ALERTS · REMINDERS" />
 
       <text
         x="96"
@@ -136,21 +136,20 @@ function PosterSla() {
         fontWeight="800"
         letterSpacing="-14"
       >
-        71
+        1
       </text>
       <text x="96" y="560" fill="#ffffff" fontFamily={DISPLAY} fontSize="62" fontWeight="700" letterSpacing="-1.6">
-        rules that chase
+        owner for every
       </text>
       <text x="96" y="628" fill="#ffffff" fontFamily={DISPLAY} fontSize="62" fontWeight="700" letterSpacing="-1.6">
-        your plant for you.
+        step in your plant.
       </text>
 
       <Copy
         y="712"
         lines={[
-          "65 stages. 28 modules. 13 roles. Every hand-off in the",
-          "operation gets an owner, a deadline, and a named person",
-          "it escalates to when the clock runs out.",
+          "Every hand-off in the plant gets an owner and a time to be",
+          "done by. When it waits too long, their manager is told.",
         ]}
       />
 
@@ -158,7 +157,7 @@ function PosterSla() {
       <g transform="translate(96, 880)">
         <rect x="0" y="0" width={W - 192} height="230" rx="20" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" />
         <text x="36" y="52" fill="rgba(226,232,240,0.55)" fontFamily={SANS} fontSize="18" fontWeight="800" letterSpacing="3">
-          ONE RULE, AS CONFIGURED
+          WHEN A GAS TEST FAILS
         </text>
         {ladder.map((s, i) => (
           <g key={s.t} transform={`translate(${36 + i * 250}, 96)`}>
@@ -334,44 +333,44 @@ function PosterCylinder() {
   );
 }
 
-/* ── 4. The tax engine ─────────────────────────────────────────────── */
+/* ── 4. GST ─────────────────────────────────────────────── */
 function PosterTax() {
   const id = "p4";
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One tax engine, two implementations, one answer">
+    <svg viewBox={`0 0 ${W} ${H}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GST right on every invoice">
       <Backdrop id={id} a="#4338ca" b="#0ea5e9" />
-      <Eyebrow text="INDIA GST · COMPUTED TWICE" />
+      <Eyebrow text="INDIA GST" />
 
       <text x="96" y="300" fill="#ffffff" fontFamily={DISPLAY} fontSize="70" fontWeight="800" letterSpacing="-2">
-        One tax engine.
+        GST right
       </text>
       <text x="96" y="378" fill="#ffffff" fontFamily={DISPLAY} fontSize="70" fontWeight="800" letterSpacing="-2">
-        Two implementations.
+        on every invoice.
       </text>
       <text x="96" y="456" fill={`url(#${id}-txt)`} fontFamily={DISPLAY} fontSize="70" fontWeight="800" letterSpacing="-2">
-        One answer.
+        First time.
       </text>
 
       <Copy
         y="536"
         lines={[
-          "The split is computed independently in the application and",
-          "again inside the database, pinned to a shared test matrix.",
+          "Worked out from the two states involved, so the customer",
+          "gets the right split without anyone checking by hand.",
         ]}
       />
 
       {/* two panels agreeing */}
       <g transform="translate(96, 640)">
         {[
-          { t: "APPLICATION", v: "₹403.20", s: "18% of ₹2,240" },
-          { t: "DATABASE", v: "₹403.20", s: "18% of ₹2,240" },
+          { t: "SAME STATE", v: "CGST + SGST", s: "split equally" },
+          { t: "OTHER STATE", v: "IGST", s: "one line, full rate" },
         ].map((p, i) => (
           <g key={p.t} transform={`translate(${i * 424}, 0)`}>
             <rect x="0" y="0" width="384" height="212" rx="20" fill="rgba(255,255,255,0.06)" stroke="rgba(125,211,252,0.28)" />
             <text x="32" y="52" fill="rgba(226,232,240,0.55)" fontFamily={SANS} fontSize="18" fontWeight="800" letterSpacing="3">
               {p.t}
             </text>
-            <text x="32" y="132" fill="#ffffff" fontFamily={DISPLAY} fontSize="60" fontWeight="800" letterSpacing="-1.6">
+            <text x="32" y="132" fill="#ffffff" fontFamily={DISPLAY} fontSize="44" fontWeight="800" letterSpacing="-1.2">
               {p.v}
             </text>
             <text x="32" y="172" fill="rgba(226,232,240,0.6)" fontFamily={SANS} fontSize="21" fontWeight="600">
@@ -382,7 +381,7 @@ function PosterTax() {
         <g transform="translate(384, 92)">
           <circle cx="20" cy="20" r="19" fill="#0b1220" stroke="rgba(125,211,252,0.5)" strokeWidth="2" />
           <text x="20" y="29" textAnchor="middle" fill="#7dd3fc" fontFamily={DISPLAY} fontSize="24" fontWeight="800">
-            =
+            or
           </text>
         </g>
       </g>
@@ -390,13 +389,13 @@ function PosterTax() {
       <g transform="translate(96, 900)">
         <rect x="0" y="0" width={W - 192} height="180" rx="20" fill="rgba(248,113,113,0.09)" stroke="rgba(248,113,113,0.3)" />
         <text x="32" y="54" fill="#f87171" fontFamily={SANS} fontSize="18" fontWeight="800" letterSpacing="3">
-          AND IF THEY EVER DISAGREE
+          AND IF SOMETHING DOES NOT ADD UP
         </text>
         <text x="32" y="112" fill="#ffffff" fontFamily={DISPLAY} fontSize="40" fontWeight="700" letterSpacing="-1">
           The invoice does not issue.
         </text>
         <text x="32" y="152" fill="rgba(226,232,240,0.7)" fontFamily={SANS} fontSize="22" fontWeight="500">
-          Nor does one whose place of supply could not be resolved.
+          Nor does one whose customer state is missing.
         </text>
       </g>
 
@@ -405,7 +404,7 @@ function PosterTax() {
         size="23"
         fill="rgba(226,232,240,0.55)"
         lines={[
-          "Gapless numbering per GSTIN and financial year. E-invoice and e-way bill ready.",
+          "Invoice numbers that never skip, branch by branch and year by year.",
           "Every invoice right when it is raised, not fixed in a month of reconciliation.",
         ]}
         lh={34}
@@ -496,9 +495,9 @@ function PosterRent() {
       <Copy
         y="452"
         lines={[
-          "It accrues daily after the grace period, against a deposit",
-          "ledger and a billing watermark — so the same day is never",
-          "billed twice, and never quietly skipped.",
+          "Rent starts after the free period and is billed monthly",
+          "and on return, so the same day is never billed twice,",
+          "and never quietly skipped.",
         ]}
       />
 
@@ -533,9 +532,9 @@ function PosterRent() {
 
       <g transform="translate(96, 890)">
         {[
-          { k: "Grace period", v: "Configured per contract, not per memory" },
-          { k: "Billing watermark", v: "The last day already invoiced — never re-billed" },
-          { k: "Deposit ledger", v: "Per customer, per cylinder, reconciled" },
+          { k: "Free period", v: "Set per contract, not per memory" },
+          { k: "Already billed", v: "Never billed again" },
+          { k: "Deposits", v: "Per customer, per cylinder" },
           { k: "Monthly run", v: "On a schedule, whether anyone remembers or not" },
         ].map((r, i) => (
           <g key={r.k} transform={`translate(0, ${i * 74})`}>
@@ -562,10 +561,10 @@ function PosterRent() {
 }
 
 const POSTERS = [
-  { id: "sla-engine", title: "71 rules that chase your plant", tag: "Notifications & SLA", Comp: PosterSla },
+  { id: "alerts", title: "An owner for every step", tag: "Alerts & Reminders", Comp: PosterSla },
   { id: "compliance-gate", title: "NO. — the compliance gate", tag: "Cylinder Operations", Comp: PosterGate },
   { id: "cylinder-360", title: "Every cylinder has a story", tag: "Trace Passport", Comp: PosterCylinder },
-  { id: "gst-engine", title: "One tax engine, one answer", tag: "Finance & GST", Comp: PosterTax },
+  { id: "gst", title: "GST right, first time", tag: "Billing & GST", Comp: PosterTax },
   { id: "order-to-cash", title: "Fourteen steps, nothing re-keyed", tag: "End to end", Comp: PosterChain },
   { id: "rental-billing", title: "Rent that bills itself", tag: "Rental & demurrage", Comp: PosterRent },
 ];

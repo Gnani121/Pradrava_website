@@ -1,5 +1,16 @@
 import Link from "next/link";
 
+// The morning screen beside the headline. Deliberately generic ("a cylinder",
+// "a sales order"): no record numbers, no figures, nothing about how the
+// system decides any of it. It shows the reader their own morning.
+const morning = [
+  { tone: "bad", title: "A cylinder is due for its pressure test", note: "Held back from dispatch until it is tested. Nobody has to spot it." },
+  { tone: "warn", title: "A sales order has been waiting at dispatch too long", note: "The dispatch lead was told. Their manager is next if it keeps waiting." },
+  { tone: "warn", title: "A customer is holding your cylinders past the free period", note: "Rent is now running and will be billed. Nobody has to remember." },
+  { tone: "ok", title: "A delivery was signed for", note: "The GST invoice is ready to send." },
+  { tone: "live", title: "A gas test passed", note: "The certificate is ready for the customer." },
+];
+
 export default function Hero() {
   return (
     <section className="hero reveal">
@@ -22,9 +33,9 @@ export default function Hero() {
             <Link href="/demo" className="btn btn-primary">
               Book a live demo
             </Link>
-            <Link href="/products/fluids" className="btn btn-ghost">
-              Explore Fluids
-            </Link>
+            <a href="#your-day" className="btn btn-ghost">
+              See what changes for you
+            </a>
           </div>
 
           <p className="hero-meta">
@@ -47,19 +58,24 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-visual" aria-hidden="true">
-          <div className="visual-ring" />
-          <div className="mock-card mock-card-top">
-            <p>Live Ops</p>
-            <strong>Real-time inventory map</strong>
+        <aside className="hero-morning" aria-label="Illustration of the screen a plant manager opens in the morning">
+          <div className="hero-morning-top">
+            <h2>Your plant, this morning</h2>
+            <span>Illustration</span>
           </div>
-          <div className="mock-bag">
-            <div className="mock-bag-label">Pradrava Suite</div>
-          </div>
-          <div className="mock-cup" />
-          <div className="float-dot dot-one" />
-          <div className="float-dot dot-two" />
-        </div>
+          <ul>
+            {morning.map((m) => (
+              <li key={m.title}>
+                <i className={`hero-morning-sig ${m.tone}`} aria-hidden="true" />
+                <div>
+                  <strong>{m.title}</strong>
+                  <p>{m.note}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <p className="hero-morning-foot">One screen. It tells you what needs you, before anyone has to call.</p>
+        </aside>
       </div>
     </section>
   );

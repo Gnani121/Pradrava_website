@@ -4,7 +4,7 @@ import PosterBoard from "@/components/PosterBoard";
 export const metadata = {
   title: "Poster Set | Fluids",
   description:
-    "Six print-ready posters on what Fluids actually does — the SLA engine, the compliance gate, the cylinder trace passport, the GST engine, order to cash, and rental billing. Download as vector or image.",
+    "Six print-ready posters on what Fluids actually does — alerts, the dispatch check, the cylinder history, GST, order to cash, and rental billing. Download as vector or image.",
   alternates: { canonical: "/showcase" },
 };
 
@@ -54,7 +54,7 @@ export default function ShowcasePage() {
         <div className="hero-actions">
           <Link href="/contact" className="btn btn-primary">Talk to us</Link>
           <Link href="/products/fluids/notifications" className="btn btn-ghost">
-            Notifications &amp; SLA →
+            Alerts &amp; Reminders →
           </Link>
         </div>
       </div>

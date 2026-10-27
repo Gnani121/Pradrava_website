@@ -7,7 +7,7 @@ export const services = [
   {
     icon: "🧭",
     title: "Workflow Configuration",
-    desc: "Plant profile, business mode, module toggles, role assignments, notification routing and SLA hours are all configuration. We sit with your team and set them to how your plant actually runs, then adjust once it has run for a month."
+    desc: "Which parts each branch uses, who does what, who is told when work waits, and how long they have are all settings. We sit with your team and set them to how your plant actually runs, then adjust once it has run for a month."
   },
   {
     icon: "🔌",

@@ -78,7 +78,7 @@ export const tiers = [
     name: "Cloud subscription",
     short: "per branch / month",
     billing: "Monthly or annual subscription",
-    desc: "Runs on our shared cloud with your data kept separate by the database itself. Hosting, backups, updates and standard support included.",
+    desc: "Runs on our shared cloud with your data kept separate from every other customer. Hosting, backups, updates and standard support included.",
     bestFor: "Most single-plant and two-plant businesses.",
   },
   {
