@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PriceEstimator from "@/components/PriceEstimator";
+import SavingsCalculator from "@/components/SavingsCalculator";
 import {
   bands,
   bundles,
@@ -134,6 +135,19 @@ export default function PricingPage() {
           </p>
         </div>
         <PriceEstimator />
+      </div>
+
+      <div id="savings" className="section-block reveal delay-1">
+        <div className="section-head" style={{ marginBottom: "1.2rem" }}>
+          <p className="eyebrow">What it could save you</p>
+          <h2>Work out what the leaks cost your plant</h2>
+          <p className="lead" style={{ marginTop: "0.9rem" }}>
+            Put in your own figures: cylinders that go missing, rent nobody bills, time spent
+            chasing. Fill in as many lines as you like and leave the rest blank. Nothing you type
+            leaves this page.
+          </p>
+        </div>
+        <SavingsCalculator />
       </div>
 
       <div className="section-block reveal delay-2">
